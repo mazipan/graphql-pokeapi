@@ -23,9 +23,9 @@ export const resolvers = {
   Mutation: Mutations.resolvers,
 };
 
-// @ts-ignore
+
 if (resolvers && !resolvers.Upload) {
-	// @ts-ignore
+
   resolvers.Upload = GraphQLUpload;
 }
 

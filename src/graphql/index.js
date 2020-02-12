@@ -1,6 +1,7 @@
 import { ApolloServer } from 'apollo-server-express';
 import { resolvers, typeDefs } from './schema';
 
+
 export default ({ app, server }) => {
   const apollo = new ApolloServer({
     resolvers,
@@ -8,7 +9,7 @@ export default ({ app, server }) => {
     subscriptions: {
       keepAlive: 25000,
 		},
-		// @ts-ignore
+
     path: '/graphql',
     introspection: true,
     playground: true,
