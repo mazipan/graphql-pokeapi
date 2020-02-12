@@ -1,14 +1,14 @@
 {
   "name": "graphql-pokeapi",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
+  "main": "./src/index.ts",
   "scripts": {
     "test": "jest",
     "lint": "eslint --ext .ts,.tsx . --fix",
     "start": "ts-node ./src",
     "dev": "ts-node-dev ./src"
-  },
+	},
   "devDependencies": {
     "@types/body-parser": "1.19.0",
     "@types/cookie": "0.3.3",
