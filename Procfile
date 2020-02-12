@@ -1,1 +1,1 @@
-web: ts-node ./src/
+web: yarn start
