@@ -10,8 +10,14 @@ export default (): { app: Application; server: Http2Server } => {
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: false }));
 
+	app.get('/', (_, res): void => {
+		res.send(`<div style="display: flex;flex-direction: column;justify-content: center;align-items: center;text-align: center;min-height: 100vh;"><h1>Hello from GraphQL-PokeApi</h1> <br/> <a href="/graphql">Visit graphql playground</a></div>`);
+		res.end(200);
+	});
+
   app.get('/ping', (_, res): void => {
-    res.send('pong');
+		res.send('pong');
+		res.end(200);
   });
 
   app.use('/health', HealthRoutes);

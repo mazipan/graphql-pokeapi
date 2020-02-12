@@ -5,7 +5,8 @@ const router = express.Router();
 router.get('/', (req, res): void => {
   res.send({
     health: 'ok'
-  });
+	});
+	res.end(200);
 });
 
 export default router;
