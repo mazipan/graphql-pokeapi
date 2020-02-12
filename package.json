@@ -47,5 +47,8 @@
     "node-fetch": "^2.6.0",
     "ts-node-dev": "1.0.0-pre.44",
     "typescript": "3.7.2"
+	},
+	"engines": {
+    "node": "12.x"
   }
 }

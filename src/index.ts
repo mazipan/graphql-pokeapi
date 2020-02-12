@@ -2,7 +2,7 @@
 import getApp from './express';
 import graphQLServer from './graphql';
 
-const port = 8089;
+const port = process.env.PORT || 5000;
 const main = async (): Promise<void> => {
 
   const { app, server } = getApp();
