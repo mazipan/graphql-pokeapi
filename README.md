@@ -24,7 +24,8 @@ query pokemons($limit: Int, $offset: Int) {
     message
     results {
       url
-      name
+			name
+			image
     }
   }
 }
@@ -46,16 +47,23 @@ Sample Result:
   "data": {
     "pokemons": {
       "count": 964,
-      "next": "https://pokeapi.co/api/v2/pokemon/?offset=6&limit=6",
+      "next": "https://pokeapi.co/api/v2/pokemon/?offset=3&limit=3",
       "previous": null,
       "results": [
         {
           "url": "https://pokeapi.co/api/v2/pokemon/1/",
-          "name": "bulbasaur"
+          "name": "bulbasaur",
+          "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
         },
         {
           "url": "https://pokeapi.co/api/v2/pokemon/2/",
-          "name": "ivysaur"
+          "name": "ivysaur",
+          "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png"
+        },
+        {
+          "url": "https://pokeapi.co/api/v2/pokemon/3/",
+          "name": "venusaur",
+          "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png"
         }
       ],
       "status": true,
