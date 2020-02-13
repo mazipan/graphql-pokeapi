@@ -20,12 +20,12 @@ query pokemons($limit: Int, $offset: Int) {
     count
     next
     previous
+		status
+		message
     results {
       url
       name
     }
-		status
-		message
   }
 }
 ```
@@ -58,7 +58,7 @@ Sample Result:
           "name": "ivysaur"
         }
       ],
-			"status": true
+			"status": true,
 			"message": ""
     }
   }
@@ -133,7 +133,11 @@ Sample Result:
 ```
 
 
-## Schemas
+## Credits
+
+- [PokeAPI](https://github.com/PokeAPI/pokeapi)
+- [Pokedex Promise V2](https://github.com/PokeAPI/pokedex-promise-v2#pokemon)
+- [Heroku](https://heroku.com/)
 
 ----
 
