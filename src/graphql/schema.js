@@ -9,9 +9,13 @@ const Query = require('./queries').default;
 const Mutations = require('./mutations').default;
 
 const Response = require('./types/response').default;
+const Pokemon = require('./types/pokemon').default;
+const PokemonListResponse = require('./types/pokemonListResponse').default;
 
 export const typeDefs = [
-  Response,
+	Response,
+	Pokemon,
+	PokemonListResponse,
   Query,
   Mutations,
 ].map(({ typeDef }) => typeDef);

@@ -1,13 +1,16 @@
 import hello from './hello';
+import pokemons from './pokemons';
 
 export default {
   name: 'Query',
   resolvers: {
-    hello,
+		hello,
+		pokemons,
   },
   typeDef: `
   type Query {
-    hello: Response
+		hello: Response
+		pokemons (limit: Int, offset: Int): PokemonListResponse
   }
 `,
 };
