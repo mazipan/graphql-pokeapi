@@ -6,7 +6,7 @@ GraphQL implementation of pokeapi.co
 
 ## Graphql Playground
 
-[mazipan-gql-pokeapi.herokuapp.com/](https://mazipan-gql-pokeapi.herokuapp.com/)
+[s.id/gql-pokeapi](https://s.id/gql-pokeapi)
 
 ## Queries
 
