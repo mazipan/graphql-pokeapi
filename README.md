@@ -24,8 +24,8 @@ query pokemons($limit: Int, $offset: Int) {
     message
     results {
       url
-			name
-			image
+      name
+      image
     }
   }
 }
