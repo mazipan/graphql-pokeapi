@@ -1,9 +1,8 @@
 export default {
-  typeDef: `
-  type BaseResponse {
-		message: String
-		status: Boolean
-		response: JSON
-  }
-`,
-};
+  typeDef: `type BaseResponse {
+message: String
+status: Boolean
+response: JSON
+}
+`
+}

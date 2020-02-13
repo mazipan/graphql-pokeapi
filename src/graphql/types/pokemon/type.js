@@ -1,8 +1,7 @@
 export default {
-  typeDef: `
-  type Type {
-		slot: Int
-		type: BaseName
-	}
-`,
-};
+  typeDef: `type Type {
+slot: Int
+type: BaseName
+}
+`
+}

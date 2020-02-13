@@ -1,22 +1,22 @@
-const Pokedex = require('pokedex-promise-v2');
+const Pokedex = require('pokedex-promise-v2')
 const options = {
   versionPath: '/api/v2/',
-  cacheLimit: 30 * 24 * 60 * 60 * 1000,
+  cacheLimit: 30 * 24 * 60 * 60 * 1000
 }
 
-const P = new Pokedex(options);
+const P = new Pokedex(options)
 
-export const getPokemonsList = async (limit = 20, offset = 1) => {
-  return await P.getPokemonsList({
-		limit,
-		offset
-	})
+export const getPokemonsList = (limit = 20, offset = 1) => {
+  return P.getPokemonsList({
+    limit,
+    offset
+  })
 }
 
-export const getPokemonsDetail = async (name = '') => {
-  return await P.getPokemonByName(name)
+export const getPokemonsDetail = (name = '') => {
+  return P.getPokemonByName(name)
 }
 
-export const getMoveByName = async (name = '') => {
-  return await P.getMoveByName(name)
+export const getMoveByName = (name = '') => {
+  return P.getMoveByName(name)
 }

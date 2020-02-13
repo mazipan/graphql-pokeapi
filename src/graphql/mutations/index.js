@@ -1,13 +1,13 @@
-import hello from './hello';
+import hello from './hello'
 
 export default {
   name: 'Mutation',
   resolvers: {
-		hello,
+    hello
   },
   typeDef: `
   type Mutation {
     hello: BaseResponse
   }
-`,
-};
+`
+}
