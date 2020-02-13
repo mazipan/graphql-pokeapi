@@ -2,7 +2,11 @@
 
 GraphQL implementation of pokeapi.co
 
-See [mazipan-gql-pokeapi.herokuapp.com/](https://mazipan-gql-pokeapi.herokuapp.com/)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/mazipan/graphql-pokeapi)
+
+## Graphql Playground
+
+[mazipan-gql-pokeapi.herokuapp.com/](https://mazipan-gql-pokeapi.herokuapp.com/)
 
 ## Queries
 
