@@ -1,13 +1,5 @@
-import { getPokemonsList } from '../../api'
+import { getPokemonsList } from '../../api/pokemons'
+
 export default async (parent, params, context) => {
-  try {
-    const response = await getPokemonsList(params.limit, params.offset)
-    return { ...response, status: true, message: '' }
-  } catch (error) {
-    console.error('> Error resolver pokemons ', error)
-    return {
-      status: false,
-      message: error
-    }
-  }
+  return getPokemonsList(params.limit, params.offset)
 }
