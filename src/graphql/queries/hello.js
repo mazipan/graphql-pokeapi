@@ -1,6 +1,6 @@
 export default async () => {
   return {
-    ok: true,
+    status: true,
     message: 'Hello from me!',
   };
 };

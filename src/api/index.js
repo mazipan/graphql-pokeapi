@@ -13,6 +13,10 @@ export const getPokemonsList = async (limit = 20, offset = 1) => {
 	})
 }
 
+export const getPokemonsDetail = async (name = '') => {
+  return await P.getPokemonByName(name)
+}
+
 export const getMoveByName = async (name = '') => {
   return await P.getMoveByName(name)
 }

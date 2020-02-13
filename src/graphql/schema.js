@@ -1,37 +1,48 @@
 /* eslint @typescript-eslint/no-var-requires: 0 */
 const gql = require('graphql-tag');
 const { makeExecutableSchema } = require('apollo-server');
-const { GraphQLUpload } = require('graphql-upload');
 const GraphQLJSON = require('graphql-type-json');
-const { GraphQLJSONObject } = require('graphql-type-json');
 
 const Query = require('./queries').default;
 const Mutations = require('./mutations').default;
 
-const Response = require('./types/response').default;
-const Pokemon = require('./types/pokemon').default;
-const PokemonListResponse = require('./types/pokemonListResponse').default;
+const BaseResponse = require('./types/baseResponse').default;
+const BaseName = require('./types/baseName').default;
+const Ability = require('./types/pokemon/ability').default;
+const GameIndex = require('./types/pokemon/gameIndex').default;
+const VersionDetail = require('./types/pokemon/versionDetail').default;
+const HeldItem = require('./types/pokemon/heldItem').default;
+const VersionGroupDetail = require('./types/pokemon/versionGroupDetail').default;
+const Move = require('./types/pokemon/move').default;
+const Sprite = require('./types/pokemon/sprite').default;
+const Stat = require('./types/pokemon/stat').default;
+const Type = require('./types/pokemon/type').default;
+const Pokemon = require('./types/pokemon/pokemon').default;
+const PokemonList = require('./types/pokemonList').default;
 
 export const typeDefs = [
-	Response,
+	BaseResponse,
+	Ability,
+	GameIndex,
+	VersionDetail,
+	HeldItem,
+	VersionGroupDetail,
+	Move,
+	Sprite,
+	Stat,
+	Type,
+	BaseName,
 	Pokemon,
-	PokemonListResponse,
+	PokemonList,
   Query,
   Mutations,
 ].map(({ typeDef }) => typeDef);
 
 export const resolvers = {
   JSON: GraphQLJSON,
-  JSONObject: GraphQLJSONObject,
   Query: Query.resolvers,
   Mutation: Mutations.resolvers,
 };
-
-
-if (resolvers && !resolvers.Upload) {
-
-  resolvers.Upload = GraphQLUpload;
-}
 
 const augmentedTypeDefs = Array.isArray(typeDefs) ? typeDefs : [typeDefs];
 
@@ -46,16 +57,9 @@ augmentedTypeDefs.push(
     directive @cacheControl(maxAge: Int, scope: CacheControlScope) on FIELD_DEFINITION | OBJECT | INTERFACE
   `,
 );
-// We augment the typeDefs with the Upload scalar, so typeDefs that
-// don't include it won't fail
-augmentedTypeDefs.push(gql`
-  scalar Upload
-`);
+
 augmentedTypeDefs.push(gql`
   scalar JSON
-`);
-augmentedTypeDefs.push(gql`
-  scalar JSONObject
 `);
 
 export const executableSchema = makeExecutableSchema({

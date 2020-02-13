@@ -1,6 +1,6 @@
 export default {
   typeDef: `
-  type Pokemon {
+  type BaseName {
     url: String
 		name: String
   }

@@ -7,7 +7,7 @@ export default {
   },
   typeDef: `
   type Mutation {
-    hello: Response
+    hello: BaseResponse
   }
 `,
 };

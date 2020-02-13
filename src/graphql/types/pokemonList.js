@@ -1,12 +1,12 @@
 export default {
   typeDef: `
-  type PokemonListResponse {
+  type PokemonList {
 		count: Int
 		next: String
 		previous: String
-		results: [Pokemon]
+		results: [BaseName]
 		status: Boolean
-		error: String
-  }
+		message: String
+	}
 `,
 };

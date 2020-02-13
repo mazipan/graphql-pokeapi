@@ -1,7 +1,6 @@
 import { ApolloServer } from 'apollo-server-express';
 import { resolvers, typeDefs } from './schema';
 
-
 export default ({ app, server }) => {
   const apollo = new ApolloServer({
     resolvers,

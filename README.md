@@ -24,7 +24,8 @@ query pokemons($limit: Int, $offset: Int) {
       url
       name
     }
-    status
+		status
+		message
   }
 }
 ```
@@ -57,11 +58,80 @@ Sample Result:
           "name": "ivysaur"
         }
       ],
+			"status": true
+			"message": ""
+    }
+  }
+}
+```
+
+### getPokemonDetail
+
+Sample Query:
+
+```js
+query pokemon($name: String!) {
+  pokemon(name: $name) {
+    id
+    name
+    abilities {
+      ability {
+        name
+      }
+    }
+    moves {
+      move {
+        name
+      }
+    }
+    message
+    status
+  }
+}
+```
+
+Sample Variables:
+
+```json
+{
+  "name": "ditto"
+}
+```
+
+Sample Result:
+
+```json
+{
+  "data": {
+    "pokemon": {
+      "id": 132,
+      "name": "ditto",
+      "abilities": [
+        {
+          "ability": {
+            "name": "imposter"
+          }
+        },
+        {
+          "ability": {
+            "name": "limber"
+          }
+        }
+      ],
+      "moves": [
+        {
+          "move": {
+            "name": "transform"
+          }
+        }
+      ],
+      "message": "",
       "status": true
     }
   }
 }
 ```
+
 
 ## Schemas
 
