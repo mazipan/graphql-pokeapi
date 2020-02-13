@@ -3,7 +3,7 @@ export default {
 count: Int
 next: String
 previous: String
-results: [BaseName]
+results: [PokemonItem]
 status: Boolean
 message: String
 }

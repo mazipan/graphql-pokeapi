@@ -17,6 +17,7 @@ const Sprite = require('./types/pokemon/sprite').default
 const Stat = require('./types/pokemon/stat').default
 const Type = require('./types/pokemon/type').default
 const Pokemon = require('./types/pokemon/pokemon').default
+const PokemonItem = require('./types/pokemonItem').default
 const PokemonList = require('./types/pokemonList').default
 
 export const typeDefs = [
@@ -31,7 +32,8 @@ export const typeDefs = [
   Stat,
   Type,
   BaseName,
-  Pokemon,
+	Pokemon,
+	PokemonItem,
   PokemonList,
   Query,
   Mutations
