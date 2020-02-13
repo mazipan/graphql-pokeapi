@@ -20,8 +20,8 @@ query pokemons($limit: Int, $offset: Int) {
     count
     next
     previous
-		status
-		message
+    status
+    message
     results {
       url
       name
@@ -58,8 +58,8 @@ Sample Result:
           "name": "ivysaur"
         }
       ],
-			"status": true,
-			"message": ""
+      "status": true,
+      "message": ""
     }
   }
 }
