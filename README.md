@@ -32,7 +32,7 @@ query pokemons($limit: Int, $offset: Int) {
 
 Sample Variables:
 
-```json
+```js
 {
   "limit": 2,
   "offset": 1
@@ -41,7 +41,7 @@ Sample Variables:
 
 Sample Result:
 
-```json
+```js
 {
   "data": {
     "pokemons": {
@@ -92,7 +92,7 @@ query pokemon($name: String!) {
 
 Sample Variables:
 
-```json
+```js
 {
   "name": "ditto"
 }
@@ -100,7 +100,7 @@ Sample Variables:
 
 Sample Result:
 
-```json
+```js
 {
   "data": {
     "pokemon": {
