@@ -1,5 +1,6 @@
 {
   "name": "graphql-pokeapi",
+  "description": "GraphQL implementation of pokeapi.co",
   "version": "1.0.0",
   "license": "MIT",
   "main": "./src/index.ts",

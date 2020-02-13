@@ -1,0 +1,7 @@
+{
+  "name": "graphql-pokeapi",
+  "description": "GraphQL implementation of pokeapi.co",
+  "repository": "https://github.com/mazipan/graphql-pokeapi",
+  "logo": "https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png",
+  "keywords": ["pokeapi", "pokemon", "graphql"]
+}
