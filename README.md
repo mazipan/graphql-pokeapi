@@ -2,6 +2,8 @@
 
 GraphQL implementation of pokeapi.co
 
+![Main workflow](https://github.com/mazipan/graphql-pokeapi/workflows/Main%20workflow/badge.svg)
+
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/mazipan/graphql-pokeapi)
 
 ## Graphql Playground
