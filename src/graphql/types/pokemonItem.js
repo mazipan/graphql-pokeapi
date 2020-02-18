@@ -3,6 +3,7 @@ export default {
 url: String
 name: String
 image: String
+id: String
 }
 `
 }
