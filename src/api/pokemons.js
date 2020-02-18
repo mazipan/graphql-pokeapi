@@ -12,7 +12,7 @@ export const getPokemonsList = async (limit = 20, offset = 1) => {
 				return {
 					name: i.name,
 					url: i.url,
-					id: i.id,
+					id: parseInt(id, 10),
 					image: `${BASE_SPRITE}${id}.png`
 				}
 			})
