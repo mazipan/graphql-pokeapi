@@ -94,6 +94,11 @@ query pokemon($name: String!) {
         name
       }
     }
+    types {
+      type {
+        name
+      }
+    }
     message
     status
   }
@@ -132,6 +137,13 @@ Sample Result:
         {
           "move": {
             "name": "transform"
+          }
+        }
+      ],
+      "types": [
+        {
+          "type": {
+            "name": "normal"
           }
         }
       ],
