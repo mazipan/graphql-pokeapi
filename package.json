@@ -34,7 +34,7 @@
     "graphql-tag": "2.10.3",
     "graphql-type-json": "0.3.1",
     "graphql-upload": "10.0.0",
-    "node-fetch": "2.6.0",
+    "node-fetch": "2.6.1",
     "nodemon": "^2.0.2",
     "pokedex-promise-v2": "^3.2.0"
   },
