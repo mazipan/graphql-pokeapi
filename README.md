@@ -173,7 +173,7 @@ Sample Result:
 
 - [PokeAPI](https://github.com/PokeAPI/pokeapi)
 - [Pokedex Promise V2](https://github.com/PokeAPI/pokedex-promise-v2#pokemon)
-- [Heroku](https://heroku.com/)
+- [Vercel](https://vercel.com/)
 
 ---
 
