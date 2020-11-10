@@ -5,42 +5,26 @@
   "license": "MIT",
   "main": "./src/index.ts",
   "scripts": {
-    "clean:dist": "rimraf dist",
+    "start": "vercel dev",
     "test": "jest",
     "lint": "standard --fix",
-    "build": "babel ./src --out-dir ./dist",
-    "start": "node ./dist/index.js",
-    "dev": "nodemon --exec babel-node ./src/index.js",
-    "postinstall": "yarn clean:dist && yarn build"
+    "deploy": "vercel --prod"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.4",
-    "@babel/node": "^7.8.4",
-    "@babel/preset-env": "^7.8.4",
-    "jest": "25.1.0",
-    "rimraf": "3.0.2",
-    "standard": "^14.3.1"
+    "@vercel/node": "^1.8.4",
+    "jest": "26.6.3",
+    "standard": "^16.0.1"
   },
   "dependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/plugin-transform-runtime": "^7.8.3",
-    "@babel/runtime": "^7.8.4",
     "@saeris/apollo-server-vercel": "^0.4.0",
-    "apollo-cache-control": "0.8.11",
-    "apollo-server": "2.14.2",
-    "apollo-server-express": "2.14.2",
-    "body-parser": "1.19.0",
-    "cors": "^2.8.5",
-    "express": "4.17.1",
     "graphql": "^15.4.0",
-    "graphql-tag": "2.10.3",
-    "graphql-type-json": "0.3.1",
-    "graphql-upload": "10.0.0",
-    "node-fetch": "2.6.0",
-    "nodemon": "^2.0.2",
-    "pokedex-promise-v2": "^3.2.0"
+    "graphql-type-json": "^0.3.2",
+    "node-fetch": "2.6.1",
+    "pokedex-promise-v2": "^3.2.0",
+    "vercel": "^20.1.2",
+    "vercel-node-server": "^2.2.1"
   },
   "engines": {
-    "node": ">= 10.x"
+    "node": ">= 12.x"
   }
 }
