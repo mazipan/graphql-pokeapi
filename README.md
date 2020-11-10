@@ -1,8 +1,11 @@
-# graphql-pokeapi
+# graphql-pokeapi - GraphQL implementation of pokeapi.co
 
-GraphQL implementation of pokeapi.co
-
-![Main workflow](https://github.com/mazipan/graphql-pokeapi/workflows/Main%20workflow/badge.svg)
+<p align="center">
+	<img height="200" src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi.svg?sanitize=true" alt="PokeAPI">
+</p>
+<p align="center">
+	<img src="https://github.com/mazipan/graphql-pokeapi/workflows/Main%20workflow/badge.svg" alt="Actions">
+</p>
 
 ## Graphql Playground
 
