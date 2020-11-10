@@ -1,7 +1,7 @@
-import { PokedexInstance, handleError} from './utils';
+import { PokedexInstance, handleError } from './utils'
 
 export const getMoveByName = async (name = '') => {
-	try {
+  try {
     const response = await PokedexInstance.getMoveByName(name)
     return { response, status: true, message: '' }
   } catch (error) {

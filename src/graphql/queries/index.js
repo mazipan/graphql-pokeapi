@@ -13,16 +13,16 @@ import move from './move'
 export default {
   name: 'Query',
   resolvers: {
-		pokemonsByAbility,
-		pokemonsByEggGroup,
-		pokemonsByGender,
-		pokemonsByGrowthRate,
-		pokemonsByMove,
-		pokemonsByNature,
+    pokemonsByAbility,
+    pokemonsByEggGroup,
+    pokemonsByGender,
+    pokemonsByGrowthRate,
+    pokemonsByMove,
+    pokemonsByNature,
     pokemons,
-		pokemon,
-		encounter,
-		move
+    pokemon,
+    encounter,
+    move
   },
   typeDef: `
   type Query {

@@ -7,8 +7,8 @@ const options = {
 export const PokedexInstance = new Pokedex(options)
 
 export const handleError = (error) => {
-	return {
-		status: false,
-		message: error
-	}
+  return {
+    status: false,
+    message: error
+  }
 }

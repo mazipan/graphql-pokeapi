@@ -32,8 +32,8 @@ export const typeDefs = [
   Stat,
   Type,
   BaseName,
-	Pokemon,
-	PokemonItem,
+  Pokemon,
+  PokemonItem,
   PokemonList,
   Query,
   Mutations
