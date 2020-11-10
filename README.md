@@ -27,10 +27,9 @@ GraphQL implementation of pokeapi.co
 
 Desc: Get list of pokemons
 
-Sample Query:
-
-```js
-query pokemons($limit: Int, $offset: Int) {
+<details>
+  <summary>Sample Query</summary>
+  <p><pre>query pokemons($limit: Int, $offset: Int) {
   pokemons(limit: $limit, offset: $offset) {
     count
     next
@@ -43,22 +42,21 @@ query pokemons($limit: Int, $offset: Int) {
       image
     }
   }
-}
-```
+}</pre></p>
+</details>
 
-Sample Variables:
 
-```js
-{
+<details>
+  <summary>Sample Variables</summary>
+  <p><pre>{
   "limit": 2,
   "offset": 1
-}
-```
+}</pre></p>
+</details>
 
-Sample Result:
-
-```js
-{
+<details>
+  <summary>Sample Result</summary>
+  <p><pre>{
   "data": {
     "pokemons": {
       "count": 964,
@@ -85,17 +83,17 @@ Sample Result:
       "message": ""
     }
   }
-}
-```
+}</pre></p>
+</details>
 
 ### pokemon
 
 Desc: Get detail info of pokemon
 
-Sample Query:
 
-```js
-query pokemon($name: String!) {
+<details>
+  <summary>Sample Query</summary>
+  <p><pre>query pokemon($name: String!) {
   pokemon(name: $name) {
     id
     name
@@ -117,21 +115,19 @@ query pokemon($name: String!) {
     message
     status
   }
-}
-```
+}</pre></p>
+</details>
 
-Sample Variables:
-
-```js
-{
+<details>
+  <summary>Sample Variables</summary>
+  <p><pre>{
   "name": "ditto"
-}
-```
+}</pre></p>
+</details>
 
-Sample Result:
-
-```js
-{
+<details>
+  <summary>Sample Result</summary>
+  <p><pre>{
   "data": {
     "pokemon": {
       "id": 132,
@@ -166,8 +162,8 @@ Sample Result:
       "status": true
     }
   }
-}
-```
+}</pre></p>
+</details>
 
 ## Credits
 
