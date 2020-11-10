@@ -1,7 +1,7 @@
 export default {
   name: 'Query',
   typeDef: `
-  type Query {
+	type Query {
 		pokemonsByAbility (ability: String!): BaseResponse
 		pokemonsByEggGroup (eggGroup: String!): BaseResponse
 		pokemonsByGender (gender: String!): BaseResponse

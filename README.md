@@ -6,11 +6,26 @@ GraphQL implementation of pokeapi.co
 
 ## Graphql Playground
 
-[s.id/gql-pokeapi](https://s.id/gql-pokeapi)
+[https://graphql-pokeapi.vercel.app/api/graphql](https://graphql-pokeapi.vercel.app/api/graphql)
 
 ## Queries
 
-### getPokemonList
+| Query                  | Desc                                    | Variables         |
+| ---------------------- | --------------------------------------- | ----------------- |
+| `pokemons`             | Get list of pokemons                    | `limit`, `offset` |
+| `pokemon`              | Get detail info of pokemon              | `name`            |
+| `pokemonsByAbility`    | Get list of pokemons by its ability     | `ability`         |
+| `pokemonsByEggGroup`   | Get list of pokemons by its egg group   | `eggGroup`        |
+| `pokemonsByGender`     | Get list of pokemons by its gender      | `gender`          |
+| `pokemonsByGrowthRate` | Get list of pokemons by its growth rate | `growthRate`      |
+| `pokemonsByMove`       | Get list of pokemons by its move        | `move`            |
+| `pokemonsByNature`     | Get list of pokemons by its nature      | `nature`          |
+
+## Examples
+
+### pokemons
+
+Desc: Get list of pokemons
 
 Sample Query:
 
@@ -73,7 +88,9 @@ Sample Result:
 }
 ```
 
-### getPokemonDetail
+### pokemon
+
+Desc: Get detail info of pokemon
 
 Sample Query:
 
@@ -152,13 +169,12 @@ Sample Result:
 }
 ```
 
-
 ## Credits
 
 - [PokeAPI](https://github.com/PokeAPI/pokeapi)
 - [Pokedex Promise V2](https://github.com/PokeAPI/pokedex-promise-v2#pokemon)
 - [Heroku](https://heroku.com/)
 
-----
+---
 
 Copyright © By Irfan Maulana
