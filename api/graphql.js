@@ -19,11 +19,17 @@ import PokemonList from '../typeDefs/pokemonList'
 import queries from '../queries'
 
 import abilityResolver from '../resolvers/ability'
+import abilitiesResolver from '../resolvers/abilities'
 import eggGroupResolver from '../resolvers/eggGroup'
+import eggGroupsResolver from '../resolvers/eggGroups'
 import genderResolver from '../resolvers/gender'
+import gendersResolver from '../resolvers/genders'
 import growthRateResolver from '../resolvers/growthRate'
+import growthRatesResolver from '../resolvers/growthRates'
 import moveResolver from '../resolvers/move'
+import movesResolver from '../resolvers/moves'
 import natureResolver from '../resolvers/nature'
+import naturesResolver from '../resolvers/natures'
 import pokemonsResolver from '../resolvers/pokemons'
 import pokemonResolver from '../resolvers/pokemon'
 
@@ -53,11 +59,17 @@ const resolvers = {
   JSON: GraphQLJSON,
   JSONObject: GraphQLJSONObject,
   Query: {
+    abilities: abilitiesResolver,
     ability: abilityResolver,
+    eggGroups: eggGroupsResolver,
     eggGroup: eggGroupResolver,
+    genders: gendersResolver,
     gender: genderResolver,
+    growthRates: growthRatesResolver,
     growthRate: growthRateResolver,
+    moves: movesResolver,
     move: moveResolver,
+    natures: naturesResolver,
     nature: natureResolver,
     pokemons: pokemonsResolver,
     pokemon: pokemonResolver
