@@ -1,4 +1,4 @@
-import { getGrowthRateByName } from '../libs/pokemons'
+import { getGrowthRateByName } from '../libs/growthRate'
 
 export default async (parent, params, context) => {
   return getGrowthRateByName(params.growthRate)

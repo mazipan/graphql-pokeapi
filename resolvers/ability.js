@@ -1,4 +1,4 @@
-import { getAbilityByName } from '../libs/pokemons'
+import { getAbilityByName } from '../libs/ability'
 
 export default async (parent, params, context) => {
   return getAbilityByName(params.ability)

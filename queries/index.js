@@ -2,16 +2,15 @@ export default {
   name: 'Query',
   typeDef: `
 	type Query {
-		pokemonsByAbility (ability: String!): BaseResponse
-		pokemonsByEggGroup (eggGroup: String!): BaseResponse
-		pokemonsByGender (gender: String!): BaseResponse
-		pokemonsByGrowthRate (growthRate: String!): BaseResponse
-		pokemonsByMove (move: String!): BaseResponse
-		pokemonsByNature (nature: String!): BaseResponse
+		ability (ability: String!): BaseResponse
+		eggGroup (eggGroup: String!): BaseResponse
+		encounter (encounter: String!): BaseResponse
+		gender (gender: String!): BaseResponse
+		growthRate (growthRate: String!): BaseResponse
+		move (move: String!): BaseResponse
+		nature (nature: String!): BaseResponse
 		pokemons (limit: Int, offset: Int): PokemonList
 		pokemon (name: String!): Pokemon
-		encounter (encounter: String!): BaseResponse
-		move (move: String!): BaseResponse
 	}
 `
 }
