@@ -1,6 +1,7 @@
 import { ApolloServer } from '@saeris/apollo-server-vercel'
 import GraphQLJSON, { GraphQLJSONObject } from 'graphql-type-json'
 
+import BaseList from '../typeDefs/baseList'
 import BaseResponse from '../typeDefs/baseResponse'
 import BaseName from '../typeDefs/baseName'
 import Ability from '../typeDefs/pokemon/ability'
@@ -38,6 +39,7 @@ const typeDefs = `
 scalar JSON
 scalar JSONObject
 ${BaseResponse.typeDef}
+${BaseList.typeDef}
 ${Ability.typeDef}
 ${GameIndex.typeDef}
 ${VersionDetail.typeDef}

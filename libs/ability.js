@@ -3,7 +3,10 @@ import { PokedexInstance, handleError } from './utils'
 export const getAbilitiesList = async () => {
   try {
     const response = await PokedexInstance.getAbilitiesList()
-    return { response, status: true, message: '' }
+    if (response && response.results) {
+      return { ...response, results: response.results, status: true, message: '' }
+    }
+    return { ...response, status: true, message: '' }
   } catch (error) {
     console.error('> Error api getAbilitiesList()', error)
     return handleError(error)

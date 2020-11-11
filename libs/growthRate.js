@@ -3,7 +3,10 @@ import { PokedexInstance, handleError } from './utils'
 export const getGrowthRatesList = async () => {
   try {
     const response = await PokedexInstance.getGrowthRatesList()
-    return { response, status: true, message: '' }
+    if (response && response.results) {
+      return { ...response, results: response.results, status: true, message: '' }
+    }
+    return { ...response, status: true, message: '' }
   } catch (error) {
     console.error('> Error api getGrowthRatesList()', error)
     return handleError(error)
