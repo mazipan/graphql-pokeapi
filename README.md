@@ -7,6 +7,10 @@
 	<img src="https://github.com/mazipan/graphql-pokeapi/workflows/Main%20workflow/badge.svg" alt="Actions">
 </p>
 
+## Homepage
+
+[https://graphql-pokeapi.vercel.app](https://graphql-pokeapi.vercel.app)
+
 ## Graphql Playground
 
 [https://graphql-pokeapi.vercel.app/api/graphql](https://graphql-pokeapi.vercel.app/api/graphql)
