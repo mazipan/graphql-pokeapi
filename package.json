@@ -5,10 +5,10 @@
   "license": "MIT",
   "main": "./src/index.ts",
   "scripts": {
-    "css": "tailwindcss build styles.css -o output.css",
-    "css:min": "cleancss -o output.min.css output.css",
+    "css": "tailwindcss build public/styles.css -o public/output.css",
+    "css:min": "cleancss -o public/output.min.css public/output.css",
 		"build": "yarn css && yarn css:min",
-		"serve": "yarn build && serve",
+		"serve": "yarn build && serve public",
     "start": "vercel dev",
     "test": "jest",
     "lint": "standard --fix",

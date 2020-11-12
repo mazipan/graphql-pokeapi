@@ -21649,45 +21649,78 @@ video {
   transition-property: box-shadow;
 }
 
-.wave-wrapper {
-  z-index: -1;
+.waves {
+  position: absolute;
   width: 100%;
-  height: 500px;
-  position: absolute;
-  left: 50%;
-  top: 70px;
-  transform: translate(-50%, -50%);
-  background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
-  overflow: hidden;
+  height: 15vh;
+  margin-top: -53px;
+  /*Fix for safari gap*/
+  min-height: 100px;
+  max-height: 150px;
 }
 
-.wave {
-  width: 1000px;
-  height: 1025px;
-  position: absolute;
-  top: -25%;
-  left: 50%;
-  margin-left: -500px;
-  margin-top: -500px;
-  border-radius: 35%;
-  background: rgba(255, 255, 255, .75);
-  -webkit-animation: wave 15s infinite linear;
-          animation: wave 15s infinite linear;
+/* Animation */
+
+.parallax>use {
+  -webkit-animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+          animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
 }
 
-@-webkit-keyframes wave {
-  from { transform: rotate(0deg);
+.parallax>use:nth-child(1) {
+  -webkit-animation-delay: -2s;
+          animation-delay: -2s;
+  -webkit-animation-duration: 7s;
+          animation-duration: 7s;
+}
+
+.parallax>use:nth-child(2) {
+  -webkit-animation-delay: -3s;
+          animation-delay: -3s;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+}
+
+.parallax>use:nth-child(3) {
+  -webkit-animation-delay: -4s;
+          animation-delay: -4s;
+  -webkit-animation-duration: 13s;
+          animation-duration: 13s;
+}
+
+.parallax>use:nth-child(4) {
+  -webkit-animation-delay: -5s;
+          animation-delay: -5s;
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+}
+
+@-webkit-keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
   }
 
-  from { transform: rotate(360deg);
+  100% {
+    transform: translate3d(85px, 0, 0);
   }
 }
 
-@keyframes wave {
-  from { transform: rotate(0deg);
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
   }
 
-  from { transform: rotate(360deg);
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+/*Shrinking for mobile*/
+
+@media (max-width: 768px) {
+  .waves {
+    height: 40px;
+    min-height: 40px;
+    margin-top: -33px;
   }
 }
 
