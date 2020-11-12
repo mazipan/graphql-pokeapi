@@ -1,11 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>GraphQL-PokeAPI</title>
-</head>
-<body>
-	<h1>Welcome to GraphQL-PokeAPI</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1, minimum-scale=1, maximum-scale=5, user-scalable=yes, width=device-width"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://pokeapi.co/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://pokeapi.co/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href="https://pokeapi.co/favicon-48x48.png"
+    />
+
+    <title>GraphQL - PokeAPI</title>
+    <meta name="description" content="GraphQL implementation of pokeapi.co" />
+    <link rel="stylesheet" href="/output.min.css" />
+  </head>
+
+  <body>
+    <header class="bg-red-500">
+      <div
+        class="flex flex-wrap items-center justify-between max-w-4xl p-4 mx-auto md:flex-no-wrap"
+      >
+        <div class="flex items-center">
+          <a class="flex items-center text-xl font-bold text-white" href="/">
+            <img
+              class="mr-2"
+              src="https://pokeapi.co/favicon-48x48.png"
+              alt="PokeAPI"
+            />
+            GraphQL - PokeAPI
+          </a>
+        </div>
+      </div>
+    </header>
+    <div class="wave-wrapper">
+      <div class="wave"></div>
+    </div>
+    <main class="min-h-screen flex-1 w-full max-w-4xl p-4 mx-auto">
+      <div class="flex flex-col justify-center items-center">
+        <img
+          alt="PokéAPI"
+          src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png"
+        />
+        <h1 class="text-3xl md:text-4xl font-bold text-center">
+          The GraphQL for PokeAPI
+        </h1>
+        <div class="flex mt-6 justify-start md:justify-center xl:justify-start">
+          <a
+            class="rounded-lg px-4 md:px-5 xl:px-4 py-3 md:py-4 xl:py-3 bg-red-500 hover:bg-red-600 md:text-lg xl:text-base text-white font-semibold leading-tight shadow-md"
+            href="/api/graphql"
+            >Playground</a
+          ><a
+            target="_blank"
+            rel="noopenner noreferrer"
+            href="https://github.com/mazipan/graphql-pokeapi"
+            class="ml-4 rounded-lg px-4 md:px-5 xl:px-4 py-3 md:py-4 xl:py-3 bg-white hover:bg-gray-200 md:text-lg xl:text-base text-gray-800 font-semibold leading-tight shadow-md"
+            >GitHub</a
+          >
+        </div>
+      </div>
+      <div class="mt-8">
+        <h3 class="text-2xl md:text-3xl font-bold">Available Queries</h3>
+        <ul>
+          <li class="card">abilities: BaseList</li>
+          <li class="card">ability (ability: String!): BaseResponse</li>
+          <li class="card">berries: BaseList</li>
+          <li class="card">berry (berry: String!): BaseResponse</li>
+          <li class="card">eggGroups: BaseList</li>
+          <li class="card">eggGroup (eggGroup: String!): BaseResponse</li>
+          <li class="card">encounterMethods: BaseList</li>
+          <li class="card">encounterMethod (encounterMethod: String!): BaseResponse</li>
+          <li class="card">evolutionChains: BaseList</li>
+          <li class="card">evolutionChain (id: String!): BaseResponse</li>
+          <li class="card">evolutionTriggers: BaseList</li>
+          <li class="card">evolutionTrigger (name: String!): BaseResponse</li>
+          <li class="card">evolutionTrigger (name: String!): BaseResponse</li>
+          <li class="card">genders : BaseList</li>
+          <li class="card">gender (gender: String!): BaseResponse</li>
+          <li class="card">growthRates: BaseList</li>
+          <li class="card">growthRate (growthRate: String!): BaseResponse</li>
+          <li class="card">locations: BaseList</li>
+          <li class="card">location (location: String!): BaseResponse</li>
+          <li class="card">moves: BaseList</li>
+          <li class="card">move (move: String!): BaseResponse</li>
+          <li class="card">natures: BaseList</li>
+          <li class="card">nature (nature: String!): BaseResponse</li>
+          <li class="card">pokemons (limit: Int, offset: Int): PokemonList</li>
+          <li class="card">pokemon (name: String!): Pokemon</li>
+          <li class="card">regions: BaseList</li>
+          <li class="card">region (region: String!): BaseResponse</li>
+          <li class="card">species: BaseList</li>
+          <li class="card">types: BaseList</li>
+        </ul>
+      </div>
+    </main>
+    <footer class="bg-red-500">
+      <ul
+        class="flex items-center justify-between max-w-4xl p-4 mx-auto text-sm text-white md:p-8"
+      >
+        <li class="card">
+          Code by
+          <a
+            href="https://mazipan.space/"
+            target="_blank"
+            rel="noopenner noreferrer"
+            class="font-bold"
+            >Irfan Maulana</a
+          >
+        </li>
+        <li class="card">
+          <a
+            href="https://github.com/mazipan/graphql-pokeapi"
+            target="_blank"
+            rel="noopenner noreferrer"
+            class="font-bold"
+            >GitHub</a
+          >
+        </li>
+      </ul>
+    </footer>
+  </body>
 </html>

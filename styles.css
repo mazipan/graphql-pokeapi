@@ -1,0 +1,39 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.card {
+	@apply px-2 py-4 rounded-lg overflow-hidden shadow-lg transition-shadow;
+}
+
+.wave-wrapper {
+	z-index: -1;
+  width: 100%;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+	top: 70px;
+  transform: translate(-50%, -50%);
+  background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+  overflow: hidden;
+}
+
+.wave {
+  width: 1000px;
+  height: 1025px;
+  position: absolute;
+  top: -25%;
+  left: 50%;
+  margin-left: -500px;
+  margin-top: -500px;
+  border-radius: 35%;
+  background: rgba(255, 255, 255, .75);
+  animation: wave 15s infinite linear;
+}
+
+@keyframes wave {
+  from { transform: rotate(0deg);}
+  from { transform: rotate(360deg);}
+}

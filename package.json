@@ -5,6 +5,10 @@
   "license": "MIT",
   "main": "./src/index.ts",
   "scripts": {
+    "css": "tailwindcss build styles.css -o output.css",
+    "css:min": "cleancss -o output.min.css output.css",
+		"build": "yarn css && yarn css:min",
+		"serve": "yarn build && serve",
     "start": "vercel dev",
     "test": "jest",
     "lint": "standard --fix",
@@ -12,8 +16,11 @@
   },
   "devDependencies": {
     "@vercel/node": "^1.8.4",
+    "clean-css-cli": "^4.3.0",
     "jest": "26.6.3",
-    "standard": "^16.0.1"
+    "serve": "^11.3.2",
+    "standard": "^16.0.1",
+    "tailwindcss": "^1.9.6"
   },
   "dependencies": {
     "@saeris/apollo-server-vercel": "^0.4.0",

@@ -13,22 +13,36 @@
 
 ## Queries
 
-| Query         | Desc                       | Variables         |
-| ------------- | -------------------------- | ----------------- |
-| `pokemons`    | Get list of pokemons       | `limit`, `offset` |
-| `pokemon`     | Get detail info of pokemon | `name`            |
-| `abilities`   | Get list of abilities      |                   |
-| `ability`     | Get detail of ability      | `ability`         |
-| `eggGroups`   | Get list of egg groups     |                   |
-| `eggGroup`    | Get detail of egg group    | `eggGroup`        |
-| `genders`     | Get list of genders        |                   |
-| `gender`      | Get detail of gender       | `gender`          |
-| `growthRates` | Get list of growth rates   |                   |
-| `growthRate`  | Get detail of growth rate  | `growthRate`      |
-| `moves`       | Get list of moves          |                   |
-| `move`        | Get detail of move         | `move`            |
-| `natures`     | Get list of natures        |                   |
-| `nature`      | Get detail of nature       | `nature`          |
+| Query               | Desc                           | Variables         |
+| ------------------- | ------------------------------ | ----------------- |
+| `abilities`         | Get list of abilities          |                   |
+| `ability`           | Get detail of ability          | `ability`         |
+| `berries`           | Get list of berries            |                   |
+| `berry`             | Get detail of berry            | `berry`           |
+| `eggGroups`         | Get list of egg groups         |                   |
+| `eggGroup`          | Get detail of egg group        | `eggGroup`        |
+| `encounterMethods`  | Get list of egg groups         |                   |
+| `encounterMethod`   | Get detail of egg group        | `encounterMethod` |
+| `evolutionChains`   | Get list of evolutionChains    |                   |
+| `evolutionChain`    | Get detail of evolutionChains  | `id`              |
+| `evolutionTriggers` | Get list of evolutionTriggers  |                   |
+| `evolutionTrigger`  | Get detail of evolutionTrigger | `name`            |
+| `genders`           | Get list of genders            |                   |
+| `gender`            | Get detail of gender           | `gender`          |
+| `growthRates`       | Get list of growth rates       |                   |
+| `growthRate`        | Get detail of growth rate      | `growthRate`      |
+| `locations`         | Get list of locations          |                   |
+| `location`          | Get detail of location         | `location`        |
+| `moves`             | Get list of moves              |                   |
+| `move`              | Get detail of move             | `move`            |
+| `natures`           | Get list of natures            |                   |
+| `nature`            | Get detail of nature           | `nature`          |
+| `pokemons`          | Get list of pokemons           | `limit`, `offset` |
+| `pokemon`           | Get detail info of pokemon     | `name`            |
+| `regions`           | Get list of regions            |                   |
+| `region`            | Get detail of region           | `region`          |
+| `species`           | Get list of species            |                   |
+| `types`             | Get list of types              |                   |
 
 ## Examples
 
