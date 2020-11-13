@@ -1,4 +1,4 @@
-name: Main workflow
+name: Build UI
 
 on:
   pull_request:
@@ -32,3 +32,6 @@ jobs:
 
       - name: Install dependencies and test build
         run: yarn
+        
+      - name: Run build
+        run: yarn build
