@@ -104,3 +104,6 @@ dist
 .tern-port
 
 .vercel
+public/output.css
+public/output.min.css
+public/index.html
