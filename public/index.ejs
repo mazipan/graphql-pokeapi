@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1, minimum-scale=1, maximum-scale=5, user-scalable=yes, width=device-width"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://pokeapi.co/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://pokeapi.co/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href="https://pokeapi.co/favicon-48x48.png"
+    />
+
+    <title>GraphQL - PokeAPI</title>
+    <meta name="description" content="GraphQL implementation of pokeapi.co" />
+    <link rel="stylesheet" href="/output.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism-dark.min.css"
+    />
+  </head>
+
+  <body>
+    <main class="min-h-screen flex-1 w-full mx-auto">
+      <div
+        class="relative py-32 px-2 flex flex-col justify-center items-center bg-gradient-to-r from-purple-400 via-pink-500 to-red-500"
+      >
+        <img
+          alt="PokéAPI"
+          src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png"
+        />
+        <h1 class="text-3xl md:text-4xl font-bold text-center text-white">
+          The GraphQL for PokeAPI
+        </h1>
+        <div class="flex mt-6 justify-start md:justify-center xl:justify-start">
+          <a
+            class="rounded-lg px-4 md:px-5 xl:px-4 py-3 md:py-4 xl:py-3 bg-red-500 hover:bg-red-600 md:text-lg xl:text-base text-white font-semibold leading-tight shadow-md"
+            href="/api/graphql"
+            >Playground</a
+          ><a
+            target="_blank"
+            rel="noopenner noreferrer"
+            href="https://github.com/mazipan/graphql-pokeapi"
+            class="ml-4 rounded-lg px-4 md:px-5 xl:px-4 py-3 md:py-4 xl:py-3 bg-white hover:bg-gray-200 md:text-lg xl:text-base text-gray-800 font-semibold leading-tight shadow-md"
+            >GitHub</a
+          >
+        </div>
+      </div>
+
+      <svg
+        class="waves"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28"
+        preserveAspectRatio="none"
+        shape-rendering="auto"
+      >
+        <defs>
+          <path
+            id="gentle-wave"
+            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+          />
+        </defs>
+        <g class="parallax">
+          <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="0"
+            fill="rgba(255,255,255,0.7"
+          />
+          <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="3"
+            fill="rgba(255,255,255,0.5)"
+          />
+          <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="5"
+            fill="rgba(255,255,255,0.3)"
+          />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+        </g>
+      </svg>
+
+      <article class="w-full max-w-4xl mx-auto mt-8 mb-4 p-4 md:mt-32">
+        <h3 class="text-2xl md:text-3xl font-bold mb-4 text-gray-700">
+          Available Queries
+				</h3>
+
+        <ul>
+					<% if (data) { %>
+						<% data.forEach(function(d){ %>
+							<li class="card">
+								<div class="card__header"><%= d.query %>: <%= d.responseType %></div>
+								<div class="card__body">
+									<div class="card__title"><%= d.desc %></div>
+									<div class="card__content">
+										<details>
+											<summary>Sample Query</summary>
+											<pre><code class="language-javascript"></code></pre>
+										</details>
+
+										<details>
+											<summary>Sample Variables</summary>
+											<pre><code class="language-javascript"></code></pre>
+										</details>
+
+										<details>
+											<summary>Sample Result</summary>
+											<pre><code class="language-javascript"></code></pre>
+										</details>
+									</div>
+								</div>
+							</li>
+						<% }); %>
+					<% } %>
+        </ul>
+      </article>
+    </main>
+
+    <footer class="bg-red-500">
+      <ul
+        class="flex items-center justify-between max-w-4xl p-4 mx-auto text-sm text-white md:p-8"
+      >
+        <li>
+          Code by
+          <a
+            href="https://mazipan.space/"
+            target="_blank"
+            rel="noopenner noreferrer"
+            class="font-bold"
+            >Irfan Maulana</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://github.com/mazipan/graphql-pokeapi"
+            target="_blank"
+            rel="noopenner noreferrer"
+            class="font-bold"
+            >GitHub</a
+          >
+        </li>
+      </ul>
+    </footer>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/components/prism-core.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/plugins/autoloader/prism-autoloader.min.js"
+      defer
+    ></script>
+  </body>
+</html>

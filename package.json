@@ -7,8 +7,9 @@
   "scripts": {
     "css": "tailwindcss build public/styles.css -o public/output.css",
     "css:min": "cleancss -o public/output.min.css public/output.css",
-		"build": "yarn css && yarn css:min",
-		"serve": "yarn build && serve public",
+    "build:html": "ejs public/index.ejs -f public/data.json -o public/index.html",
+    "build": "yarn css && yarn css:min && yarn build:html",
+    "serve": "yarn build && serve public",
     "start": "vercel dev",
     "test": "jest",
     "lint": "standard --fix",
@@ -17,6 +18,7 @@
   "devDependencies": {
     "@vercel/node": "^1.8.4",
     "clean-css-cli": "^4.3.0",
+    "ejs": "^3.1.5",
     "jest": "26.6.3",
     "serve": "^11.3.2",
     "standard": "^16.0.1",

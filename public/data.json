@@ -1,0 +1,201 @@
+{
+	"data": [
+		{
+			"query": "abilities",
+			"desc": "Get list of abilities",
+			"responseType": "BaseList",
+			"param": null
+		},
+		{
+			"query": "ability",
+			"desc": "Get detail of ability",
+			"responseType": "BaseResponse",
+			"param": {
+				"ability": "string"
+			}
+		},
+		{
+			"query": "berries",
+			"desc": "Get list of berries",
+			"responseType": "BaseList",
+			"param": null
+		},
+		{
+			"query": "berry",
+			"desc": "Get detail of berry",
+			"responseType": "BaseResponse",
+			"param": {
+				"berry": "string"
+			}
+		},
+		{
+			"query": "eggGroups",
+			"desc": "Get list of eggGroups",
+			"responseType": "BaseList",
+			"param": null
+		},
+		{
+			"query": "eggGroup",
+			"desc": "Get detail of eggGroup",
+			"responseType": "BaseResponse",
+			"param": {
+				"eggGroup": "string"
+			}
+		},
+		{
+			"query": "encounterMethods",
+			"desc": "Get list of encounterMethods",
+			"responseType": "BaseList",
+			"param": null
+		},
+		{
+			"query": "encounterMethod",
+			"desc": "Get detail of encounterMethod",
+			"responseType": "BaseResponse",
+			"param": {
+				"encounterMethod": "string"
+			}
+		},
+		{
+			"query": "evolutionChains",
+			"desc": "Get list of evolutionChains",
+			"responseType": "BaseList",
+			"param": null
+		},
+		{
+			"query": "evolutionChain",
+			"desc": "Get detail of evolutionChain",
+			"responseType": "BaseResponse",
+			"param": {
+				"id": "string"
+			}
+		},
+		{
+			"query": "evolutionTriggers",
+			"desc": "Get list of evolutionTriggers",
+			"responseType": "BaseList",
+			"param": null
+		},
+		{
+			"query": "evolutionTrigger",
+			"desc": "Get detail of evolutionTrigger",
+			"responseType": "BaseResponse",
+			"param": {
+				"name": "string"
+			}
+		},
+		{
+			"query": "genders",
+			"desc": "Get list of genders",
+			"responseType": "BaseList",
+			"param": null
+		},
+		{
+			"query": "gender",
+			"desc": "Get detail of gender",
+			"responseType": "BaseResponse",
+			"param": {
+				"gender": "string"
+			}
+		},
+		{
+			"query": "growthRates",
+			"desc": "Get list of growthRates",
+			"responseType": "BaseList",
+			"param": null
+		},
+		{
+			"query": "growthRate",
+			"desc": "Get detail of growthRate",
+			"responseType": "BaseResponse",
+			"param": {
+				"growthRate": "string"
+			}
+		},
+		{
+			"query": "locations",
+			"desc": "Get list of locations",
+			"responseType": "BaseList",
+			"param": null
+		},
+		{
+			"query": "location",
+			"desc": "Get detail of location",
+			"responseType": "BaseResponse",
+			"param": {
+				"location": "string"
+			}
+		},
+		{
+			"query": "moves",
+			"desc": "Get list of moves",
+			"responseType": "BaseList",
+			"param": null
+		},
+		{
+			"query": "move",
+			"desc": "Get detail of move",
+			"responseType": "BaseResponse",
+			"param": {
+				"move": "string"
+			}
+		},
+		{
+			"query": "natures",
+			"desc": "Get list of natures",
+			"responseType": "BaseList",
+			"param": null
+		},
+		{
+			"query": "nature",
+			"desc": "Get detail of nature",
+			"responseType": "BaseResponse",
+			"param": {
+				"nature": "string"
+			}
+		},
+		{
+			"query": "pokemons",
+			"desc": "Get list of pokemons",
+			"responseType": "PokemonList",
+			"param": {
+				"limit": "Int",
+				"offset": "Int"
+			}
+		},
+		{
+			"query": "pokemon",
+			"desc": "Get detail of pokemon",
+			"responseType": "Pokemon",
+			"param": {
+				"name": "string"
+			}
+		},
+		{
+			"query": "regions",
+			"desc": "Get list of regions",
+			"responseType": "BaseList",
+			"param": null
+		},
+		{
+			"query": "region",
+			"desc": "Get detail of region",
+			"responseType": "BaseResponse",
+			"param": {
+				"region": "string"
+			}
+		},
+		{
+			"query": "species",
+			"desc": "Get list of species",
+			"responseType": "BaseList",
+			"param": null
+		},
+		{
+			"query": "types",
+			"desc": "Get list of types",
+			"responseType": "BaseList",
+			"param": null
+		}
+	]
+}

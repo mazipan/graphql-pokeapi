@@ -25,8 +25,8 @@
 | `berry`             | Get detail of berry            | `berry`           |
 | `eggGroups`         | Get list of egg groups         |                   |
 | `eggGroup`          | Get detail of egg group        | `eggGroup`        |
-| `encounterMethods`  | Get list of egg groups         |                   |
-| `encounterMethod`   | Get detail of egg group        | `encounterMethod` |
+| `encounterMethods`  | Get list of encounterMethods   |                   |
+| `encounterMethod`   | Get detail of encounterMethod  | `encounterMethod` |
 | `evolutionChains`   | Get list of evolutionChains    |                   |
 | `evolutionChain`    | Get detail of evolutionChains  | `id`              |
 | `evolutionTriggers` | Get list of evolutionTriggers  |                   |
