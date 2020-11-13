@@ -4,7 +4,12 @@
 			"query": "abilities",
 			"desc": "Get list of abilities",
 			"responseType": "BaseList",
-			"param": null
+			"param": null,
+			"code": {
+				"query": "query abilities {\r\n  abilities {\r\n    count\r\n    next\r\n    previous\r\n    results {\r\n      url\r\n      name\r\n    }\r\n  }\r\n}",
+				"variable": "",
+				"result": "{\r\n  \"data\": {\r\n    \"abilities\": {\r\n      \"count\": 2,\r\n      \"next\": null,\r\n      \"previous\": null,\r\n      \"results\": [\r\n        {\r\n          \"url\": \"https:\/\/pokeapi.co\/api\/v2\/ability\/1\/\",\r\n          \"name\": \"stench\"\r\n        },\r\n        {\r\n          \"url\": \"https:\/\/pokeapi.co\/api\/v2\/ability\/2\/\",\r\n          \"name\": \"drizzle\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}"
+			}
 		},
 		{
 			"query": "ability",
@@ -18,7 +23,12 @@
 			"query": "berries",
 			"desc": "Get list of berries",
 			"responseType": "BaseList",
-			"param": null
+			"param": null,
+			"code": {
+				"query": "query berries {\r\n  berries {\r\n    count\r\n    next\r\n    previous\r\n    results {\r\n      url\r\n      name\r\n    }\r\n  }\r\n}",
+				"variable": "",
+				"result": "{\r\n  \"data\": {\r\n    \"berries\": {\r\n      \"count\": 2,\r\n      \"next\": null,\r\n      \"previous\": null,\r\n      \"results\": [\r\n        {\r\n          \"url\": \"https:\/\/pokeapi.co\/api\/v2\/berry\/1\/\",\r\n          \"name\": \"cheri\"\r\n        },\r\n        {\r\n          \"url\": \"https:\/\/pokeapi.co\/api\/v2\/berry\/2\/\",\r\n          \"name\": \"chesto\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}"
+			}
 		},
 		{
 			"query": "berry",
@@ -32,7 +42,12 @@
 			"query": "eggGroups",
 			"desc": "Get list of eggGroups",
 			"responseType": "BaseList",
-			"param": null
+			"param": null,
+			"code": {
+				"query": "query eggGroups {\r\n  eggGroups {\r\n    count\r\n    next\r\n    previous\r\n    results {\r\n      url\r\n      name\r\n    }\r\n  }\r\n}",
+				"variable": "",
+				"result": "{\r\n  \"data\": {\r\n    \"eggGroups\": {\r\n      \"count\": 15,\r\n      \"next\": null,\r\n      \"previous\": null,\r\n      \"results\": [\r\n        {\r\n          \"url\": \"https:\/\/pokeapi.co\/api\/v2\/egg-group\/1\/\",\r\n          \"name\": \"monster\"\r\n        },\r\n        {\r\n          \"url\": \"https:\/\/pokeapi.co\/api\/v2\/egg-group\/2\/\",\r\n          \"name\": \"water1\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}"
+			}
 		},
 		{
 			"query": "eggGroup",
@@ -46,7 +61,12 @@
 			"query": "encounterMethods",
 			"desc": "Get list of encounterMethods",
 			"responseType": "BaseList",
-			"param": null
+			"param": null,
+			"code": {
+				"query": "query encounterMethods {\r\n  encounterMethods {\r\n    count\r\n    next\r\n    previous\r\n    results {\r\n      url\r\n      name\r\n    }\r\n  }\r\n}",
+				"variable": "",
+				"result": "{\r\n  \"data\": {\r\n    \"encounterMethods\": {\r\n      \"count\": 2,\r\n      \"next\": null,\r\n      \"previous\": null,\r\n      \"results\": [\r\n        {\r\n          \"url\": \"https:\/\/pokeapi.co\/api\/v2\/encounter-method\/1\/\",\r\n          \"name\": \"walk\"\r\n        },\r\n        {\r\n          \"url\": \"https:\/\/pokeapi.co\/api\/v2\/encounter-method\/2\/\",\r\n          \"name\": \"old-rod\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}"
+			}
 		},
 		{
 			"query": "encounterMethod",
@@ -60,7 +80,12 @@
 			"query": "evolutionChains",
 			"desc": "Get list of evolutionChains",
 			"responseType": "BaseList",
-			"param": null
+			"param": null,
+			"code": {
+				"query": "query evolutionChains {\r\n  evolutionChains {\r\n    count\r\n    next\r\n    previous\r\n    results {\r\n      url\r\n      name\r\n    }\r\n  }\r\n}",
+				"variable": "",
+				"result": "{\r\n  \"data\": {\r\n    \"evolutionChains\": {\r\n      \"count\": 419,\r\n      \"next\": null,\r\n      \"previous\": null,\r\n      \"results\": [\r\n        {\r\n          \"url\": \"https:\/\/pokeapi.co\/api\/v2\/evolution-chain\/1\/\",\r\n          \"name\": \"1\"\r\n        },\r\n        {\r\n          \"url\": \"https:\/\/pokeapi.co\/api\/v2\/evolution-chain\/2\/\",\r\n          \"name\": \"2\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}"
+			}
 		},
 		{
 			"query": "evolutionChain",
@@ -74,7 +99,12 @@
 			"query": "evolutionTriggers",
 			"desc": "Get list of evolutionTriggers",
 			"responseType": "BaseList",
-			"param": null
+			"param": null,
+			"code": {
+				"query": "query evolutionTriggers {\r\n  evolutionTriggers {\r\n    count\r\n    next\r\n    previous\r\n    results {\r\n      url\r\n      name\r\n    }\r\n  }\r\n}",
+				"variable": "",
+				"result": "{\r\n  \"data\": {\r\n    \"evolutionTriggers\": {\r\n      \"count\": 2,\r\n      \"next\": null,\r\n      \"previous\": null,\r\n      \"results\": [\r\n        {\r\n          \"url\": \"https:\/\/pokeapi.co\/api\/v2\/evolution-trigger\/1\/\",\r\n          \"name\": \"level-up\"\r\n        },\r\n        {\r\n          \"url\": \"https:\/\/pokeapi.co\/api\/v2\/evolution-trigger\/2\/\",\r\n          \"name\": \"trade\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}"
+			}
 		},
 		{
 			"query": "evolutionTrigger",
@@ -88,7 +118,12 @@
 			"query": "genders",
 			"desc": "Get list of genders",
 			"responseType": "BaseList",
-			"param": null
+			"param": null,
+			"code": {
+				"query": "query genders {\r\n  genders {\r\n    count\r\n    next\r\n    previous\r\n    results {\r\n      url\r\n      name\r\n    }\r\n  }\r\n}",
+				"variable": "",
+				"result": "{\r\n  \"data\": {\r\n    \"genders\": {\r\n      \"count\": 3,\r\n      \"next\": null,\r\n      \"previous\": null,\r\n      \"results\": [\r\n        {\r\n          \"url\": \"https:\/\/pokeapi.co\/api\/v2\/gender\/1\/\",\r\n          \"name\": \"female\"\r\n        },\r\n        {\r\n          \"url\": \"https:\/\/pokeapi.co\/api\/v2\/gender\/2\/\",\r\n          \"name\": \"male\"\r\n        },\r\n        {\r\n          \"url\": \"https:\/\/pokeapi.co\/api\/v2\/gender\/3\/\",\r\n          \"name\": \"genderless\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}"
+			}
 		},
 		{
 			"query": "gender",
@@ -102,7 +137,12 @@
 			"query": "growthRates",
 			"desc": "Get list of growthRates",
 			"responseType": "BaseList",
-			"param": null
+			"param": null,
+			"code": {
+				"query": "query growthRates {\r\n  growthRates {\r\n    count\r\n    next\r\n    previous\r\n    results {\r\n      url\r\n      name\r\n    }\r\n  }\r\n}",
+				"variable": "",
+				"result": "{\r\n  \"data\": {\r\n    \"growthRates\": {\r\n      \"count\": 6,\r\n      \"next\": null,\r\n      \"previous\": null,\r\n      \"results\": [\r\n        {\r\n          \"url\": \"https:\/\/pokeapi.co\/api\/v2\/growth-rate\/1\/\",\r\n          \"name\": \"slow\"\r\n        },\r\n        {\r\n          \"url\": \"https:\/\/pokeapi.co\/api\/v2\/growth-rate\/2\/\",\r\n          \"name\": \"medium\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}"
+			}
 		},
 		{
 			"query": "growthRate",
@@ -116,7 +156,12 @@
 			"query": "locations",
 			"desc": "Get list of locations",
 			"responseType": "BaseList",
-			"param": null
+			"param": null,
+			"code": {
+				"query": "query locations {\r\n  locations {\r\n    count\r\n    next\r\n    previous\r\n    results {\r\n      url\r\n      name\r\n    }\r\n  }\r\n}",
+				"variable": "",
+				"result": "{\r\n  \"data\": {\r\n    \"locations\": {\r\n      \"count\": 2,\r\n      \"next\": null,\r\n      \"previous\": null,\r\n      \"results\": [\r\n        {\r\n          \"url\": \"https:\/\/pokeapi.co\/api\/v2\/location\/1\/\",\r\n          \"name\": \"canalave-city\"\r\n        },\r\n        {\r\n          \"url\": \"https:\/\/pokeapi.co\/api\/v2\/location\/2\/\",\r\n          \"name\": \"eterna-city\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}"
+			}
 		},
 		{
 			"query": "location",
@@ -130,7 +175,12 @@
 			"query": "moves",
 			"desc": "Get list of moves",
 			"responseType": "BaseList",
-			"param": null
+			"param": null,
+			"code": {
+				"query": "query moves {\r\n  moves {\r\n    count\r\n    next\r\n    previous\r\n    results {\r\n      url\r\n      name\r\n    }\r\n  }\r\n}",
+				"variable": "",
+				"result": "{\r\n  \"data\": {\r\n    \"moves\": {\r\n      \"count\": 2,\r\n      \"next\": null,\r\n      \"previous\": null,\r\n      \"results\": [\r\n        {\r\n          \"url\": \"https:\/\/pokeapi.co\/api\/v2\/move\/1\/\",\r\n          \"name\": \"pound\"\r\n        },\r\n        {\r\n          \"url\": \"https:\/\/pokeapi.co\/api\/v2\/move\/2\/\",\r\n          \"name\": \"karate-chop\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}"
+			}
 		},
 		{
 			"query": "move",
@@ -144,7 +194,12 @@
 			"query": "natures",
 			"desc": "Get list of natures",
 			"responseType": "BaseList",
-			"param": null
+			"param": null,
+			"code": {
+				"query": "query natures {\r\n  natures {\r\n    count\r\n    next\r\n    previous\r\n    results {\r\n      url\r\n      name\r\n    }\r\n  }\r\n}",
+				"variable": "",
+				"result": "{\r\n  \"data\": {\r\n    \"natures\": {\r\n      \"count\": 25,\r\n      \"next\": null,\r\n      \"previous\": null,\r\n      \"results\": [\r\n        {\r\n          \"url\": \"https:\/\/pokeapi.co\/api\/v2\/nature\/1\/\",\r\n          \"name\": \"hardy\"\r\n        },\r\n        {\r\n          \"url\": \"https:\/\/pokeapi.co\/api\/v2\/nature\/2\/\",\r\n          \"name\": \"bold\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}"
+			}
 		},
 		{
 			"query": "nature",
@@ -169,13 +224,23 @@
 			"responseType": "Pokemon",
 			"param": {
 				"name": "string"
+			},
+			"code": {
+				"query": "query pokemon($name: String!) {\r\n  pokemon(name: $name) {\r\n    id\r\n    name\r\n    sprites {\r\n      front_default\r\n    }\r\n    moves {\r\n      move {\r\n        name\r\n      }\r\n    }\r\n    types {\r\n      type {\r\n        name\r\n      }\r\n    }\r\n  }\r\n}",
+				"variable": "{\r\n  \"name\": \"ditto\"\r\n}",
+				"result": "{\r\n  \"data\": {\r\n    \"pokemon\": {\r\n      \"id\": 132,\r\n      \"name\": \"ditto\",\r\n      \"sprites\": {\r\n        \"front_default\": \"https:\/\/raw.githubusercontent.com\/PokeAPI\/sprites\/master\/sprites\/pokemon\/132.png\"\r\n      },\r\n      \"moves\": [\r\n        {\r\n          \"move\": {\r\n            \"name\": \"transform\"\r\n          }\r\n        }\r\n      ],\r\n      \"types\": [\r\n        {\r\n          \"type\": {\r\n            \"name\": \"normal\"\r\n          }\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}"
 			}
 		},
 		{
 			"query": "regions",
 			"desc": "Get list of regions",
 			"responseType": "BaseList",
-			"param": null
+			"param": null,
+			"code": {
+				"query": "query regions {\r\n  regions {\r\n    count\r\n    next\r\n    previous\r\n    results {\r\n      url\r\n      name\r\n    }\r\n  }\r\n}",
+				"variable": "",
+				"result": "{\r\n  \"data\": {\r\n    \"regions\": {\r\n      \"count\": 8,\r\n      \"next\": null,\r\n      \"previous\": null,\r\n      \"results\": [\r\n        {\r\n          \"url\": \"https:\/\/pokeapi.co\/api\/v2\/region\/1\/\",\r\n          \"name\": \"kanto\"\r\n        },\r\n        {\r\n          \"url\": \"https:\/\/pokeapi.co\/api\/v2\/region\/2\/\",\r\n          \"name\": \"johto\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}"
+			}
 		},
 		{
 			"query": "region",
@@ -189,13 +254,23 @@
 			"query": "species",
 			"desc": "Get list of species",
 			"responseType": "BaseList",
-			"param": null
+			"param": null,
+			"code": {
+				"query": "query species {\r\n  species {\r\n    count\r\n    next\r\n    previous\r\n    results {\r\n      url\r\n      name\r\n    }\r\n  }\r\n}",
+				"variable": "",
+				"result": "{\r\n  \"data\": {\r\n    \"species\": {\r\n      \"count\": 893,\r\n      \"next\": null,\r\n      \"previous\": null,\r\n      \"results\": [\r\n        {\r\n          \"url\": \"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/1\/\",\r\n          \"name\": \"bulbasaur\"\r\n        },\r\n        {\r\n          \"url\": \"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/2\/\",\r\n          \"name\": \"ivysaur\"\r\n        },\r\n        {\r\n          \"url\": \"https:\/\/pokeapi.co\/api\/v2\/pokemon-species\/3\/\",\r\n          \"name\": \"venusaur\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}"
+			}
 		},
 		{
 			"query": "types",
 			"desc": "Get list of types",
 			"responseType": "BaseList",
-			"param": null
+			"param": null,
+			"code": {
+				"query": "query types {\r\n  types {\r\n    count\r\n    next\r\n    previous\r\n    results {\r\n      url\r\n      name\r\n    }\r\n  }\r\n}",
+				"variable": "",
+				"result": "{\r\n  \"data\": {\r\n    \"types\": {\r\n      \"count\": 20,\r\n      \"next\": null,\r\n      \"previous\": null,\r\n      \"results\": [\r\n        {\r\n          \"url\": \"https:\/\/pokeapi.co\/api\/v2\/type\/1\/\",\r\n          \"name\": \"normal\"\r\n        },\r\n        {\r\n          \"url\": \"https:\/\/pokeapi.co\/api\/v2\/type\/2\/\",\r\n          \"name\": \"fighting\"\r\n        }\r\n      ]\r\n    }\r\n  }\r\n}"
+			}
 		}
 	]
 }

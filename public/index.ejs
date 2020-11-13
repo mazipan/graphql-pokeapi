@@ -5,8 +5,9 @@
     <meta
       name="viewport"
       content="initial-scale=1, minimum-scale=1, maximum-scale=5, user-scalable=yes, width=device-width"
-    />
+		/>
 
+		<meta name="google-site-verification" content="6MAhMl8DETJAEL6vwD4RIf4QOprJYS-Vwsz9f2LKaNk" />
     <link
       rel="icon"
       type="image/png"
@@ -32,7 +33,17 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism-dark.min.css"
-    />
+		/>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-D0213WZCL8"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'G-D0213WZCL8');
+		</script>
   </head>
 
   <body>
@@ -114,17 +125,17 @@
 									<div class="card__content">
 										<details>
 											<summary>Sample Query</summary>
-											<pre><code class="language-javascript"></code></pre>
+											<pre><code class="language-javascript"><% if (d.code) { %><%= d.code.query %><% } %></code></pre>
 										</details>
 
 										<details>
 											<summary>Sample Variables</summary>
-											<pre><code class="language-javascript"></code></pre>
+											<pre><code class="language-javascript"><% if (d.code) { %><%= d.code.variable %><% } %></code></pre>
 										</details>
 
 										<details>
 											<summary>Sample Result</summary>
-											<pre><code class="language-javascript"></code></pre>
+											<pre><code class="language-javascript"><% if (d.code) { %><%= d.code.result %><% } %></code></pre>
 										</details>
 									</div>
 								</div>
