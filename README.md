@@ -10,6 +10,8 @@
 	<img src="https://github.com/mazipan/graphql-pokeapi/workflows/Build%20UI/badge.svg" alt="Actions">
 </p>
 
+![Playground Screenshot](public/screenshot.png)
+
 ## Homepage
 
 [https://graphql-pokeapi.vercel.app](https://graphql-pokeapi.vercel.app)
