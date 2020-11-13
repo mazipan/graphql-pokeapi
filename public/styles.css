@@ -9,7 +9,7 @@
 }
 
 .card__header {
-  @apply p-2 text-lg text-red-500 font-bold bg-gray-700;
+  @apply p-2 text-lg text-gray-100 bg-red-500;
 }
 
 .card__body {

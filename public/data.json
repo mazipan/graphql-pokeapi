@@ -15,9 +15,7 @@
 			"query": "ability",
 			"desc": "Get detail of ability",
 			"responseType": "BaseResponse",
-			"param": {
-				"ability": "string"
-			}
+			"param": "ability: String!"
 		},
 		{
 			"query": "berries",
@@ -34,9 +32,7 @@
 			"query": "berry",
 			"desc": "Get detail of berry",
 			"responseType": "BaseResponse",
-			"param": {
-				"berry": "string"
-			}
+			"param": "berry: String!"
 		},
 		{
 			"query": "eggGroups",
@@ -53,9 +49,7 @@
 			"query": "eggGroup",
 			"desc": "Get detail of eggGroup",
 			"responseType": "BaseResponse",
-			"param": {
-				"eggGroup": "string"
-			}
+			"param": "eggGroup: String!"
 		},
 		{
 			"query": "encounterMethods",
@@ -72,9 +66,7 @@
 			"query": "encounterMethod",
 			"desc": "Get detail of encounterMethod",
 			"responseType": "BaseResponse",
-			"param": {
-				"encounterMethod": "string"
-			}
+			"param": "encounterMethod: String!"
 		},
 		{
 			"query": "evolutionChains",
@@ -91,9 +83,7 @@
 			"query": "evolutionChain",
 			"desc": "Get detail of evolutionChain",
 			"responseType": "BaseResponse",
-			"param": {
-				"id": "string"
-			}
+			"param": "id: String!"
 		},
 		{
 			"query": "evolutionTriggers",
@@ -110,9 +100,7 @@
 			"query": "evolutionTrigger",
 			"desc": "Get detail of evolutionTrigger",
 			"responseType": "BaseResponse",
-			"param": {
-				"name": "string"
-			}
+			"param": "name: String!"
 		},
 		{
 			"query": "genders",
@@ -129,9 +117,7 @@
 			"query": "gender",
 			"desc": "Get detail of gender",
 			"responseType": "BaseResponse",
-			"param": {
-				"gender": "string"
-			}
+			"param": "gender: String!"
 		},
 		{
 			"query": "growthRates",
@@ -148,9 +134,7 @@
 			"query": "growthRate",
 			"desc": "Get detail of growthRate",
 			"responseType": "BaseResponse",
-			"param": {
-				"growthRate": "string"
-			}
+			"param": "growthRate: String!"
 		},
 		{
 			"query": "locations",
@@ -167,9 +151,7 @@
 			"query": "location",
 			"desc": "Get detail of location",
 			"responseType": "BaseResponse",
-			"param": {
-				"location": "string"
-			}
+			"param": "location: String!"
 		},
 		{
 			"query": "moves",
@@ -186,9 +168,7 @@
 			"query": "move",
 			"desc": "Get detail of move",
 			"responseType": "BaseResponse",
-			"param": {
-				"move": "string"
-			}
+			"param": "move: String!"
 		},
 		{
 			"query": "natures",
@@ -205,26 +185,19 @@
 			"query": "nature",
 			"desc": "Get detail of nature",
 			"responseType": "BaseResponse",
-			"param": {
-				"nature": "string"
-			}
+			"param": "nature: String!"
 		},
 		{
 			"query": "pokemons",
 			"desc": "Get list of pokemons",
 			"responseType": "PokemonList",
-			"param": {
-				"limit": "Int",
-				"offset": "Int"
-			}
+			"param": "limit: Int, offset: Int"
 		},
 		{
 			"query": "pokemon",
 			"desc": "Get detail of pokemon",
 			"responseType": "Pokemon",
-			"param": {
-				"name": "string"
-			},
+			"param": "name: String!",
 			"code": {
 				"query": "query pokemon($name: String!) {\r\n  pokemon(name: $name) {\r\n    id\r\n    name\r\n    sprites {\r\n      front_default\r\n    }\r\n    moves {\r\n      move {\r\n        name\r\n      }\r\n    }\r\n    types {\r\n      type {\r\n        name\r\n      }\r\n    }\r\n  }\r\n}",
 				"variable": "{\r\n  \"name\": \"ditto\"\r\n}",
@@ -246,9 +219,7 @@
 			"query": "region",
 			"desc": "Get detail of region",
 			"responseType": "BaseResponse",
-			"param": {
-				"region": "string"
-			}
+			"param": "region: String!"
 		},
 		{
 			"query": "species",
