@@ -4,7 +4,10 @@
 	<img height="200" src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi.svg?sanitize=true" alt="PokeAPI">
 </p>
 <p align="center">
-	<img src="https://github.com/mazipan/graphql-pokeapi/workflows/Main%20workflow/badge.svg" alt="Actions">
+	<img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg" alt="Standard">
+	<img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome">
+	<img src="https://img.shields.io/website-up-down-brightgreen-red/https/graphql-pokeapi.vercel.app.svg" alt="Wesite Up">
+	<img src="https://github.com/mazipan/graphql-pokeapi/workflows/Build%20UI/badge.svg" alt="Actions">
 </p>
 
 ## Homepage
