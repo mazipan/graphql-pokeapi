@@ -3,5 +3,5 @@ export default {
 ability: BaseName
 is_hidden: Boolean
 slot: Int
-}`
-}
+}`,
+};

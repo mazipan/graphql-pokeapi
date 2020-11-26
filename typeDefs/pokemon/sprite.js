@@ -9,5 +9,5 @@ front_female: String
 front_shiny: String
 front_shiny_female: String
 }
-`
-}
+`,
+};

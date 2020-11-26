@@ -4,5 +4,5 @@ message: String
 status: Boolean
 response: JSON
 }
-`
-}
+`,
+};

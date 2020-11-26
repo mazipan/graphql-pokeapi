@@ -7,5 +7,5 @@ export default {
 		status: Boolean
 		message: String
 	}
-`
-}
+`,
+};

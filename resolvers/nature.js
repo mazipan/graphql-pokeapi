@@ -1,5 +1,5 @@
-import { getNatureByName } from '../libs/natures'
+import { getNatureByName } from '../libs/natures';
 
 export default async (parent, params, context) => {
-  return getNatureByName(params.nature)
-}
+  return getNatureByName(params.nature);
+};

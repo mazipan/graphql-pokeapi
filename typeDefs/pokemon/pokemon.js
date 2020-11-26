@@ -20,5 +20,5 @@ weight: Int
 status: Boolean
 message: String
 }
-`
-}
+`,
+};

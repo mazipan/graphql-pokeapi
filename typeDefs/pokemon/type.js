@@ -3,5 +3,5 @@ export default {
 slot: Int
 type: BaseName
 }
-`
-}
+`,
+};

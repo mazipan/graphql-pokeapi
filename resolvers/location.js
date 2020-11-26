@@ -1,5 +1,5 @@
-import { getLocationByName } from '../libs/locations'
+import { getLocationByName } from '../libs/locations';
 
 export default async (parent, params, context) => {
-  return getLocationByName(params.location)
-}
+  return getLocationByName(params.location);
+};

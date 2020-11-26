@@ -4,5 +4,5 @@ base_stat: Int
 effort: Int
 stat: BaseName
 }
-`
-}
+`,
+};

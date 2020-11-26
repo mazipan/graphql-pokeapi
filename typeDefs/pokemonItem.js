@@ -5,5 +5,5 @@ name: String
 image: String
 id: Int
 }
-`
-}
+`,
+};

@@ -31,5 +31,5 @@ export default {
 		species: BaseList
 		types: BaseList
 	}
-`
-}
+`,
+};

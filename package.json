@@ -3,7 +3,7 @@
   "description": "GraphQL implementation of pokeapi.co",
   "version": "1.0.0",
   "license": "MIT",
-  "main": "./src/index.ts",
+  "type": "module",
   "scripts": {
     "css": "tailwindcss build public/styles.css -o public/output.css",
     "css:min": "cleancss -o public/output.min.css public/output.css",
@@ -12,16 +12,24 @@
     "serve": "yarn build && serve public",
     "start": "vercel dev",
     "test": "jest",
-    "lint": "standard --fix",
+    "lint": "eslint . --ext .js --fix",
     "deploy": "vercel --prod"
   },
   "devDependencies": {
     "@vercel/node": "^1.8.4",
     "clean-css-cli": "^4.3.0",
     "ejs": "^3.1.5",
+    "eslint": "7.2.0",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
     "jest": "26.6.3",
+    "lint-staged": "^10.5.2",
+    "prettier": "^2.2.0",
     "serve": "^11.3.2",
-    "standard": "^16.0.1",
     "tailwindcss": "^1.9.6"
   },
   "dependencies": {
@@ -33,7 +41,22 @@
     "vercel": "^20.1.2",
     "vercel-node-server": "^2.2.1"
   },
+  "lint-staged": {
+    "*.{js,jsx}": "yarn lint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "engines": {
     "node": ">= 12.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mazipan/graphql-pokeapi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mazipan/graphql-pokeapi/issues"
   }
 }

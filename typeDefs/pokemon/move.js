@@ -3,5 +3,5 @@ export default {
 move: BaseName
 version_group_details: [VersionGroupDetail]
 }
-`
-}
+`,
+};

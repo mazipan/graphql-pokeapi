@@ -1,5 +1,5 @@
-import { getEggGroupsList } from '../libs/eggGroup'
+import { getEggGroupsList } from '../libs/eggGroup';
 
 export default async (parent, params, context) => {
-  return getEggGroupsList()
-}
+  return getEggGroupsList();
+};

@@ -3,5 +3,5 @@ export default {
 game_index: Int
 version: BaseName
 }
-`
-}
+`,
+};

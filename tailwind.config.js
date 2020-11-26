@@ -5,8 +5,8 @@ module.exports = {
   },
   purge: ['public/index.html, public/index.ejs'],
   theme: {
-    extend: {},
+    extend: {}
   },
   variants: {},
-  plugins: [],
+  plugins: []
 }

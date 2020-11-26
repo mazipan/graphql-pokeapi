@@ -3,5 +3,5 @@ export default {
 url: String
 name: String
 }
-`
-}
+`,
+};

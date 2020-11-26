@@ -3,5 +3,5 @@ export default {
 rarity: Int
 version: BaseName
 }
-`
-}
+`,
+};

@@ -1,5 +1,5 @@
-import { getTypesList } from '../libs/types'
+import { getTypesList } from '../libs/types';
 
 export default async (parent, params, context) => {
-  return getTypesList()
-}
+  return getTypesList();
+};

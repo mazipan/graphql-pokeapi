@@ -1,5 +1,5 @@
-import { getRegionsList } from '../libs/regions'
+import { getRegionsList } from '../libs/regions';
 
 export default async (parent, params, context) => {
-  return getRegionsList()
-}
+  return getRegionsList();
+};

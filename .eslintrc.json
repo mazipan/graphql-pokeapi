@@ -1,0 +1,28 @@
+{
+  "root": true,
+  "env": {
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:node/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "prettier"
+  ],
+  "plugins": ["prettier"],
+  "rules": {
+    "semi": ["error", "always"],
+    "quotes": ["error", "single"],
+    "prettier/prettier": ["error"],
+    "no-tabs": "off",
+    "no-unused-vars": "warn"
+  },
+  "settings": {
+    "import/extensions": [".js"]
+  }
+}

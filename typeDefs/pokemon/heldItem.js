@@ -3,5 +3,5 @@ export default {
 item: BaseName
 version_details: [VersionDetail]
 }
-`
-}
+`,
+};

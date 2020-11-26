@@ -1,5 +1,5 @@
-import { getPokemonByName } from '../libs/pokemons'
+import { getPokemonByName } from '../libs/pokemons';
 
 export default async (parent, params, context) => {
-  return getPokemonByName(params.name)
-}
+  return getPokemonByName(params.name);
+};

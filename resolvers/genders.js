@@ -1,5 +1,5 @@
-import { getGendersList } from '../libs/genders'
+import { getGendersList } from '../libs/genders';
 
 export default async (parent, params, context) => {
-  return getGendersList()
-}
+  return getGendersList();
+};
