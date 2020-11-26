@@ -1,5 +1,5 @@
 import { getEncounterMethodsList } from '../libs/encounters';
 
-export default async (parent, params, context) => {
+export default async () => {
   return getEncounterMethodsList();
 };

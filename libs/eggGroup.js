@@ -5,7 +5,12 @@ export const getEggGroupsList = async () => {
     const response = await PokedexInstance.getEggGroupsList();
     hitSuccessCounter();
     if (response && response.results) {
-      return { ...response, results: response.results, status: true, message: '' };
+      return {
+        ...response,
+        results: response.results,
+        status: true,
+        message: '',
+      };
     }
     return { ...response, status: true, message: '' };
   } catch (error) {

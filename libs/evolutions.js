@@ -14,7 +14,12 @@ export const getEvolutionChainsList = async () => {
           url: i.url,
         };
       });
-      return { ...response, results: responseWithName, status: true, message: '' };
+      return {
+        ...response,
+        results: responseWithName,
+        status: true,
+        message: '',
+      };
     }
     return { ...response, status: true, message: '' };
   } catch (error) {
@@ -39,7 +44,12 @@ export const getEvolutionTriggersList = async () => {
     const response = await PokedexInstance.getEvolutionTriggersList();
     hitSuccessCounter();
     if (response && response.results) {
-      return { ...response, results: response.results, status: true, message: '' };
+      return {
+        ...response,
+        results: response.results,
+        status: true,
+        message: '',
+      };
     }
     return { ...response, status: true, message: '' };
   } catch (error) {

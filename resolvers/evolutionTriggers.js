@@ -1,5 +1,5 @@
 import { getEvolutionTriggersList } from '../libs/evolutions';
 
-export default async (parent, params, context) => {
+export default async () => {
   return getEvolutionTriggersList();
 };

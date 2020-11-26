@@ -1,5 +1,5 @@
 import { getGrowthRateByName } from '../libs/growthRate';
 
-export default async (parent, params, context) => {
+export default async (parent, params) => {
   return getGrowthRateByName(params.growthRate);
 };

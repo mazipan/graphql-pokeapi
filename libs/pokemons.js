@@ -17,7 +17,12 @@ export const getPokemonsList = async (limit = 20, offset = 1) => {
           image: `${BASE_SPRITE}${id}.png`,
         };
       });
-      return { ...response, results: responseWithImage, status: true, message: '' };
+      return {
+        ...response,
+        results: responseWithImage,
+        status: true,
+        message: '',
+      };
     }
     return { ...response, status: true, message: '' };
   } catch (error) {
