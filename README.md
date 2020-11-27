@@ -4,9 +4,9 @@
 	<img height="200" src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi.svg?sanitize=true" alt="PokeAPI">
 </p>
 <p align="center">
-	<img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg" alt="Standard">
 	<img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome">
 	<img src="https://img.shields.io/website-up-down-brightgreen-red/https/graphql-pokeapi.vercel.app.svg" alt="Wesite Up">
+	<img src="https://img.shields.io/david/mazipan/graphql-pokeapi.svg" alt="Dependencies">
 	<img src="https://github.com/mazipan/graphql-pokeapi/workflows/Build%20UI/badge.svg" alt="Actions">
 </p>
 
@@ -19,6 +19,10 @@
 ## Graphql Playground
 
 [https://graphql-pokeapi.vercel.app/api/graphql](https://graphql-pokeapi.vercel.app/api/graphql)
+
+## Applications
+
+If you are using `graphql-pokeapi`, you can add your apps in our [awesome-list.md](awesome-list.md)
 
 ## Queries
 
