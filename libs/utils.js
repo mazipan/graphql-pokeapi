@@ -14,16 +14,24 @@ export const getErrorCounterUrl = 'https://api.countapi.xyz/get/graphql-pokeapi/
 
 export const hitApi = (url) => {
   setTimeout(async () => {
-    const response = await fetch(url);
-    const json = await response.json();
-    console.log(JSON.stringify(json));
+    try {
+      const response = await fetch(url);
+      await response.json();
+    } catch (error) {
+      console.error(`> Error on hit api: ${url}`, error);
+    }
   }, 50);
 };
 
 export const getApi = async (url) => {
-  const response = await fetch(url);
-  const json = await response.json();
-  return json;
+  try {
+    const response = await fetch(url);
+    const json = await response.json();
+    return json;
+  } catch (error) {
+    console.error(`> Error on get api: ${url}`, error);
+  }
+  return null;
 };
 
 export const hitSuccessCounter = () => {
