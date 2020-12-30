@@ -64,7 +64,9 @@ Desc: Get list of pokemons
 
 <details>
   <summary>Sample Query</summary>
-  <p><pre><code>query pokemons($limit: Int, $offset: Int) {
+  <p>
+```js
+query pokemons($limit: Int, $offset: Int) {
   pokemons(limit: $limit, offset: $offset) {
     count
     next
@@ -77,7 +79,9 @@ Desc: Get list of pokemons
       image
     }
   }
-}</code></pre></p>
+}
+```
+</p>
 </details>
 
 <details>
