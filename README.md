@@ -183,6 +183,7 @@ query pokemon($name: String!) {
 {
   "name": "ditto"
 }
+```
 
 </p>
 </details>
