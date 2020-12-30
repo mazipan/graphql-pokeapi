@@ -25,9 +25,9 @@ If you are using `graphql-pokeapi`, you can add your apps in our [awesome-list.m
 
 ## Sending Request Example
 
-- [Sending request using Fetch API - GET](examples/01-use-fetch-get.js)
+- WIP - [Sending request using Fetch API - GET](examples/01-use-fetch-get.js)
 - [Sending request using Fetch API - POST](examples/02-use-fetch-post.js)
-- [Sending request using Apollo - GET](examples/03-use-apollo-get.js)
+- WIP - [Sending request using Apollo - GET](examples/03-use-apollo-get.js)
 - [Sending request using Apollo - POST](examples/04-use-apollo-post.js)
 ## Queries
 
