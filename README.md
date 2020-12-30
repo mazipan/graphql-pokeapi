@@ -88,15 +88,24 @@ query pokemons($limit: Int, $offset: Int) {
 
 <details>
   <summary>Sample Variables</summary>
-  <p><pre>{
+  <p>
+
+```js
+{
   "limit": 2,
   "offset": 1
-}</pre></p>
+}
+```
+
+</p>
 </details>
 
 <details>
   <summary>Sample Result</summary>
-  <p><pre>{
+  <p>
+
+```js
+{
   "data": {
     "pokemons": {
       "count": 964,
@@ -123,7 +132,10 @@ query pokemons($limit: Int, $offset: Int) {
       "message": ""
     }
   }
-}</pre></p>
+}
+```
+
+</p>
 </details>
 
 ### pokemon
@@ -132,7 +144,10 @@ Desc: Get detail info of pokemon
 
 <details>
   <summary>Sample Query</summary>
-  <p><pre>query pokemon($name: String!) {
+  <p>
+
+```js
+query pokemon($name: String!) {
   pokemon(name: $name) {
     id
     name
@@ -154,19 +169,30 @@ Desc: Get detail info of pokemon
     message
     status
   }
-}</pre></p>
+}
+```
+
+</p>
 </details>
 
 <details>
   <summary>Sample Variables</summary>
-  <p><pre>{
+  <p>
+
+```js
+{
   "name": "ditto"
-}</pre></p>
+}
+
+</p>
 </details>
 
 <details>
   <summary>Sample Result</summary>
-  <p><pre>{
+  <p>
+
+```js
+{
   "data": {
     "pokemon": {
       "id": 132,
@@ -201,7 +227,10 @@ Desc: Get detail info of pokemon
       "status": true
     }
   }
-}</pre></p>
+}
+```
+
+</p>
 </details>
 
 ## Credits
