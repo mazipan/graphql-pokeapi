@@ -65,6 +65,7 @@ Desc: Get list of pokemons
 <details>
   <summary>Sample Query</summary>
   <p>
+
 ```js
 query pokemons($limit: Int, $offset: Int) {
   pokemons(limit: $limit, offset: $offset) {
@@ -81,6 +82,7 @@ query pokemons($limit: Int, $offset: Int) {
   }
 }
 ```
+
 </p>
 </details>
 
