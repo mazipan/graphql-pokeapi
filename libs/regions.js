@@ -19,13 +19,13 @@ export const getRegionsList = async () => {
   }
 };
 
-export const getRegionByName = async (name = '') => {
+export const getRegionByName = async (region = '') => {
   try {
-    const response = await PokedexInstance.getRegionByName(name);
+    const response = await PokedexInstance.getRegionByName(region);
     hitSuccessCounter();
-    return { response, status: true, message: '' };
+    return { response, params: { region }, status: true, message: '' };
   } catch (error) {
-    console.error(`> Error api getRegionByName(${name})`, error);
+    console.error(`> Error api getRegionByName(${region})`, error);
     return handleError(error);
   }
 };

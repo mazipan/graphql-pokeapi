@@ -19,13 +19,13 @@ export const getGrowthRatesList = async () => {
   }
 };
 
-export const getGrowthRateByName = async (name = '') => {
+export const getGrowthRateByName = async (growthRate = '') => {
   try {
-    const response = await PokedexInstance.getGrowthRateByName(name);
+    const response = await PokedexInstance.getGrowthRateByName(growthRate);
     hitSuccessCounter();
-    return { response, status: true, message: '' };
+    return { response, params: { growthRate }, status: true, message: '' };
   } catch (error) {
-    console.error(`> Error api getGrowthRateByName(${name})`, error);
+    console.error(`> Error api getGrowthRateByName(${growthRate})`, error);
     return handleError(error);
   }
 };

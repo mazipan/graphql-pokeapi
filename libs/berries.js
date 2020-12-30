@@ -19,13 +19,13 @@ export const getBerriesList = async () => {
   }
 };
 
-export const getBerryByName = async (name = '') => {
+export const getBerryByName = async (berry = '') => {
   try {
-    const response = await PokedexInstance.getBerryByName(name);
+    const response = await PokedexInstance.getBerryByName(berry);
     hitSuccessCounter();
-    return { response, status: true, message: '' };
+    return { response, params: { berry }, status: true, message: '' };
   } catch (error) {
-    console.error(`> Error api getBerryByName(${name})`, error);
+    console.error(`> Error api getBerryByName(${berry})`, error);
     return handleError(error);
   }
 };

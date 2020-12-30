@@ -19,13 +19,13 @@ export const getEggGroupsList = async () => {
   }
 };
 
-export const getEggGroupByName = async (name = '') => {
+export const getEggGroupByName = async (eggGroup = '') => {
   try {
-    const response = await PokedexInstance.getEggGroupByName(name);
+    const response = await PokedexInstance.getEggGroupByName(eggGroup);
     hitSuccessCounter();
-    return { response, status: true, message: '' };
+    return { response, params: { eggGroup }, status: true, message: '' };
   } catch (error) {
-    console.error(`> Error api getEggGroupByName(${name})`, error);
+    console.error(`> Error api getEggGroupByName(${eggGroup})`, error);
     return handleError(error);
   }
 };

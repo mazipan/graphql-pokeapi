@@ -3,6 +3,7 @@ export default {
 message: String
 status: Boolean
 response: JSON
+params: JSON
 }
 `,
 };

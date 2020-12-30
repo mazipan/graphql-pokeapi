@@ -28,13 +28,13 @@ export const getEvolutionChainsList = async () => {
   }
 };
 
-export const getEvolutionChainById = async (name = '') => {
+export const getEvolutionChainById = async (id = '') => {
   try {
-    const response = await PokedexInstance.getEvolutionChainById(name);
+    const response = await PokedexInstance.getEvolutionChainById(id);
     hitSuccessCounter();
-    return { response, status: true, message: '' };
+    return { response, params: { id }, status: true, message: '' };
   } catch (error) {
-    console.error(`> Error api getEvolutionChainById(${name})`, error);
+    console.error(`> Error api getEvolutionChainById(${id})`, error);
     return handleError(error);
   }
 };
@@ -62,7 +62,7 @@ export const getEvolutionTriggerByName = async (name = '') => {
   try {
     const response = await PokedexInstance.getEvolutionTriggerByName(name);
     hitSuccessCounter();
-    return { response, status: true, message: '' };
+    return { response, params: { name }, status: true, message: '' };
   } catch (error) {
     console.error(`> Error api getEvolutionTriggerByName(${name})`, error);
     return handleError(error);

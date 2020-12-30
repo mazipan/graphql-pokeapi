@@ -19,13 +19,13 @@ export const getAbilitiesList = async () => {
   }
 };
 
-export const getAbilityByName = async (name = '') => {
+export const getAbilityByName = async (ability = '') => {
   try {
-    const response = await PokedexInstance.getAbilityByName(name);
+    const response = await PokedexInstance.getAbilityByName(ability);
     hitSuccessCounter();
-    return { response, status: true, message: '' };
+    return { response, params: { ability }, status: true, message: '' };
   } catch (error) {
-    console.error(`> Error api getAbilityByName(${name})`, error);
+    console.error(`> Error api getAbilityByName(${ability})`, error);
     return handleError(error);
   }
 };

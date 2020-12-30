@@ -19,13 +19,13 @@ export const getLocationsList = async () => {
   }
 };
 
-export const getLocationByName = async (name = '') => {
+export const getLocationByName = async (location = '') => {
   try {
-    const response = await PokedexInstance.getLocationByName(name);
+    const response = await PokedexInstance.getLocationByName(location);
     hitSuccessCounter();
-    return { response, status: true, message: '' };
+    return { response, params: { location }, status: true, message: '' };
   } catch (error) {
-    console.error(`> Error api getLocationByName(${name})`, error);
+    console.error(`> Error api getLocationByName(${location})`, error);
     return handleError(error);
   }
 };

@@ -23,6 +23,12 @@
 
 If you are using `graphql-pokeapi`, you can add your apps in our [awesome-list.md](awesome-list.md)
 
+## Sending Request Example
+
+- [Sending request using Fetch API - GET](examples/01-use-fetch-get.js)
+- [Sending request using Fetch API - POST](examples/02-use-fetch-post.js)
+- [Sending request using Apollo - GET](examples/03-use-apollo-get.js)
+- [Sending request using Apollo - POST](examples/04-use-apollo-post.js)
 ## Queries
 
 | Query               | Desc                           | Variables         |
@@ -56,7 +62,7 @@ If you are using `graphql-pokeapi`, you can add your apps in our [awesome-list.m
 | `species`           | Get list of species            |                   |
 | `types`             | Get list of types              |                   |
 
-## Examples
+## Query Examples
 
 ### pokemons
 

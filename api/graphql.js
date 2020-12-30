@@ -4,7 +4,6 @@ import GraphQLJSON, { GraphQLJSONObject } from 'graphql-type-json';
 import BaseList from '../typeDefs/baseList';
 import BaseResponse from '../typeDefs/baseResponse';
 import BaseName from '../typeDefs/baseName';
-import ListResponse from '../typeDefs/listResponse';
 import Ability from '../typeDefs/pokemon/ability';
 import GameIndex from '../typeDefs/pokemon/gameIndex';
 import VersionDetail from '../typeDefs/pokemon/versionDetail';
@@ -55,7 +54,6 @@ scalar JSON
 scalar JSONObject
 ${BaseResponse.typeDef}
 ${BaseList.typeDef}
-${ListResponse.typeDef}
 ${Ability.typeDef}
 ${GameIndex.typeDef}
 ${VersionDetail.typeDef}
@@ -115,4 +113,12 @@ const server = new ApolloServer({
   introspection: true,
 });
 
-export default server.createHandler();
+export default server.createHandler({
+  cors: {
+    origin: '*',
+    methods: 'GET,OPTIONS,PATCH,DELETE,POST,PUT',
+    allowedHeaders:
+      'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version',
+    credentials: true,
+  },
+});

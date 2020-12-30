@@ -19,13 +19,13 @@ export const getMovesList = async () => {
   }
 };
 
-export const getMoveByName = async (name = '') => {
+export const getMoveByName = async (move = '') => {
   try {
-    const response = await PokedexInstance.getMoveByName(name);
+    const response = await PokedexInstance.getMoveByName(move);
     hitSuccessCounter();
-    return { response, status: true, message: '' };
+    return { response, params: { move }, status: true, message: '' };
   } catch (error) {
-    console.error(`> Error api getMoveByName(${name})`, error);
+    console.error(`> Error api getMoveByName(${move})`, error);
     return handleError(error);
   }
 };

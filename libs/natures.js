@@ -19,13 +19,13 @@ export const getNaturesList = async () => {
   }
 };
 
-export const getNatureByName = async (name = '') => {
+export const getNatureByName = async (nature = '') => {
   try {
-    const response = await PokedexInstance.getNatureByName(name);
+    const response = await PokedexInstance.getNatureByName(nature);
     hitSuccessCounter();
-    return { response, status: true, message: '' };
+    return { response, params: { nature }, status: true, message: '' };
   } catch (error) {
-    console.error(`> Error api getNatureByName(${name})`, error);
+    console.error(`> Error api getNatureByName(${nature})`, error);
     return handleError(error);
   }
 };

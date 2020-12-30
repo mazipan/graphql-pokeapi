@@ -19,13 +19,13 @@ export const getGendersList = async () => {
   }
 };
 
-export const getGenderByName = async (name = '') => {
+export const getGenderByName = async (gender = '') => {
   try {
-    const response = await PokedexInstance.getGenderByName(name);
+    const response = await PokedexInstance.getGenderByName(gender);
     hitSuccessCounter();
-    return { response, status: true, message: '' };
+    return { response, params: { gender }, status: true, message: '' };
   } catch (error) {
-    console.error(`> Error api getGenderByName(${name})`, error);
+    console.error(`> Error api getGenderByName(${gender})`, error);
     return handleError(error);
   }
 };

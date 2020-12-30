@@ -19,13 +19,13 @@ export const getEncounterMethodsList = async () => {
   }
 };
 
-export const getEncounterMethodByName = async (name = '') => {
+export const getEncounterMethodByName = async (encounterMethod = '') => {
   try {
-    const response = await PokedexInstance.getEncounterMethodByName(name);
+    const response = await PokedexInstance.getEncounterMethodByName(encounterMethod);
     hitSuccessCounter();
-    return { response, status: true, message: '' };
+    return { response, params: { encounterMethod }, status: true, message: '' };
   } catch (error) {
-    console.error(`> Error api getEncounterMethodByName(${name})`, error);
+    console.error(`> Error api getEncounterMethodByName(${encounterMethod})`, error);
     return handleError(error);
   }
 };

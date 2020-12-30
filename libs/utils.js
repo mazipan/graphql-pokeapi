@@ -12,6 +12,12 @@ export const hitErrorCounterUrl = 'https://api.countapi.xyz/hit/graphql-pokeapi/
 export const getSuccessCounterUrl = 'https://api.countapi.xyz/get/graphql-pokeapi/hits';
 export const getErrorCounterUrl = 'https://api.countapi.xyz/get/graphql-pokeapi/errors';
 
+export const getOffset = (url) => {
+  const { search } = new URL(url);
+  const offset = new URLSearchParams(search).get('offset');
+  return offset ? parseInt(offset, 10) : 0;
+};
+
 export const hitApi = (url) => {
   setTimeout(async () => {
     try {
