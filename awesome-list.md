@@ -8,4 +8,5 @@
 
 ## Awesome List
 
-- [Pokemon Web App](https://pokemon-web-app.web.app/): ReactJS, Apollo GraphQL, IDB
+- [Pokemon Web App](https://pokemon-web-app.web.app/): ReactJS, Apollo GraphQL, IDB.
+- [Pokemon Search](https://github.com/gabriel-brito/pokesearch): NextJs, GraphQL Request, TypeScript.
