@@ -10,4 +10,4 @@
 
 - [Pokemon Web App](https://pokemon-web-app.web.app/): ReactJS, Apollo GraphQL, IDB.
 - [Pokemon Search](https://github.com/gabriel-brito/pokesearch): NextJs, GraphQL Request, TypeScript.
-- [Pokepedia] (https://pokepedia-ferd.web.app): React, Apollo GraphQL, Material-UI
+- [Pokepedia](https://pokepedia-ferd.web.app): React, Apollo GraphQL, Material-UI
