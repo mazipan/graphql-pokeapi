@@ -4,10 +4,10 @@
 
 ## Template:
 
-- [Your app name](/your-demo-link): Your tech stacks (e.g: React, Redux, Tailwind)
+- [Your app name](/your-demo-link) by [Your name](/your-github-link): Your tech stacks (e.g: React, Redux, Tailwind)
 
 ## Awesome List
 
-- [Pokemon Web App](https://pokemon-web-app.web.app/): ReactJS, Apollo GraphQL, IDB.
-- [Pokemon Search](https://github.com/gabriel-brito/pokesearch): NextJs, GraphQL Request, TypeScript.
-- [Pokepedia](https://pokepedia-ferd.web.app): React, Apollo GraphQL, Material-UI
+- [Pokemon Web App](https://pokemon-web-app.web.app/) by [Your name](/your-github-link): ReactJS, Apollo GraphQL, IDB.
+- [Pokemon Search](https://github.com/gabriel-brito/pokesearch) by [Your name](/your-github-link): NextJs, GraphQL Request, TypeScript.
+- [Pokepedia](https://pokepedia-ferd.web.app) by [Your name](/your-github-link): React, Apollo GraphQL, Material-UI
