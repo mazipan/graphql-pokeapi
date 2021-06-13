@@ -7,6 +7,12 @@ const options = {
 
 export const PokedexInstance = new Pokedex(options);
 
+export const extractIdFromUrl = (url) => {
+  const urls = url.split('/').filter((u) => Boolean(u));
+  const id = urls.length > 0 ? urls[urls.length - 1] : '1';
+  return parseInt(id, 10);
+};
+
 export const hitSuccessCounterUrl = 'https://api.countapi.xyz/hit/graphql-pokeapi/hits';
 export const hitErrorCounterUrl = 'https://api.countapi.xyz/hit/graphql-pokeapi/errors';
 export const getSuccessCounterUrl = 'https://api.countapi.xyz/get/graphql-pokeapi/hits';

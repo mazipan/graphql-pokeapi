@@ -2,6 +2,8 @@ import { PokedexInstance, getOffset, handleError, hitSuccessCounter } from './ut
 
 const BASE_URL_POKEMON = 'https://pokeapi.co/api/v2/pokemon/';
 const BASE_SPRITE = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
+const BASE_ARTWORK = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/';
+const BASE_DREAMWORLD = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/';
 
 export const getPokemonsList = async (limit = 20, offset = 1) => {
   try {
@@ -15,6 +17,8 @@ export const getPokemonsList = async (limit = 20, offset = 1) => {
           url: i.url,
           id: parseInt(id, 10),
           image: `${BASE_SPRITE}${id}.png`,
+          artwork: `${BASE_ARTWORK}${id}.png`,
+          dreamworld: `${BASE_DREAMWORLD}${id}.svg`,
         };
       });
 

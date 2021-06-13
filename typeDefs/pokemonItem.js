@@ -1,9 +1,11 @@
 export default {
   typeDef: `type PokemonItem {
+id: Int
 url: String
 name: String
 image: String
-id: Int
+artwork: String
+dreamworld: String
 }
 `,
 };

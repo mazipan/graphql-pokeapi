@@ -1,4 +1,4 @@
-import { PokedexInstance, handleError, hitSuccessCounter } from './utils';
+import { PokedexInstance, handleError, hitSuccessCounter, extractIdFromUrl } from './utils';
 
 const EVO_CHAIN = 'https://pokeapi.co/api/v2/evolution-chain/';
 
@@ -46,7 +46,12 @@ export const getEvolutionTriggersList = async () => {
     if (response && response.results) {
       return {
         ...response,
-        results: response.results,
+        results: response.results.map((r) => {
+          return {
+            ...r,
+            id: extractIdFromUrl(r.url),
+          };
+        }),
         status: true,
         message: '',
       };
