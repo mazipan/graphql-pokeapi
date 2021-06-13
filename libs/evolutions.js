@@ -12,6 +12,7 @@ export const getEvolutionChainsList = async () => {
         return {
           name: name,
           url: i.url,
+          id: extractIdFromUrl(i.url),
         };
       });
       return {
