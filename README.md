@@ -15,7 +15,12 @@
 
 [https://graphql-pokeapi.vercel.app](https://graphql-pokeapi.vercel.app)
 
-## Graphql Playground
+## Endpoint
+
+- GraphCDN (with caching): https://graphql-pokeapi.graphcdn.app
+- Origin: https://graphql-pokeapi.vercel.app/api/graphql
+
+## Playground
 
 [https://graphql-pokeapi.vercel.app/api/graphql](https://graphql-pokeapi.vercel.app/api/graphql)
 
