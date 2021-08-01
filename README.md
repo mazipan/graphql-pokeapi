@@ -1,4 +1,4 @@
-# 🔴 The GraphQL for PokeApi
+# 🔴 The Unofficial GraphQL for PokeAPI
 
 <p align="center">
 	<img height="200" src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi.svg?sanitize=true" alt="PokeAPI">
