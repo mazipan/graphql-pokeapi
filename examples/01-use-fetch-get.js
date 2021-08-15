@@ -32,7 +32,7 @@ const queryString = Object.keys(params)
   })
   .join('&');
 
-fetch(`https://graphql-pokeapi.vercel.app/api/graphql?${queryString}`, {
+fetch(`https://graphql-pokeapi.graphcdn.app/?${queryString}`, {
   credentials: 'omit',
   headers: { 'Content-Type': 'application/json' },
   method: 'GET',
