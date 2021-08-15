@@ -33,11 +33,11 @@
     <main class="min-h-screen flex-1 w-full mx-auto">
       <div class="relative py-32 px-2 flex flex-col justify-center items-center bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
         <img alt="PokéAPI" src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" />
-        <h1 class="text-3xl md:text-4xl font-bold text-center text-white leading-tight">The Unofficial GraphQL for PokeAPII</h1>
+        <h1 class="text-3xl md:text-4xl font-bold text-center text-white leading-tight">The Unofficial GraphQL for PokeAPI</h1>
         <div class="flex mt-6 justify-start md:justify-center xl:justify-start">
           <a
             class="rounded-lg px-4 md:px-5 xl:px-4 py-3 md:py-4 xl:py-3 md:text-lg xl:text-base bg-purple-100 text-purple-700 shadow-md"
-            href="/api/graphql"
+            href="https://graphql-pokeapi.graphcdn.app/"
             >Playground</a
           >
 
@@ -117,7 +117,7 @@ const gqlVariables = {
   offset: 1,
 };
 
-fetch('https://graphql-pokeapi.vercel.app/api/graphql', {
+fetch('https://graphql-pokeapi.graphcdn.app/', {
   credentials: 'omit',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
