@@ -21,7 +21,7 @@ const gqlVariables = {
   offset: 1,
 };
 
-fetch('https://graphql-pokeapi.vercel.app/api/graphql', {
+fetch('https://graphql-pokeapi.graphcdn.app/', {
   credentials: 'omit',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
