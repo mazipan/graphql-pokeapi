@@ -1644,7 +1644,7 @@ autoprefixer@^9.4.5:
     postcss "^7.0.32"
     postcss-value-parser "^4.1.0"
 
-axios@^0.21.0:
+axios@^0.21.1:
   version "0.21.1"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
   integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
@@ -4136,11 +4136,6 @@ p-locate@^4.1.0:
   dependencies:
     p-limit "^2.2.0"
 
-p-map@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/p-map/-/p-map-2.1.0.tgz#310928feef9c9ecc65b68b17693018a665cea175"
-  integrity sha512-y3b8Kpd8OAN444hxfBbFfj1FY/RjtTd8tzYwhUqNYXx0fXx2iX4maP4Qr6qhIKbQXI02wTLAda4fYUbDagTUFw==
-
 p-map@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/p-map/-/p-map-4.0.0.tgz#bb2f95a5eda2ec168ec9274e06a747c3e2904d2b"
@@ -4288,14 +4283,14 @@ please-upgrade-node@^3.2.0:
   dependencies:
     semver-compare "^1.0.0"
 
-pokedex-promise-v2@3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/pokedex-promise-v2/-/pokedex-promise-v2-3.3.0.tgz#d4d677fd163ffa97dd33fcc0b9c32ddad6f2699d"
-  integrity sha512-OV18zzr/ThQBEUgLlcUUwxntpOUYGR3wAi9f7DwFVPsaEUWhxnmdyoYxRbhfzeYoXT2UMlzZewPkjiEKfaNvOA==
+pokedex-promise-v2@3.3.2:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/pokedex-promise-v2/-/pokedex-promise-v2-3.3.2.tgz#298e3bfe069f2d3c288c9d9300f5f20726b08ded"
+  integrity sha512-Jz6ayPmJKtvOxB+jxAvF0auQBkiphOHITDkUpexR55ncx5EfHd+UHNN1r6ROl5A5s9NFoZ5eZU6tgxPjbGnOMQ==
   dependencies:
-    axios "^0.21.0"
+    axios "^0.21.1"
     memory-cache "^0.2.0"
-    p-map "^2.1.0"
+    p-map "^4.0.0"
 
 postcss-functions@^3.0.0:
   version "3.0.0"

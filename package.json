@@ -32,7 +32,7 @@
     "graphql": "15.4.0",
     "graphql-type-json": "0.3.2",
     "node-fetch": "2.6.1",
-    "pokedex-promise-v2": "3.3.0",
+    "pokedex-promise-v2": "3.3.2",
     "vercel": "21.0.1",
     "vercel-node-server": "2.2.1"
   },
