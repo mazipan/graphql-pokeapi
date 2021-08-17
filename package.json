@@ -33,7 +33,7 @@
     "graphql-type-json": "0.3.2",
     "node-fetch": "2.6.1",
     "pokedex-promise-v2": "3.3.0",
-    "vercel": "21.0.1",
+    "vercel": "21.3.3",
     "vercel-node-server": "2.2.1"
   },
   "lint-staged": {
