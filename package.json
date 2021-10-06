@@ -10,7 +10,6 @@
     "build": "yarn css && yarn css:min && yarn build:html",
     "serve": "yarn build && serve public",
     "start": "vercel dev",
-    "lint": "eslint . --ext .js --fix",
     "deploy": "vercel --prod",
     "prepare": "husky install"
   },
