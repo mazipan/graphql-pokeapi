@@ -1,0 +1,11 @@
+schema: null
+keyFields:
+  types: {}
+rules:
+  - types:
+      - Query
+    maxAge: 2592000
+    swr: 604800
+    description: Cache everything (default)
+name: graphql-pokeapi
+originUrl: 'https://graphql-pokeapi.vercel.app/api/graphql'
