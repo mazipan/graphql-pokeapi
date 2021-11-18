@@ -1,4 +1,4 @@
-schema: null
+schema: 'https://graphql-pokeapi.vercel.app/api/graphql'
 keyFields:
   types: {}
 rules:
