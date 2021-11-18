@@ -9,8 +9,7 @@ export default async (req, res) => {
     schemaVersion: 1,
     label: 'Handle Request',
     message: `${nFormatter(success.value, 2) || 0}`,
-    color: 'green',
+    color: 'brightgreen',
     cacheSeconds: 86400,
-    style: 'flat-square',
   });
 };

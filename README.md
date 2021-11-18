@@ -7,7 +7,7 @@
 	<img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome">
 	<img src="https://img.shields.io/website-up-down-brightgreen-red/https/graphql-pokeapi.vercel.app.svg" alt="Wesite Up">
 	<img src="https://github.com/mazipan/graphql-pokeapi/workflows/Build%20UI/badge.svg" alt="Actions">
-	<img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fgraphql-pokeapi.vercel.app%2Fapi%2Fshield" alt="Actions">
+	<img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fgraphql-pokeapi.vercel.app%2Fapi%2Fbadge" alt="Actions">
 </p>
 
 ![Playground Screenshot](public/screenshot.png)
