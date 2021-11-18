@@ -1,4 +1,4 @@
-import { getNaturesList } from '../libs/natures';
+import { getNaturesList } from '../requests/natures';
 
 export default async () => {
   return getNaturesList();

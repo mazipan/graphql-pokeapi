@@ -1,4 +1,4 @@
-import { getTypesList } from '../libs/types';
+import { getTypesList } from '../requests/types';
 
 export default async () => {
   return getTypesList();

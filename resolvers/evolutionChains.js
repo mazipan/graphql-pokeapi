@@ -1,4 +1,4 @@
-import { getEvolutionChainsList } from '../libs/evolutions';
+import { getEvolutionChainsList } from '../requests/evolutions';
 
 export default async () => {
   return getEvolutionChainsList();

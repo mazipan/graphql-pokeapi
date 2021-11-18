@@ -1,4 +1,4 @@
-import { getPokemonSpeciesList } from '../libs/species';
+import { getPokemonSpeciesList } from '../requests/species';
 
 export default async () => {
   return getPokemonSpeciesList();
