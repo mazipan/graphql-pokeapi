@@ -1,4 +1,4 @@
-import { getAbilitiesList } from '../libs/ability';
+import { getAbilitiesList } from '../requests/ability';
 
 export default async () => {
   return getAbilitiesList();

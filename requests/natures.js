@@ -1,8 +1,8 @@
-import { PokedexInstance, handleError, hitSuccessCounter, extractIdFromUrl } from './utils';
+import { PokedexInstance, handleError, hitSuccessCounter, extractIdFromUrl } from '../utils';
 
-export const getBerriesList = async () => {
+export const getNaturesList = async () => {
   try {
-    const response = await PokedexInstance.getBerriesList();
+    const response = await PokedexInstance.getNaturesList();
     hitSuccessCounter();
     if (response && response.results) {
       return {
@@ -19,18 +19,18 @@ export const getBerriesList = async () => {
     }
     return { ...response, status: true, message: '' };
   } catch (error) {
-    console.error('> Error api getBerriesList()', error);
+    console.error('> Error api getNaturesList()', error);
     return handleError(error);
   }
 };
 
-export const getBerryByName = async (berry = '') => {
+export const getNatureByName = async (nature = '') => {
   try {
-    const response = await PokedexInstance.getBerryByName(berry);
+    const response = await PokedexInstance.getNatureByName(nature);
     hitSuccessCounter();
-    return { response, params: { berry }, status: true, message: '' };
+    return { response, params: { nature }, status: true, message: '' };
   } catch (error) {
-    console.error(`> Error api getBerryByName(${berry})`, error);
+    console.error(`> Error api getNatureByName(${nature})`, error);
     return handleError(error);
   }
 };

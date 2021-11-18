@@ -1,4 +1,4 @@
-import { getLocationsList } from '../libs/locations';
+import { getLocationsList } from '../requests/locations';
 
 export default async () => {
   return getLocationsList();

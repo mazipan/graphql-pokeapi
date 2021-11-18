@@ -1,8 +1,8 @@
-import { PokedexInstance, handleError, hitSuccessCounter, extractIdFromUrl } from './utils';
+import { PokedexInstance, handleError, hitSuccessCounter, extractIdFromUrl } from '../utils';
 
-export const getTypesList = async () => {
+export const getPokemonSpeciesList = async () => {
   try {
-    const response = await PokedexInstance.getTypesList();
+    const response = await PokedexInstance.getPokemonSpeciesList();
     hitSuccessCounter();
     if (response && response.results) {
       return {
@@ -19,7 +19,7 @@ export const getTypesList = async () => {
     }
     return { ...response, status: true, message: '' };
   } catch (error) {
-    console.error('> Error api getTypesList()', error);
+    console.error('> Error api getPokemonSpeciesList()', error);
     return handleError(error);
   }
 };

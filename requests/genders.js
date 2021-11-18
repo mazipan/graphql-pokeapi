@@ -1,8 +1,8 @@
-import { PokedexInstance, handleError, hitSuccessCounter, extractIdFromUrl } from './utils';
+import { PokedexInstance, handleError, hitSuccessCounter, extractIdFromUrl } from '../utils';
 
-export const getRegionsList = async () => {
+export const getGendersList = async () => {
   try {
-    const response = await PokedexInstance.getRegionsList();
+    const response = await PokedexInstance.getGendersList();
     hitSuccessCounter();
     if (response && response.results) {
       return {
@@ -19,18 +19,18 @@ export const getRegionsList = async () => {
     }
     return { ...response, status: true, message: '' };
   } catch (error) {
-    console.error('> Error api getRegionsList()', error);
+    console.error('> Error api getGendersList()', error);
     return handleError(error);
   }
 };
 
-export const getRegionByName = async (region = '') => {
+export const getGenderByName = async (gender = '') => {
   try {
-    const response = await PokedexInstance.getRegionByName(region);
+    const response = await PokedexInstance.getGenderByName(gender);
     hitSuccessCounter();
-    return { response, params: { region }, status: true, message: '' };
+    return { response, params: { gender }, status: true, message: '' };
   } catch (error) {
-    console.error(`> Error api getRegionByName(${region})`, error);
+    console.error(`> Error api getGenderByName(${gender})`, error);
     return handleError(error);
   }
 };

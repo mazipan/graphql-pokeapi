@@ -1,4 +1,4 @@
-import { getEvolutionTriggersList } from '../libs/evolutions';
+import { getEvolutionTriggersList } from '../requests/evolutions';
 
 export default async () => {
   return getEvolutionTriggersList();

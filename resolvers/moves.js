@@ -1,4 +1,4 @@
-import { getMovesList } from '../libs/moves';
+import { getMovesList } from '../requests/moves';
 
 export default async () => {
   return getMovesList();

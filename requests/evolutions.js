@@ -1,4 +1,4 @@
-import { PokedexInstance, handleError, hitSuccessCounter, extractIdFromUrl } from './utils';
+import { PokedexInstance, handleError, hitSuccessCounter, extractIdFromUrl } from '../utils';
 
 const EVO_CHAIN = 'https://pokeapi.co/api/v2/evolution-chain/';
 

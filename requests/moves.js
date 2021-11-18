@@ -1,8 +1,8 @@
-import { PokedexInstance, handleError, hitSuccessCounter, extractIdFromUrl } from './utils';
+import { PokedexInstance, handleError, hitSuccessCounter, extractIdFromUrl } from '../utils';
 
-export const getGendersList = async () => {
+export const getMovesList = async () => {
   try {
-    const response = await PokedexInstance.getGendersList();
+    const response = await PokedexInstance.getMovesList();
     hitSuccessCounter();
     if (response && response.results) {
       return {
@@ -19,18 +19,18 @@ export const getGendersList = async () => {
     }
     return { ...response, status: true, message: '' };
   } catch (error) {
-    console.error('> Error api getGendersList()', error);
+    console.error('> Error api getMovesList()', error);
     return handleError(error);
   }
 };
 
-export const getGenderByName = async (gender = '') => {
+export const getMoveByName = async (move = '') => {
   try {
-    const response = await PokedexInstance.getGenderByName(gender);
+    const response = await PokedexInstance.getMoveByName(move);
     hitSuccessCounter();
-    return { response, params: { gender }, status: true, message: '' };
+    return { response, params: { move }, status: true, message: '' };
   } catch (error) {
-    console.error(`> Error api getGenderByName(${gender})`, error);
+    console.error(`> Error api getMoveByName(${move})`, error);
     return handleError(error);
   }
 };

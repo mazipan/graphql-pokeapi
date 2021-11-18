@@ -1,4 +1,4 @@
-import { PokedexInstance, getOffset, handleError, hitSuccessCounter } from './utils';
+import { PokedexInstance, getOffset, handleError, hitSuccessCounter } from '../utils';
 
 const BASE_URL_POKEMON = 'https://pokeapi.co/api/v2/pokemon/';
 const BASE_SPRITE = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';

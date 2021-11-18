@@ -1,4 +1,4 @@
-import { getGrowthRatesList } from '../libs/growthRate';
+import { getGrowthRatesList } from '../requests/growthRate';
 
 export default async () => {
   return getGrowthRatesList();
