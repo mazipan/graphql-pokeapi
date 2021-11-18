@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "css": "tailwindcss build public/styles.css -o public/output.css",
+    "css": "tailwindcss build -i public/styles.css -o public/output.css",
     "css:min": "cleancss -o public/output.min.css public/output.css",
     "build:html": "ejs public/index.ejs -f public/data.json -o public/index.html",
     "build": "yarn css && yarn css:min && yarn build:html",
@@ -14,26 +14,26 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "@vercel/node": "1.8.5",
-    "clean-css-cli": "4.3.0",
-    "ejs": "3.1.5",
+    "@vercel/node": "1.12.1",
+    "clean-css-cli": "5.4.2",
+    "ejs": "3.1.6",
     "eslint": "7.16.0",
     "eslint-config-prettier": "7.1.0",
-    "eslint-plugin-import": "2.22.1",
-    "eslint-plugin-prettier": "3.3.0",
-    "husky": "^7.0.2",
-    "lint-staged": "10.5.3",
-    "prettier": "2.2.1",
-    "serve": "11.3.2",
-    "tailwindcss": "1.9.6"
+    "eslint-plugin-import": "2.25.3",
+    "eslint-plugin-prettier": "4.0.0",
+    "husky": "^7.0.4",
+    "lint-staged": "12.0.2",
+    "prettier": "2.4.1",
+    "serve": "13.0.2",
+    "tailwindcss": "2.2.19"
   },
   "dependencies": {
     "@saeris/apollo-server-vercel": "0.4.0",
     "graphql": "15.5.1",
     "graphql-type-json": "0.3.2",
-    "node-fetch": "2.6.1",
-    "pokedex-promise-v2": "3.3.0",
-    "vercel": "21.3.3",
+    "node-fetch": "^2.6.6",
+    "pokedex-promise-v2": "3.3.2",
+    "vercel": "23.1.2",
     "vercel-node-server": "2.2.1"
   },
   "lint-staged": {
