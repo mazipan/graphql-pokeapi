@@ -32,6 +32,11 @@ jobs:
 
       - name: Install dependencies and test build
         run: yarn
-        
+
       - name: Run build
         run: yarn build
+
+      - name: Push schema
+        run: npx graphcdn push
+        env:
+          GRAPHCDN_TOKEN: ${{ secrets.GRAPHCDN_TOKEN }}
