@@ -7,7 +7,7 @@ export default async (req, res) => {
   res.statusCode = 200;
   res.json({
     schemaVersion: 1,
-    label: 'Handle Request',
+    label: 'Total Request',
     message: `${nFormatter(success.value, 2) || 0}`,
     color: 'brightgreen',
     cacheSeconds: 86400,
