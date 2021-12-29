@@ -10,6 +10,7 @@
 
 - [Catch 'Em All App](https://pokemon.ptdede.me/): NextJS, Apollo GraphQL, Typescript, IDB.
 - [Képomon](https://kepomon.jadi.dev): NextJS, Apollo GraphQL, Emotion.
+- [PkDx](https://pkdx.wisesa.dev): Apollo GraphQL, Create react app, Emotion, Statically.io, Typescript.
 - [Pokemon Web App](https://pokemon-web-app.web.app/): ReactJS, Apollo GraphQL, IDB.
 - [Pokemon Search](https://github.com/gabriel-brito/pokesearch): NextJs, GraphQL Request, TypeScript.
 - [Pokepedia](https://pokepedia-ferd.web.app): React, Apollo GraphQL, Material-UI
