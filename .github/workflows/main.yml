@@ -14,7 +14,8 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Check token
-        run: echo "GraphCDN Token: $GRAPHCDN_TOKEN"
+        shell: bash
+        run: 'echo "GraphCDN Token: $GRAPHCDN_TOKEN"'
         env:
           GRAPHCDN_TOKEN: ${{ secrets.GRAPHCDN_TOKEN }}
 
