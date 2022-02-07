@@ -13,6 +13,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Check token
+        shell: bash
+        run: 'echo "GraphCDN Token: $GRAPHCDN_TOKEN"'
+        env:
+          GRAPHCDN_TOKEN: ${{ secrets.GRAPHCDN_TOKEN }}
+
       - name: Setup node 12
         uses: actions/setup-node@v1
         with:
@@ -37,6 +43,7 @@ jobs:
         run: yarn build
 
       - name: Push schema
+        if: github.ref == 'refs/heads/master'
         run: npx graphcdn push
         env:
           GRAPHCDN_TOKEN: ${{ secrets.GRAPHCDN_TOKEN }}
