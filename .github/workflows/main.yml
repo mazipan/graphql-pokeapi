@@ -13,6 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Check token
+        run: echo "GraphCDN Token: ${{ secrets.GRAPHCDN_TOKEN }}"
+
       - name: Setup node 12
         uses: actions/setup-node@v1
         with:
