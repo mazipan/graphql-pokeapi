@@ -17,3 +17,4 @@
 - [PokeTop](https://poke-top.netlify.app/): ReactJs, Apollo GraphQL, Chakra UI
 - [PokeGame](https://pokegame-by-andara.web.app/): ReactJS, Apollo GraphQL, Emotion
 - [Pokecatch](https://pokedex-power.vercel.app/): ReactJS, Apollo GraphQL, Tailwind, TypeScript
+- [Pokemon](https://pokemon-77773.web.app/): React JS, Apollo Client, GrapjQL, Styled Component/Emotion, Javascript, React Hooks, React Context, SPA.
