@@ -8,7 +8,7 @@ export default async (req, res) => {
   res.json({
     schemaVersion: 1,
     label: 'Total Request',
-    message: `${nFormatter(success.value, 2) || 0}`,
+    message: `${nFormatter(success?.value || 0, 2) || 0}`,
     color: 'brightgreen',
     cacheSeconds: 86400,
   });
