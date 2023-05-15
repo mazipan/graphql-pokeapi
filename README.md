@@ -5,7 +5,7 @@
 </p>
 <p align="center">
 	<img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome">
-	<img src="https://img.shields.io/website-up-down-brightgreen-red/https/graphql-pokeapi.vercel.app.svg" alt="Wesite Up">
+	<img src="https://img.shields.io/website?url=https%3A%2F%2Fgraphql-pokeapi.vercel.app&cacheSeconds=86400" alt="Wesite Up">
 	<img src="https://github.com/mazipan/graphql-pokeapi/workflows/Build%20UI/badge.svg" alt="Actions">
 </p>
 
