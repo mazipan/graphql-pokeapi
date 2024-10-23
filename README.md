@@ -254,6 +254,12 @@ query pokemon($name: String!) {
 - [Vercel](https://vercel.com/)
 - [JS Escaper Tool](https://www.freeformatter.com/javascript-escape.html#ad-output)
 
+## Contributors
+
+Thanks goes to these wonderful people!
+
+![Contributors](https://contrib.rocks/image?repo=mazipan/graphql-pokeapi)
+
 ---
 
 Copyright © By Irfan Maulana
