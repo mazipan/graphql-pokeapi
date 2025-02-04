@@ -15,6 +15,10 @@
 
 [https://graphql-pokeapi.vercel.app](https://graphql-pokeapi.vercel.app)
 
+## Deploy on Vercel
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmazipan%2Fgraphql-pokeapi)
+
 ## Endpoint
 
 - GraphCDN (with caching): https://graphql-pokeapi.graphcdn.app
