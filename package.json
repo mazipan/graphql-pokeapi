@@ -42,7 +42,7 @@
     "*.{js,ts,css,md}": "prettier --write"
   },
   "engines": {
-    "node": ">= 12.x"
+    "node": ">= 16.x"
   },
   "repository": {
     "type": "git",

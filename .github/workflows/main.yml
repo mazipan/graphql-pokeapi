@@ -10,26 +10,25 @@ on:
 jobs:
   install_and_build:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-      - name: Check token
-        shell: bash
-        run: 'echo "GraphCDN Token: $GRAPHCDN_TOKEN"'
-        env:
-          GRAPHCDN_TOKEN: ${{ secrets.GRAPHCDN_TOKEN }}
-
-      - name: Setup node 12
-        uses: actions/setup-node@v1
+      - name: Setup node 20
+        uses: actions/setup-node@v4
         with:
-          node-version: 12.x
+          node-version: 20
 
       - name: Get yarn cache
         id: yarn-cache
         run: echo "::set-output name=dir::$(yarn cache dir)"
 
       - name: Cache Node.js modules
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           path: ${{ steps.yarn-cache.outputs.dir }}
           key: ${{ runner.OS }}-yarn-${{ hashFiles('**/yarn.lock') }}
@@ -42,8 +41,8 @@ jobs:
       - name: Run build
         run: yarn build
 
-#       - name: Push schema
-#         if: github.ref == 'refs/heads/master'
-#         run: npx graphcdn push
-#         env:
-#           GRAPHCDN_TOKEN: ${{ secrets.GRAPHCDN_TOKEN }}
+      - name: Push to Stellate
+        if: github.ref == 'refs/heads/master'
+        run: npx stellate push
+        env:
+          STELLATE_TOKEN: ${{ secrets.STELLATE_TOKEN }}
