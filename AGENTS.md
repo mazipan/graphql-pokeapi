@@ -46,7 +46,15 @@ Date: 2026-11-04. PR #110 upgraded all packages. The local build and lint passed
 
 Cause: `pokedex-promise-v2` 4 is ESM-only. Every function imports `utils`, and `utils` imports this package. PR #112 reverted it.
 
-The exact failure is not confirmed. A local `require()` of version 4 works on Node 22, 24 and 26. The PR #113 preview, with `engines.node` set to `26.x`, still returned 500. Read the Vercel runtime log before you try version 4 again.
+Confirmed log from the PR #113 preview, with `engines.node` set to `26.x`:
+
+```
+Error [ERR_REQUIRE_ESM]: require() of ES Module /var/task/node_modules/pokedex-promise-v2/dist/src/index.js from /var/task/utils/index.js not supported.
+```
+
+The Vercel runtime wrapper (`/opt/rust/nodejs.js`) does not allow `require()` of ESM. A local `require()` works on Node 22, 24 and 26. Do not use a local test to decide if an ESM-only package is safe.
+
+To use an ESM-only package, migrate the project to ESM first. This means `"type": "module"` in `package.json` and `.js` extensions on every relative import. Test it on a Vercel preview.
 
 Why the checks did not catch it:
 
@@ -62,7 +70,7 @@ Side effects of the same upgrade:
 ## Checklist for dependency changes
 
 1. Run `npm run build` and `npx eslint .`.
-2. Check if the new version of each package is ESM-only. Run `npm view <package> type`. If the value is `module`, do not use it in `api/`, `requests/` or `utils/`.
+2. Check if the new version of each package is ESM-only. Run `npm view <package> type`. If the value is `module`, do not use it in `api/`, `requests/` or `utils/` until the project is ESM.
 3. Open a PR. Wait for the Vercel preview deploy.
 4. Call the preview. `/api` and `/api/graphql` must return 200. Send a POST with `content-type: application/json` and the query `{ pokemon(name: "ditto") { id name } }`.
 5. Read the function logs for import errors.
