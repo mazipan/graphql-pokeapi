@@ -22,6 +22,16 @@ updates:
     commit-message:
       prefix: 'chore'
       include: 'scope'
+    ignore:
+      # Held back, see AGENTS.md
+      - dependency-name: 'pokedex-promise-v2'
+        update-types: ['version-update:semver-major']
+      - dependency-name: 'graphql'
+        update-types: ['version-update:semver-major']
+      - dependency-name: 'eslint'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@eslint/js'
+        update-types: ['version-update:semver-major']
     groups:
       apollo:
         applies-to: version-updates

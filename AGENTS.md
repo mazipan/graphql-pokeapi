@@ -27,7 +27,7 @@ GraphQL wrapper for pokeapi.co. It runs as Vercel Functions. The static page in 
 - Use npm only. Do not add `yarn.lock`.
 - The Node version is in `engines.node` in `package.json`. CI and Vercel read it. Do not set it anywhere else.
 - Pin each GitHub Action to a commit SHA. Add the version in a comment.
-- Dependabot opens the update PRs. See `.github/dependabot.yml`.
+- Dependabot opens the update PRs. See `.github/dependabot.yml`. It ignores the major versions of the held-back packages.
 
 ## Packages that are held back
 
@@ -45,6 +45,8 @@ Do not upgrade these packages until the reason is gone.
 Date: 2026-11-04. PR #110 upgraded all packages. The local build and lint passed. Production returned `500 FUNCTION_INVOCATION_FAILED` on every function.
 
 Cause: `pokedex-promise-v2` 4 is ESM-only. Every function imports `utils`, and `utils` imports this package. PR #112 reverted it.
+
+The exact failure is not confirmed. A local `require()` of version 4 works on Node 22, 24 and 26. The PR #113 preview, with `engines.node` set to `26.x`, still returned 500. Read the Vercel runtime log before you try version 4 again.
 
 Why the checks did not catch it:
 
@@ -67,6 +69,6 @@ Side effects of the same upgrade:
 6. If you downgrade a package, run `npm ls` and `npm audit --omit=dev`. Look for old transitive versions.
 7. Do not merge before step 4 passes.
 
-## Known issues
+## Removed
 
-- `/api` and `/api/badge` call `api.countapi.xyz`. This service does not respond. `/api` times out with 504.
+- The `api.countapi.xyz` counters and `/api/badge` are removed (PR #122). The service did not respond and `/api` timed out.
