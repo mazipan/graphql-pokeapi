@@ -35,8 +35,7 @@
     "graphql-type-json": "0.3.2",
     "pokedex-promise-v2": "3.3.2",
     "stellate": "3.2.32",
-    "vercel": "65.11.0",
-    "vercel-node-server": "2.2.1"
+    "vercel": "65.11.0"
   },
   "lint-staged": {
     "*.{js,jsx}": "eslint --fix",
@@ -53,6 +52,15 @@
     "url": "https://github.com/mazipan/graphql-pokeapi/issues"
   },
   "overrides": {
-    "axios": "1.21.0"
+    "axios@<1.0.0": "1.21.0",
+    "ajv@>=8.0.0 <8.18.0": "8.18.0",
+    "compression@<1.8.2": "1.8.2",
+    "cookie@<0.7.0": "0.7.2",
+    "js-yaml@>=4.0.0 <4.3.2": "4.3.2",
+    "path-to-regexp@>=6.0.0 <6.3.0": "6.3.0",
+    "path-to-regexp@>=8.0.0 <8.4.2": "8.4.2",
+    "smol-toml@<1.9.0": "1.9.0",
+    "tar@>=7.0.0 <7.5.22": "7.5.22",
+    "zod@>=4.0.0 <4.6.7": "4.6.7"
   }
 }
