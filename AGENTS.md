@@ -25,6 +25,7 @@ GraphQL wrapper for pokeapi.co. It runs as Vercel Functions. The static page in 
 ## Rules
 
 - Use npm only. Do not add `yarn.lock`.
+- Pin every dependency to an exact version. Never use `^` or `~`. `.npmrc` sets `save-exact=true`, so `npm install <package>` saves an exact version. A range let `graphql` 16.14 in and broke the Stellate push.
 - The Node version is in `engines.node` in `package.json`. CI and Vercel read it. Do not set it anywhere else.
 - Pin each GitHub Action to a commit SHA. Add the version in a comment.
 - Dependabot opens the update PRs. See `.github/dependabot.yml`. It ignores the major versions of the held-back packages.
