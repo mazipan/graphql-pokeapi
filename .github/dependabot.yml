@@ -1,0 +1,92 @@
+# Dependabot configuration
+# https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+#
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      day: 'monday'
+      time: '12:00'
+      timezone: 'Asia/Jakarta'
+    open-pull-requests-limit: 10
+    cooldown:
+      default-days: 5
+      semver-major-days: 30
+      semver-minor-days: 14
+      semver-patch-days: 7
+    # Reviewers come from CODEOWNERS - GitHub removed the "reviewers" field in 2025
+    labels: ['dependencies', 'automated', 'javascript']
+    versioning-strategy: increase
+    commit-message:
+      prefix: 'chore'
+      include: 'scope'
+    groups:
+      apollo:
+        applies-to: version-updates
+        patterns:
+          - '@apollo/*'
+          - 'graphql'
+          - 'graphql-*'
+        update-types:
+          - 'minor'
+          - 'patch'
+      vercel:
+        applies-to: version-updates
+        patterns:
+          - 'vercel'
+          - '@vercel/*'
+        update-types:
+          - 'minor'
+          - 'patch'
+      tailwind:
+        applies-to: version-updates
+        patterns:
+          - 'tailwindcss'
+          - '@tailwindcss/*'
+        update-types:
+          - 'minor'
+          - 'patch'
+      lint:
+        applies-to: version-updates
+        patterns:
+          - 'eslint'
+          - 'eslint-*'
+          - '@eslint/*'
+          - 'globals'
+          - 'prettier'
+          - 'husky'
+          - 'lint-staged'
+        update-types:
+          - 'minor'
+          - 'patch'
+      miscellaneous:
+        applies-to: version-updates
+        patterns:
+          - '*'
+        update-types:
+          - 'minor'
+          - 'patch'
+
+  # GitHub Actions used by workflows
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      day: 'monday'
+      time: '10:00'
+      timezone: 'Asia/Jakarta'
+    cooldown:
+      default-days: 5
+    open-pull-requests-limit: 5
+    groups:
+      minor-and-patch:
+        applies-to: security-updates
+        update-types:
+          - 'patch'
+          - 'minor'
+    commit-message:
+      prefix: 'chore'
+      include: 'scope'
+    labels: ['dependencies', 'automated', 'github-actions']
