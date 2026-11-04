@@ -3,8 +3,8 @@ import { Config } from 'stellate';
 const config: Config = {
   config: {
     name: 'graphql-pokeapi',
-    originUrl: 'https://graphql-pokeapi.vercel.app/api/graphql',
-    schema: 'https://graphql-pokeapi.vercel.app/api/graphql',
+    originUrl: 'https://gql-poke.mazipan.space/api/graphql',
+    schema: 'https://gql-poke.mazipan.space/api/graphql',
     enablePlayground: true,
     rootTypeNames: {
       query: 'Query',
