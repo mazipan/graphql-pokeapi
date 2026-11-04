@@ -33,7 +33,7 @@
     "@apollo/server": "^5.5.1",
     "graphql": "^16.14.2",
     "graphql-type-json": "^0.3.2",
-    "node-fetch": "^2.7.0",
+    "node-fetch": "^3.3.2",
     "pokedex-promise-v2": "^3.3.2",
     "stellate": "^3.2.32",
     "vercel": "^65.11.0",
