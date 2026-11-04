@@ -2,16 +2,95 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=5, user-scalable=yes, width=device-width" />
-    
-    <link rel="icon" type="image/png" sizes="16x16" href="https://pokeapi.co/favicon-16x16.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="https://pokeapi.co/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="48x48" href="https://pokeapi.co/favicon-48x48.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      (function () {
+        var t = 'dark';
+        try {
+          var saved = localStorage.getItem('theme');
+          t = saved === 'light' || saved === 'dark' ? saved : window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        } catch (e) {}
+        document.documentElement.setAttribute('data-theme', t);
+      })();
+    </script>
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#090c15" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#e9eef8" media="(prefers-color-scheme: light)" />
 
-    <title>The Unofficial GraphQL for PokeAPI by mazipan</title>
-    <meta name="description" content="Do you find a simple alternative for PokeAPI's GraphQL? Try this!" />
+    <!-- Icons -->
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Search -->
+    <title>GraphQL PokeApi: a free GraphQL API for PokéAPI</title>
+    <meta
+      name="description"
+      content="A free, typed GraphQL API for PokéAPI with edge caching and no API key. Fetch only the fields you need in one request."
+    />
+    <meta name="keywords" content="graphql, pokeapi, pokemon api, graphql api, apollo, urql, graphql-request, free api" />
+    <meta name="author" content="Irfan Maulana" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://gql-poke.mazipan.space/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="GraphQL PokeApi" />
+    <meta property="og:title" content="GraphQL PokeApi: a free GraphQL API for PokéAPI" />
+    <meta property="og:description" content="Ask for a Pokémon, get only what you asked for. Free, typed and cached at the edge. No API key." />
+    <meta property="og:url" content="https://gql-poke.mazipan.space/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://gql-poke.mazipan.space/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GraphQL PokeApi: ask for a Pokémon, get only what you asked for." />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="GraphQL PokeApi: a free GraphQL API for PokéAPI" />
+    <meta name="twitter:description" content="Ask for a Pokémon, get only what you asked for. Free, typed and cached at the edge. No API key." />
+    <meta name="twitter:image" content="https://gql-poke.mazipan.space/og-image.png" />
+    <meta name="twitter:image:alt" content="GraphQL PokeApi: ask for a Pokémon, get only what you asked for." />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://gql-poke.mazipan.space/#website",
+            "url": "https://gql-poke.mazipan.space/",
+            "name": "GraphQL PokeApi",
+            "description": "A free, typed GraphQL API for PokéAPI with edge caching and no API key.",
+            "inLanguage": "en"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://gql-poke.mazipan.space/#api",
+            "name": "GraphQL PokeApi",
+            "url": "https://gql-poke.mazipan.space/",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Any",
+            "description": "An unofficial GraphQL API for PokéAPI. Fetch only the fields you need in one request.",
+            "license": "https://opensource.org/licenses/MIT",
+            "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+            "author": { "@type": "Person", "name": "Irfan Maulana", "url": "https://mazipan.space/" },
+            "sameAs": ["https://github.com/mazipan/graphql-pokeapi"]
+          }
+        ]
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=JetBrains+Mono:wght@400;500;700&family=Jersey+10&display=swap"
+    />
     <link rel="stylesheet" href="/output.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/themes/prism-okaidia.min.css" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-D0213WZCL8"></script>
@@ -21,217 +100,871 @@
         dataLayer.push(arguments);
       }
       gtag('js', new Date());
-
       gtag('config', 'G-D0213WZCL8');
     </script>
-    <!--
-    <script data-ad-client="ca-pub-5442972248172818" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    -->
   </head>
 
   <body>
-    <main class="min-h-screen flex-1 w-full mx-auto">
-      <div class="relative py-32 px-2 flex flex-col justify-center items-center bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
-        <img alt="PokéAPI" src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" />
-        <h1 class="text-3xl md:text-4xl font-bold text-center text-white leading-tight">The Unofficial GraphQL for PokeAPI</h1>
-        <div class="flex mt-6 justify-start md:justify-center xl:justify-start">
-          <a
-            class="rounded-lg px-4 md:px-5 xl:px-4 py-3 md:py-4 xl:py-3 md:text-lg xl:text-base bg-purple-100 text-purple-700 shadow-md"
-            href="https://graphql-pokeapi.graphcdn.app/"
-            >Playground</a
-          >
-
-          <a
-            target="_blank"
-            rel="noopenner noreferrer"
-            href="https://www.mazipan.space/support"
-            class="ml-2 rounded-lg px-4 md:px-5 xl:px-4 py-3 md:py-4 xl:py-3 md:text-lg xl:text-base bg-red-100 text-red-700 shadow-md"
-            >Support</a
-          >
-
-          <a
-            target="_blank"
-            rel="noopenner noreferrer"
-            href="https://github.com/mazipan/graphql-pokeapi"
-            class="ml-2 rounded-lg px-4 md:px-5 xl:px-4 py-3 md:py-4 xl:py-3 md:text-lg xl:text-base bg-gray-100 text-gray-700 shadow-md">
-              GitHub 
-           </a>
-
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true" focusable="false">
+      <defs>
+        <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2" /><path d="M5 15V6a2 2 0 0 1 2-2h9" /></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" /></symbol>
+        <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" /></symbol>
+        <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z" /></symbol>
+        <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.7l1-5.9L3.5 9.7l5.9-.8z" /></symbol>
+        <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" /><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6L17 7M7 17l-1.4 1.4" /></symbol>
+        <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" /></symbol>
+        <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" /></symbol>
+        <symbol id="i-x" viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11" /></symbol>
+        <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5" /></symbol>
+        <symbol id="i-github" viewBox="0 0 24 24"><path stroke="none" fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.7 5.4-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z" /></symbol>
+      </defs>
+    </svg>
+    <p class="sr-only" role="status" id="copy-status"></p>
+    <a
+      href="#top"
+      class="skiplink sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded focus:bg-lens focus:px-3 focus:py-2 focus:font-semibold focus:text-[#04131a]"
+      >Skip to content</a
+    >
+    <header class="border-b hairline">
+      <nav class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between text-[0.95rem]">
+        <a href="#top" class="flex items-center gap-2.5 font-bold tracking-tight">
+          <img alt="" width="30" height="30" class="rounded-lg" src="/favicon.svg" />
+          GraphQL PokeApi
+        </a>
+        <div class="flex items-center gap-5 sm:gap-7 text-muted">
+          <a class="hidden sm:inline hover:text-text" href="#schema">Schema</a>
+          <a class="hidden sm:inline hover:text-text" href="#start">Get started</a>
+          <a class="hidden sm:inline hover:text-text" href="#reference">Queries</a>
+          <a class="hover:text-text" href="https://www.mazipan.space/support" target="_blank" rel="noopener noreferrer">Support<span class="sr-only"> (opens in a new tab)</span></a>
+          <a class="hover:text-text" href="https://github.com/mazipan/graphql-pokeapi" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in a new tab)</span></a>
+          <button type="button" id="theme-toggle" class="theme-key" aria-label="Switch to light theme">
+            <svg class="ico icon-moon" aria-hidden="true" focusable="false"><use href="#i-moon" /></svg>
+            <svg class="ico icon-sun" aria-hidden="true" focusable="false"><use href="#i-sun" /></svg>
+          </button>
         </div>
-        <div class="flex mt-2 justify-start md:justify-center xl:justify-start">
-          <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/mazipan/graphql-pokeapi?style=social" />
-        </div>
+      </nav>
+    </header>
 
-      </div>
+    <main id="top">
+      <!-- Hero -->
+      <section class="relative">
+        <div class="backdrop absolute inset-0" aria-hidden="true"></div>
+        <div class="relative max-w-6xl mx-auto px-5 pt-14 pb-12 lg:pt-20 grid grid-cols-[minmax(0,1fr)] lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-12 items-start">
+          <div class="lg:pt-6 min-w-0">
+            <h1 class="display text-[2.9rem] sm:text-[4.4rem]">
+              <span class="block">Ask for a Pokémon.</span>
+              <span class="block text-muted">Get only what you asked for.</span>
+            </h1>
+            <p class="mt-6 text-lg text-muted max-w-md">
+              A free GraphQL API for PokéAPI. One request, a typed schema, cached at the edge. No API key.
+            </p>
 
-      <svg
-        class="waves"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        viewBox="0 24 150 28"
-        preserveAspectRatio="none"
-        shape-rendering="auto"
-      >
-        <defs>
-          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-        </defs>
-        <g class="parallax">
-          <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
-          <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-          <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-          <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-        </g>
-      </svg>
-
-      <article class="w-full max-w-4xl mx-auto mt-8 mb-4 p-4 md:mt-32">
-        <h3 class="text-2xl md:text-3xl font-bold mb-4 text-gray-700">Make Request</h3>
-
-        <ul>
-          <li class="card">
-            <div class="card__header">
-              Using Fetch API
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a class="btn btn-solid" href="https://gql-poke.mazipan.space/api/graphql" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-play" /></svg>Open the playground<span class="sr-only"> (opens in a new tab)</span></a>
+              <a class="btn btn-line" href="#start">Copy a request</a>
             </div>
-            <div class="card__body">
-              <div class="card__content">
-                <details>
-                  <summary>Code</summary>
-                  <pre>
-                    <code class="language-javascript">
-const gqlQuery = `query pokemons($limit: Int, $offset: Int) {
-  pokemons(limit: $limit, offset: $offset) {
-    count
-    next
-    previous
-    status
-    message
-    results {
-      url
-      name
-      image
-    }
-  }
-}`;
 
-const gqlVariables = {
-  limit: 2,
-  offset: 1,
-};
+            <div class="mt-7 panel flex items-center justify-between gap-2 pl-3.5 pr-1.5 py-1.5 max-w-md">
+              <code class="mono text-[0.8rem] text-muted truncate min-w-0" id="endpoint">graphql-pokeapi.graphcdn.app</code>
+              <button class="btn btn-line !h-9 !text-sm shrink-0 !px-2.5 sm:!px-3.5" type="button" data-copy="https://graphql-pokeapi.graphcdn.app/"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-copy" /></svg><span data-l class="sr-only sm:not-sr-only">Copy URL</span></button>
+            </div>
 
-fetch('https://graphql-pokeapi.graphcdn.app/', {
-  credentials: 'omit',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({
-    query: gqlQuery,
-    variables: gqlVariables,
-  }),
-  method: 'POST',
-})
-  .then((res) => res.json())
-  .then((res) => console.log('Response from server', res));</code>
-                  </pre>
-                </details>
+            <!-- Pokémon stage: each one has its own motion -->
+            <div class="stage mt-10" aria-hidden="true" id="stage">
+              <div class="mover at-pika" data-depth="10">
+                <img class="mon hop" width="88" height="88" alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" />
+              </div>
+              <div class="mover at-eevee" data-depth="16">
+                <img class="mon bob" width="84" height="84" alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/133.png" />
+              </div>
+              <div class="mover at-gengar" data-depth="22">
+                <img class="mon wobble" width="92" height="92" alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/94.png" />
+              </div>
+              <div class="mover at-char" data-depth="14">
+                <img class="mon glide" width="104" height="104" alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png" />
+              </div>
+              <div class="mover at-mew" data-depth="26">
+                <img class="mon orbit" width="92" height="92" alt="" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png" />
               </div>
             </div>
-          </li>
-          <li class="card">
-            <div class="card__header">
-              Using Apollo Client
-            </div>
-            <div class="card__body">
-              <div class="card__content">
-                <details>
-                  <summary>Code</summary>
-                  <pre>
-                    <code class="language-javascript">
-import React from 'react';
-import { gql, useQuery } from '@apollo/client';
+          </div>
 
-const GET_POKEMONS = gql`
-  query pokemons($limit: Int, $offset: Int) {
-    pokemons(limit: $limit, offset: $offset) {
-      count
-      next
-      previous
-      status
-      message
-      results {
-        url
-        name
-        image
-      }
-    }
+          <!-- Query lab -->
+          <div class="panel overflow-hidden" id="lab" aria-label="Query lab">
+            <div class="lab-head px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+              <div class="mono text-sm text-muted">Pick a Pokémon</div>
+              <div class="flex flex-wrap gap-1" id="who" role="group" aria-label="Pokémon">
+                <button type="button" class="who" aria-pressed="true" data-name="pikachu">pikachu</button>
+                <button type="button" class="who" aria-pressed="false" data-name="charizard">charizard</button>
+                <button type="button" class="who" aria-pressed="false" data-name="mewtwo">mewtwo</button>
+                <button type="button" class="who" aria-pressed="false" data-name="gengar">gengar</button>
+                <button type="button" class="who" aria-pressed="false" data-name="eevee">eevee</button>
+              </div>
+            </div>
+
+            <div class="px-4 pt-4">
+              <div class="mono text-sm text-muted mb-2">Pick the fields you want</div>
+              <div class="flex flex-wrap gap-2 relative" id="fields">
+                <label class="field"><input type="checkbox" value="id" checked /><span class="box"></span>id</label>
+                <label class="field"><input type="checkbox" value="name" checked /><span class="box"></span>name</label>
+                <label class="field"><input type="checkbox" value="height" checked /><span class="box"></span>height</label>
+                <label class="field"><input type="checkbox" value="weight" checked /><span class="box"></span>weight</label>
+                <label class="field"><input type="checkbox" value="base_experience" checked /><span class="box"></span>base_experience</label>
+                <label class="field"><input type="checkbox" value="types" checked /><span class="box"></span>types</label>
+                <label class="field"><input type="checkbox" value="stats" checked /><span class="box"></span>stats</label>
+                <label class="field"><input type="checkbox" value="sprites" checked /><span class="box"></span>sprites</label>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-[minmax(0,1fr)] md:grid-cols-[repeat(2,minmax(0,1fr))] gap-3 p-4">
+              <div>
+                <div class="flex items-center justify-between mono text-xs text-muted mb-1.5"><span>Query</span><span>POST</span></div>
+                <pre class="code !h-[17rem]" id="lab-query" tabindex="0" aria-label="GraphQL query"></pre>
+              </div>
+              <div>
+                <div class="flex items-center justify-between mono text-xs text-muted mb-1.5">
+                  <span>Response</span>
+                  <span id="lab-time">waiting</span>
+                </div>
+                <pre class="code !h-[17rem] relative" id="lab-response" tabindex="0" aria-label="API response"></pre>
+              </div>
+            </div>
+
+            <div class="px-4 pb-5">
+              <div class="flex items-baseline justify-between gap-4">
+                <div class="text-sm">
+                  <span class="font-bold" id="lab-ratio">-</span>
+                  <span class="text-muted">smaller than the REST response for the same Pokémon</span>
+                </div>
+                <img id="lab-sprite" alt="" width="40" height="40" class="hidden pixelated" style="image-rendering: pixelated" />
+              </div>
+              <div class="mt-3 space-y-2.5">
+                <div>
+                  <div class="flex justify-between mono text-xs text-muted mb-1"><span id="rest-label">REST /pokemon/pikachu</span><span id="rest-size">-</span></div>
+                  <div class="meter" aria-hidden="true"><i id="rest-bar" style="width: 100%; background: var(--color-ball)"></i></div>
+                </div>
+                <div>
+                  <div class="flex justify-between mono text-xs text-muted mb-1"><span>Your query</span><span id="gql-size">-</span></div>
+                  <div class="meter" aria-hidden="true"><i id="gql-bar" style="width: 0%; background: var(--color-lens)"></i></div>
+                </div>
+              </div>
+              <p class="sr-only" role="status" id="lab-status"></p>
+              <p class="mt-3 text-xs text-muted" id="lab-note">Live requests to the API. Sizes are measured in your browser.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ledger -->
+        <div class="relative max-w-6xl mx-auto px-5 pb-16">
+          <dl class="grid grid-cols-2 lg:grid-cols-4 border-y hairline">
+            <div class="py-5 pr-4 lg:border-r hairline">
+              <dt class="text-sm text-muted">Requests a month</dt>
+              <dd class="mono text-2xl font-medium mt-1">17K+</dd>
+            </div>
+            <div class="py-5 px-4 lg:border-r hairline">
+              <dt class="text-sm text-muted">Served from edge cache</dt>
+              <dd class="mono text-2xl font-medium mt-1">60%+</dd>
+            </div>
+            <div class="py-5 pr-4 lg:px-4 lg:border-r hairline border-t lg:border-t-0">
+              <dt class="text-sm text-muted">Requests that succeed</dt>
+              <dd class="mono text-2xl font-medium mt-1">97%</dd>
+            </div>
+            <div class="py-5 px-4 border-t lg:border-t-0 hairline">
+              <dt class="text-sm text-muted">Different queries in use</dt>
+              <dd class="mono text-2xl font-medium mt-1">470+</dd>
+            </div>
+          </dl>
+          <p class="mt-2 text-xs text-muted">Edge cache traffic only, last 30 days (2026-11-04). Source: Stellate metrics.</p>
+        </div>
+      </section>
+
+      <!-- Schema -->
+      <section id="schema" class="border-t hairline">
+        <div class="max-w-6xl mx-auto px-5 py-16 grid grid-cols-[minmax(0,1fr)] lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-12 items-center">
+        <div>
+          <h2 class="display text-[2.6rem] sm:text-[3.7rem]">One query can follow every relation.</h2>
+          <p class="mt-5 text-muted max-w-md">
+            A Pokémon links to its types, moves, abilities, stats and species. Ask for any of them in the same request. The schema is typed, so your editor can autocomplete it.
+          </p>
+          <p class="mt-4 text-sm text-muted">Hover a node to see the field that leads to it.</p>
+        </div>
+        <div class="panel p-2">
+          <svg id="map" viewBox="0 0 640 380" aria-hidden="true" focusable="false" class="w-full h-auto"></svg>
+          <ul class="sr-only" id="map-list" aria-label="Types that Pokemon links to"></ul>
+        </div>
+        </div>
+      </section>
+
+      <!-- Get started -->
+      <section id="start" class="border-t hairline">
+        <div class="max-w-6xl mx-auto px-5 py-16">
+        <h2 class="display text-[2.6rem] sm:text-[3.7rem]">Send your first request.</h2>
+        <p class="mt-4 text-muted max-w-xl">Pick your tool, copy the code and run it. There is nothing to sign up for.</p>
+
+        <div class="panel mt-8 grid grid-cols-[minmax(0,1fr)] lg:grid-cols-[16rem_minmax(0,1fr)]">
+          <div class="border-b lg:border-b-0 lg:border-r hairline p-3 lg:p-5">
+            <div role="tablist" aria-orientation="horizontal" aria-label="Request examples" id="example-tabs" class="vtabs flex flex-wrap gap-2 lg:flex-col lg:flex-nowrap lg:gap-2.5">
+              <div role="presentation" class="hidden lg:block px-1 pt-5 pb-0.5 text-sm text-muted first:pt-0">JavaScript</div>
+              <button role="tab" id="tab-fetch" aria-controls="panel-fetch" tabindex="0" class="tab" aria-selected="true" data-tab="fetch">Fetch</button>
+              <button role="tab" id="tab-apollo" aria-controls="panel-apollo" tabindex="-1" class="tab" aria-selected="false" data-tab="apollo">Apollo Client</button>
+              <button role="tab" id="tab-urql" aria-controls="panel-urql" tabindex="-1" class="tab" aria-selected="false" data-tab="urql">urql</button>
+              <button role="tab" id="tab-request" aria-controls="panel-request" tabindex="-1" class="tab" aria-selected="false" data-tab="request">graphql-request</button>
+              <button role="tab" id="tab-tanstack" aria-controls="panel-tanstack" tabindex="-1" class="tab" aria-selected="false" data-tab="tanstack">TanStack Query</button>
+              <div role="presentation" class="hidden lg:block px-1 pt-5 pb-0.5 text-sm text-muted first:pt-0">Python</div>
+              <button role="tab" id="tab-python" aria-controls="panel-python" tabindex="-1" class="tab" aria-selected="false" data-tab="python">Python</button>
+              <div role="presentation" class="hidden lg:block px-1 pt-5 pb-0.5 text-sm text-muted first:pt-0">Command line</div>
+              <button role="tab" id="tab-post" aria-controls="panel-post" tabindex="-1" class="tab" aria-selected="false" data-tab="post">curl POST</button>
+              <button role="tab" id="tab-get" aria-controls="panel-get" tabindex="-1" class="tab" aria-selected="false" data-tab="get">curl GET</button>
+            </div>
+          </div>
+          <div class="min-w-0">
+            <div class="flex items-center justify-between gap-2 p-2 border-b hairline">
+              <div class="mono text-sm text-muted px-2" id="example-title">Fetch</div>
+              <button class="btn btn-line !h-9 !text-sm shrink-0" type="button" id="copy-example"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-copy" /></svg><span data-l>Copy code</span></button>
+            </div>
+
+            <div class="p-3">
+            <div role="tabpanel" id="panel-fetch" aria-labelledby="tab-fetch" data-panel="fetch">
+              <pre class="code" data-lang="js" tabindex="0" aria-label="fetch example">const endpoint = 'https://graphql-pokeapi.graphcdn.app/';
+
+const query = `
+  query pokemon($name: String!) {
+    pokemon(name: $name) { id name }
   }
 `;
 
-const gqlVariables = {
-  limit: 2,
-  offset: 1,
-};
+const variables = { name: 'ditto' };
 
-export const Todos = () => {
-  const { loading, error, data } = useQuery(GET_POKEMONS, {
-    variables: gqlVariables,
+const res = await fetch(endpoint, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ query, variables }),
+});
+
+console.log(await res.json());</pre>
+            </div>
+            <div role="tabpanel" id="panel-apollo" aria-labelledby="tab-apollo" data-panel="apollo" hidden>
+              <pre class="code" data-lang="js" tabindex="0" aria-label="apollo example">import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
+
+const client = new ApolloClient({
+  uri: 'https://graphql-pokeapi.graphcdn.app/',
+  cache: new InMemoryCache(),
+});
+
+const query = gql`
+  query pokemon($name: String!) {
+    pokemon(name: $name) { id name }
+  }
+`;
+
+const variables = { name: 'ditto' };
+
+const { data } = await client.query({ query, variables });
+
+console.log(data);</pre>
+            </div>
+            <div role="tabpanel" id="panel-urql" aria-labelledby="tab-urql" data-panel="urql" hidden>
+              <pre class="code" data-lang="js" tabindex="0" aria-label="urql example">import { Client, fetchExchange, gql } from '@urql/core';
+
+const client = new Client({
+  url: 'https://graphql-pokeapi.graphcdn.app/',
+  exchanges: [fetchExchange],
+});
+
+const query = gql`
+  query pokemon($name: String!) {
+    pokemon(name: $name) { id name }
+  }
+`;
+
+const variables = { name: 'ditto' };
+
+const { data } = await client.query(query, variables).toPromise();
+
+console.log(data);</pre>
+            </div>
+            <div role="tabpanel" id="panel-request" aria-labelledby="tab-request" data-panel="request" hidden>
+              <pre class="code" data-lang="js" tabindex="0" aria-label="request example">import { GraphQLClient, gql } from 'graphql-request';
+
+const client = new GraphQLClient('https://graphql-pokeapi.graphcdn.app/');
+
+const query = gql`
+  query pokemon($name: String!) {
+    pokemon(name: $name) { id name }
+  }
+`;
+
+const variables = { name: 'ditto' };
+
+const data = await client.request(query, variables);
+
+console.log(data);</pre>
+            </div>
+            <div role="tabpanel" id="panel-tanstack" aria-labelledby="tab-tanstack" data-panel="tanstack" hidden>
+              <pre class="code" data-lang="js" tabindex="0" aria-label="tanstack example">import { useQuery } from '@tanstack/react-query';
+import { GraphQLClient, gql } from 'graphql-request';
+
+const client = new GraphQLClient('https://graphql-pokeapi.graphcdn.app/');
+
+const query = gql`
+  query pokemon($name: String!) {
+    pokemon(name: $name) { id name }
+  }
+`;
+
+const getPokemon = (name) =&gt; client.request(query, { name });
+
+export function Pokemon({ name }) {
+  const { data, isPending, error } = useQuery({
+    queryKey: ['pokemon', name],
+    queryFn: () =&gt; getPokemon(name),
   });
 
-  if (loading) return 'Loading...';
-  if (error) return `Error! ${error.message}`;
+  if (isPending) return 'Loading...';
+  if (error) return error.message;
 
-  console.log('Response from server', data);
-  return 'Success!';
-};</code>
-                  </pre>
-                </details>
-              </div>
+  return data.pokemon.name;
+}</pre>
+              <p class="mt-3 text-sm text-muted">Needs a <code class="mono text-text">QueryClientProvider</code> at the root of your app.</p>
             </div>
-          </li>
-        </ul>
-      </article>
+            <div role="tabpanel" id="panel-python" aria-labelledby="tab-python" data-panel="python" hidden>
+              <pre class="code" data-lang="py" tabindex="0" aria-label="python example">import requests
 
-      <article class="w-full max-w-4xl mx-auto mb-4 p-4">
-        <h3 class="text-2xl md:text-3xl font-bold mb-4 text-gray-700">Available Queries</h3>
+endpoint = 'https://graphql-pokeapi.graphcdn.app/'
 
-        <ul>
+query = """
+query pokemon($name: String!) {
+  pokemon(name: $name) { id name }
+}
+"""
+
+variables = {'name': 'ditto'}
+
+res = requests.post(endpoint, json={'query': query, 'variables': variables})
+
+print(res.json())</pre>
+            </div>
+            <div role="tabpanel" id="panel-post" aria-labelledby="tab-post" data-panel="post" hidden>
+              <pre class="code" data-lang="sh" tabindex="0" aria-label="post example">ENDPOINT='https://graphql-pokeapi.graphcdn.app/'
+QUERY='query pokemon($name: String!) { pokemon(name: $name) { id name } }'
+VARIABLES='{"name":"ditto"}'
+
+curl -X POST "$ENDPOINT" \
+  -H 'Content-Type: application/json' \
+  -d "{\"query\":\"$QUERY\",\"variables\":$VARIABLES}"</pre>
+            </div>
+            <div role="tabpanel" id="panel-get" aria-labelledby="tab-get" data-panel="get" hidden>
+              <pre class="code" data-lang="sh" tabindex="0" aria-label="get example">ENDPOINT='https://graphql-pokeapi.graphcdn.app/'
+QUERY='query pokemon($name: String!) { pokemon(name: $name) { id name } }'
+VARIABLES='{"name":"ditto"}'
+
+curl -G "$ENDPOINT" \
+  -H 'apollo-require-preflight: true' \
+  --data-urlencode "query=$QUERY" \
+  --data-urlencode "variables=$VARIABLES"</pre>
+              <p class="mt-3 text-sm text-muted">
+                The server blocks a plain GET as CSRF protection. Add the <code class="mono text-text">apollo-require-preflight</code> header, or use POST.
+              </p>
+            </div>
+
+            <div class="mono text-xs text-muted mt-4 mb-1.5">Response</div>
+            <pre class="code" data-lang="json">{ "data": { "pokemon": { "id": 132, "name": "ditto" } } }</pre>
+          </div>
+          </div>
+        </div>
+        </div>
+      </section>
+
+      <!-- Reference -->
+      <section id="reference" class="border-t hairline">
+        <div class="max-w-6xl mx-auto px-5 py-16">
+        <div class="flex flex-wrap items-end justify-between gap-6">
+          <div>
+            <h2 class="display text-[2.6rem] sm:text-[3.7rem]">Every query.</h2>
+            <p class="mt-4 text-muted max-w-xl">Open a row to see a sample query, its variables and a real result.</p>
+          </div>
+          <div class="w-full sm:w-80">
+            <label class="sr-only" for="q-search">Search queries</label>
+            <div class="searchbar">
+              <span class="search-key" aria-hidden="true"><svg class="ico"><use href="#i-search" /></svg></span>
+              <input id="q-search" type="search" autocomplete="off" placeholder="Search, for example move" />
+              <button type="button" id="q-clear" class="search-key" aria-label="Clear search" hidden><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-x" /></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <ul id="q-list" class="mt-8 flex flex-col gap-3">
           <% if (data) { %> <% data.forEach(function(d){ %>
-          <li class="card">
-            <div class="card__header"><%= d.query %><% if (d.param) { %> (<%= d.param %>)<% } %>: <%= d.responseType %></div>
-            <div class="card__body">
-              <div class="card__title"><%= d.desc %></div>
-              <div class="card__content">
-                <details>
-                  <summary>Sample Query</summary>
-                  <pre><code class="language-graphql"><% if (d.code) { %><%= d.code.query %><% } %></code></pre>
-                </details>
-
-                <details>
-                  <summary>Sample Variables</summary>
-                  <pre><code class="language-javascript"><% if (d.code) { %><%= d.code.variable %><% } %></code></pre>
-                </details>
-
-                <details>
-                  <summary>Sample Result</summary>
-                  <pre><code class="language-javascript"><% if (d.code) { %><%= d.code.result %><% } %></code></pre>
-                </details>
+          <li class="q-item" data-q="<%= (d.query + ' ' + d.desc + ' ' + d.responseType).toLowerCase() %>">
+            <details>
+              <summary class="ref-row">
+                <span class="mono ref-name font-medium transition-colors"><%= d.query %></span>
+                <span class="text-muted text-[0.95rem]"><%= d.desc %></span>
+                <span class="mono text-xs text-muted"><% if (d.param) { %><%= d.param %> returns <% } %><%= d.responseType %></span>
+                <span class="chev" aria-hidden="true"><svg class="ico"><use href="#i-chevron" /></svg></span>
+              </summary>
+              <div class="q-body p-4 grid grid-cols-[minmax(0,1fr)] md:grid-cols-[repeat(2,minmax(0,1fr))] gap-3">
+                <% if (d.code) { %>
+                <div>
+                  <div class="mono text-xs text-muted mb-1.5">Query</div>
+                  <pre class="code" data-lang="gql"><%= d.code.query %></pre>
+                  <% if (d.code.variable) { %>
+                  <div class="mono text-xs text-muted mt-3 mb-1.5">Variables</div>
+                  <pre class="code" data-lang="json"><%= d.code.variable %></pre>
+                  <% } %>
+                </div>
+                <div>
+                  <div class="mono text-xs text-muted mb-1.5">Result</div>
+                  <pre class="code" style="max-height: 24rem" data-lang="json"><%= d.code.result %></pre>
+                </div>
+                <% } %>
               </div>
-            </div>
+            </details>
           </li>
           <% }); %> <% } %>
         </ul>
-      </article>
+        <p class="sr-only" role="status" id="q-count"></p>
+        <p id="q-empty" class="mt-6 text-muted" hidden>No query matches your search. Try a shorter word.</p>
+        </div>
+      </section>
+
+      <!-- Close -->
+      <section class="border-t hairline">
+        <div class="max-w-6xl mx-auto px-5 py-20">
+        <h2 class="display text-[2.6rem] sm:text-[3.7rem] max-w-2xl">Free and open source.</h2>
+        <p class="mt-4 text-muted max-w-xl">
+          Servers cost money. If this API saves you time, support the project, or star it on GitHub.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a class="btn btn-solid" href="https://gql-poke.mazipan.space/api/graphql" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-play" /></svg>Open the playground<span class="sr-only"> (opens in a new tab)</span></a>
+          <a class="btn btn-line" href="https://www.mazipan.space/support" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-heart" /></svg>Support the project<span class="sr-only"> (opens in a new tab)</span></a>
+          <a class="btn btn-line" href="https://github.com/mazipan/graphql-pokeapi" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-star" /></svg>Star on GitHub<span class="sr-only"> (opens in a new tab)</span></a>
+        </div>
+        </div>
+      </section>
     </main>
 
-    <footer class="bg-red-500">
-      <ul class="flex items-center justify-between max-w-4xl p-4 mx-auto text-sm text-white md:p-8">
-        <li>
-          Code by
-          <a href="https://mazipan.space/" target="_blank" rel="noopenner noreferrer" class="font-bold">Irfan Maulana</a>
-        </li>
-        <li>
-          <a href="https://github.com/mazipan/graphql-pokeapi" target="_blank" rel="noopenner noreferrer" class="font-bold">GitHub</a>
-        </li>
-      </ul>
+    <footer class="border-t hairline">
+      <div class="max-w-6xl mx-auto px-5 py-8 flex flex-col sm:flex-row gap-3 items-start sm:items-center justify-between text-sm text-muted">
+        <div>
+          Code by <a class="text-text font-semibold" href="https://mazipan.space/" target="_blank" rel="noopener noreferrer">Irfan Maulana<span class="sr-only"> (opens in a new tab)</span></a>. MIT license.
+        </div>
+        <div>Unofficial project. Not affiliated with Nintendo, The Pokémon Company or PokéAPI.</div>
+      </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/components/prism-core.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.22.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+    <script>
+      (function () {
+        'use strict';
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var ENDPOINT = 'https://graphql-pokeapi.graphcdn.app/';
+
+        /* ---------- tiny syntax highlighter ---------- */
+        var TOKEN = /("""[\s\S]*?""")|("(?:\\.|[^"\\])*"(\s*:)?)|('(?:\\.|[^'\\])*')|(`[^`]*`)|(\b(?:query|mutation|const|let|await|async|fetch|import|export|from|new|function|return|if|print|true|false|null|curl|True|False|None)\b)|(\b\d+(?:\.\d+)?\b)/g;
+        function esc(s) {
+          return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
+        function hl(src) {
+          return esc(src).replace(TOKEN, function (m, tq, dq, isKey, sq, bt, kw, num) {
+            if (tq) return '<span class="tk-str">' + m + '</span>';
+            if (dq) return isKey ? '<span class="tk-key">' + dq.slice(0, dq.length - isKey.length) + '</span>' + isKey : '<span class="tk-str">' + dq + '</span>';
+            if (sq || bt) return '<span class="tk-str">' + m + '</span>';
+            if (kw) return '<span class="tk-kw">' + m + '</span>';
+            if (num) return '<span class="tk-num">' + m + '</span>';
+            return m;
+          });
+        }
+        function paint(pre) {
+          if (pre.getAttribute('data-hl')) return;
+          pre.innerHTML = hl(pre.textContent);
+          pre.setAttribute('data-hl', '1');
+        }
+        document.querySelectorAll('[data-panel] pre[data-lang], section#start pre[data-lang]').forEach(paint);
+
+        /* ---------- copy ---------- */
+        function copy(text, el) {
+          var label = el.querySelector('[data-l]') || el;
+          var use = el.querySelector('use');
+          var old = label.textContent;
+          var done = function () {
+            label.textContent = 'Copied';
+            if (use) use.setAttribute('href', '#i-check');
+            setTimeout(function () {
+              label.textContent = old;
+              if (use) use.setAttribute('href', '#i-copy');
+            }, 1400);
+          };
+          if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, function () {});
+        }
+        document.querySelectorAll('[data-copy]').forEach(function (b) {
+          b.addEventListener('click', function () { copy(b.getAttribute('data-copy'), b); });
+        });
+
+
+        /* ---------- small copy key on code blocks ---------- */
+        var copyStatus = document.getElementById('copy-status');
+        function labelFor(pre) {
+          var own = pre.getAttribute('aria-label');
+          if (own) return own.toLowerCase();
+          var prev = pre.previousElementSibling;
+          var text = prev && prev.textContent ? prev.textContent.trim().split(/\s+/)[0] : '';
+          return (text || 'code').toLowerCase();
+        }
+        document.querySelectorAll('pre.code').forEach(function (pre) {
+          if (pre.parentElement.hasAttribute('data-panel')) return;
+          var what = labelFor(pre);
+          var wrap = document.createElement('div');
+          wrap.className = 'codewrap';
+          pre.parentNode.insertBefore(wrap, pre);
+          wrap.appendChild(pre);
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'codecopy';
+          btn.setAttribute('aria-label', 'Copy ' + what);
+          btn.innerHTML = '<svg class="ico" aria-hidden="true" focusable="false"><use href="#i-copy" /></svg>';
+          btn.addEventListener('click', function () {
+            var use = btn.querySelector('use');
+            var done = function () {
+              use.setAttribute('href', '#i-check');
+              btn.classList.add('done');
+              copyStatus.textContent = 'Copied ' + what;
+              setTimeout(function () {
+                use.setAttribute('href', '#i-copy');
+                btn.classList.remove('done');
+              }, 1400);
+            };
+            if (navigator.clipboard) navigator.clipboard.writeText(pre.textContent).then(done, function () {});
+          });
+          wrap.appendChild(btn);
+        });
+
+        /* ---------- theme switch ---------- */
+        var root = document.documentElement;
+        var toggle = document.getElementById('theme-toggle');
+        function applyTheme(t, save) {
+          root.setAttribute('data-theme', t);
+          toggle.setAttribute('aria-label', t === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+          document.querySelectorAll('meta[name="theme-color"]').forEach(function (m) {
+            m.removeAttribute('media');
+            m.setAttribute('content', t === 'dark' ? '#090c15' : '#e9eef8');
+          });
+          if (save) { try { localStorage.setItem('theme', t); } catch (e) {} }
+        }
+        applyTheme(root.getAttribute('data-theme') || 'dark', false);
+        toggle.addEventListener('click', function () {
+          var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          applyTheme(next, true);
+          copyStatus.textContent = (next === 'dark' ? 'Dark' : 'Light') + ' theme on';
+        });
+        var systemScheme = window.matchMedia('(prefers-color-scheme: light)');
+        var onSystem = function (e) {
+          var saved = null;
+          try { saved = localStorage.getItem('theme'); } catch (err) {}
+          if (!saved) applyTheme(e.matches ? 'light' : 'dark', false);
+        };
+        if (systemScheme.addEventListener) systemScheme.addEventListener('change', onSystem);
+
+        /* ---------- tabs ---------- */
+        var tabs = document.querySelectorAll('[data-tab]');
+        var panels = document.querySelectorAll('[data-panel]');
+        var current = 'fetch';
+        var title = document.getElementById('example-title');
+        function select(tab, focus) {
+          current = tab.getAttribute('data-tab');
+          tabs.forEach(function (t) {
+            t.setAttribute('aria-selected', String(t === tab));
+            t.tabIndex = t === tab ? 0 : -1;
+          });
+          panels.forEach(function (p) { p.hidden = p.getAttribute('data-panel') !== current; });
+          title.textContent = tab.textContent;
+          if (focus) tab.focus();
+        }
+        tabs.forEach(function (tab, i) {
+          tab.addEventListener('click', function () { select(tab, false); });
+          tab.addEventListener('keydown', function (e) {
+            var n = tabs.length, to = -1;
+            if (e.key === 'ArrowDown' || e.key === 'ArrowRight') to = (i + 1) % n;
+            else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') to = (i - 1 + n) % n;
+            else if (e.key === 'Home') to = 0;
+            else if (e.key === 'End') to = n - 1;
+            if (to > -1) { e.preventDefault(); select(tabs[to], true); }
+          });
+        });
+        var tablist = document.getElementById('example-tabs');
+        var wide = window.matchMedia('(min-width: 1024px)');
+        function orient() { tablist.setAttribute('aria-orientation', wide.matches ? 'vertical' : 'horizontal'); }
+        orient();
+        if (wide.addEventListener) wide.addEventListener('change', orient);
+        document.getElementById('copy-example').addEventListener('click', function (e) {
+          copy(document.querySelector('[data-panel="' + current + '"] pre').textContent, e.currentTarget);
+        });
+
+        /* ---------- reference index ---------- */
+        document.querySelectorAll('#q-list details').forEach(function (d) {
+          d.addEventListener('toggle', function () {
+            if (d.open) d.querySelectorAll('pre[data-lang]').forEach(paint);
+          });
+        });
+        var input = document.getElementById('q-search');
+        var items = document.querySelectorAll('#q-list > li');
+        var empty = document.getElementById('q-empty');
+        var clearBtn = document.getElementById('q-clear');
+        clearBtn.addEventListener('click', function () {
+          input.value = '';
+          input.dispatchEvent(new Event('input', { bubbles: true }));
+          input.focus();
+        });
+        input.addEventListener('input', function () {
+          var q = input.value.trim().toLowerCase();
+          var shown = 0;
+          items.forEach(function (li) {
+            var hit = !q || li.getAttribute('data-q').indexOf(q) !== -1;
+            li.hidden = !hit;
+            if (hit) shown++;
+          });
+          empty.hidden = shown !== 0;
+          clearBtn.hidden = !input.value;
+          document.getElementById('q-count').textContent = shown + (shown === 1 ? ' query' : ' queries') + ' shown';
+        });
+
+        /* ---------- schema map ---------- */
+        var NODES = [
+          { type: 'Ability', field: 'abilities: [Ability]' },
+          { type: 'Move', field: 'moves: [Move]' },
+          { type: 'Type', field: 'types: [Type]' },
+          { type: 'Stat', field: 'stats: [Stat]' },
+          { type: 'Sprite', field: 'sprites: Sprite' },
+          { type: 'BaseName', field: 'species: BaseName' },
+          { type: 'HeldItem', field: 'held_items: [HeldItem]' },
+          { type: 'GameIndex', field: 'game_indices: [GameIndex]' },
+        ];
+        var map = document.getElementById('map');
+        var list = document.getElementById('map-list');
+        var NS = 'http://www.w3.org/2000/svg';
+        function el(name, attrs, parent) {
+          var n = document.createElementNS(NS, name);
+          Object.keys(attrs).forEach(function (k) { n.setAttribute(k, attrs[k]); });
+          if (parent) parent.appendChild(n);
+          return n;
+        }
+        var defs = el('defs', {}, map);
+        function grad(id, a, b, c) {
+          var g = el('radialGradient', { id: id, cx: '35%', cy: '28%', r: '78%' }, defs);
+          [[0, a], [0.55, b], [1, c]].forEach(function (st) { el('stop', { offset: st[0], style: 'stop-color: ' + st[1] }, g); });
+        }
+        grad('sg', 'var(--sg-a)', 'var(--sg-b)', 'var(--sg-c)');
+        grad('sg-on', 'var(--sgon-a)', 'var(--sgon-b)', 'var(--sgon-c)');
+        grad('sg-core', '#9aecff', '#2bb7e6', '#0c5f80');
+        var cx = 320, cy = 186, rx = 235, ry = 118;
+        var edges = [];
+        var nodeEls = [];
+        var note = el('text', { x: cx, y: 372, 'text-anchor': 'middle', class: 'mono', style: 'fill: var(--color-muted)', 'font-size': '12' }, map);
+        note.textContent = 'pokemon(name: String!): Pokemon';
+        NODES.forEach(function (n, i) {
+          var a = (Math.PI * 2 * i) / NODES.length - Math.PI / 2;
+          n.x = cx + Math.cos(a) * rx;
+          n.y = cy + Math.sin(a) * ry;
+          edges.push(el('line', { x1: cx, y1: cy, x2: n.x, y2: n.y, class: 'edge' }, map));
+        });
+        NODES.forEach(function (n, i) {
+          var g = el('g', { class: 'node', transform: 'translate(' + n.x + ' ' + n.y + ')' }, map);
+          el('circle', { r: 36 }, g);
+          el('ellipse', { cx: -9, cy: -19, rx: 17, ry: 8, fill: 'rgba(255,255,255,0.20)', transform: 'rotate(-22)' }, g);
+          var t = el('text', { 'text-anchor': 'middle', y: 4 }, g);
+          t.textContent = n.type;
+          nodeEls.push(g);
+          var li = document.createElement('li');
+          li.textContent = 'Pokemon links to ' + n.type + ' through ' + n.field;
+          list.appendChild(li);
+          function on() {
+            g.classList.add('on');
+            edges[i].classList.add('on');
+            note.textContent = n.field;
+          }
+          function off() {
+            g.classList.remove('on');
+            edges[i].classList.remove('on');
+            note.textContent = 'pokemon(name: String!): Pokemon';
+          }
+          g.addEventListener('mouseenter', on);
+          g.addEventListener('mouseleave', off);
+        });
+        var center = el('g', { transform: 'translate(' + cx + ' ' + cy + ')' }, map);
+        el('circle', { r: 44, fill: 'url(#sg-core)', stroke: '#38d0ff', 'stroke-width': 1.5, style: 'filter: drop-shadow(0 8px 8px rgba(0,0,0,.6))' }, center);
+        el('ellipse', { cx: -12, cy: -22, rx: 22, ry: 10, fill: 'rgba(255,255,255,0.30)', transform: 'rotate(-22)' }, center);
+        var ct = el('text', { 'text-anchor': 'middle', y: 5, fill: '#031018', 'font-family': 'JetBrains Mono, monospace', 'font-size': 13, 'font-weight': 700 }, center);
+        ct.textContent = 'Pokemon';
+
+        /* ---------- query lab ---------- */
+        var FIELD = {
+          id: 'id',
+          name: 'name',
+          height: 'height',
+          weight: 'weight',
+          base_experience: 'base_experience',
+          types: 'types { type { name } }',
+          stats: 'stats { base_stat stat { name } }',
+          sprites: 'sprites { front_default }',
+        };
+        var ORDER = ['id', 'name', 'height', 'weight', 'base_experience', 'types', 'stats', 'sprites'];
+        var REST = { pikachu: 309106, charizard: 373845, mewtwo: 438608, gengar: 364350, eevee: 249004 };
+        var restLive = {};
+        var who = 'pikachu';
+        var checks = document.querySelectorAll('#fields input');
+        var qEl = document.getElementById('lab-query');
+        var rEl = document.getElementById('lab-response');
+        var tEl = document.getElementById('lab-time');
+        var spriteEl = document.getElementById('lab-sprite');
+        var timer = null;
+        var token = 0;
+        var userTouched = false;
+
+        function selected() {
+          var s = [];
+          checks.forEach(function (c) { if (c.checked) s.push(c.value); });
+          return ORDER.filter(function (k) { return s.indexOf(k) !== -1; });
+        }
+        function buildQuery() {
+          var f = selected();
+          if (!f.length) return '{\n  pokemon(name: "' + who + '") {\n    # tick a field\n  }\n}';
+          return '{\n  pokemon(name: "' + who + '") {\n' + f.map(function (k) { return '    ' + FIELD[k]; }).join('\n') + '\n  }\n}';
+        }
+        function fmt(n) {
+          return n >= 1024 ? (n / 1024).toFixed(n >= 102400 ? 0 : 1) + ' KB' : n + ' B';
+        }
+        function bytes(s) {
+          return new Blob([s]).size;
+        }
+        function render() {
+          qEl.innerHTML = hl(buildQuery()).replace(/(# tick a field)/, '<span class="tk-dim">$1</span>');
+          document.getElementById('rest-label').textContent = 'REST /pokemon/' + who;
+          var rest = restLive[who] || REST[who];
+          document.getElementById('rest-size').textContent = fmt(rest);
+          document.getElementById('lab-note').textContent = restLive[who]
+            ? 'Live requests to both APIs. Sizes are measured in your browser.'
+            : 'Live request to this API. The REST size was measured on 2026-11-04.';
+        }
+        function meter(gqlBytes) {
+          var rest = restLive[who] || REST[who];
+          document.getElementById('gql-size').textContent = fmt(gqlBytes);
+          document.getElementById('gql-bar').style.width = Math.max((gqlBytes / rest) * 100, 0.8) + '%';
+          var ratio = Math.round(rest / gqlBytes);
+          document.getElementById('lab-ratio').textContent = ratio.toLocaleString('en-US') + 'x';
+        }
+        function run() {
+          var f = selected();
+          var my = ++token;
+          render();
+          if (!f.length) {
+            rEl.innerHTML = '<span class="tk-dim">Tick at least one field.</span>';
+            tEl.textContent = 'no request';
+            spriteEl.classList.add('hidden');
+            document.getElementById('gql-size').textContent = '-';
+            document.getElementById('gql-bar').style.width = '0%';
+            document.getElementById('lab-ratio').textContent = '-';
+            return;
+          }
+          tEl.textContent = 'running';
+          var t0 = performance.now();
+          fetch(ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ query: buildQuery() }),
+          })
+            .then(function (r) { return r.text(); })
+            .then(function (text) {
+              if (my !== token) return;
+              var ms = Math.round(performance.now() - t0);
+              var json;
+              try { json = JSON.parse(text); } catch (e) { throw new Error('bad json'); }
+              rEl.innerHTML = hl(JSON.stringify(json, null, 2));
+              tEl.textContent = ms + ' ms';
+              meter(bytes(text));
+              document.getElementById('lab-status').textContent = 'Response in ' + ms + ' milliseconds, ' + bytes(text) + ' bytes, ' + document.getElementById('lab-ratio').textContent + ' smaller than REST.';
+              var sp = json && json.data && json.data.pokemon && json.data.pokemon.sprites;
+              if (sp && sp.front_default) {
+                spriteEl.src = sp.front_default;
+                spriteEl.classList.remove('hidden');
+              } else {
+                spriteEl.classList.add('hidden');
+              }
+            })
+            .catch(function () {
+              if (my !== token) return;
+              rEl.innerHTML = '<span class="tk-kw">Could not reach the API.</span>\n<span class="tk-dim">Check your connection and change a field to retry.</span>';
+              tEl.textContent = 'failed';
+            });
+        }
+        function schedule() {
+          clearTimeout(timer);
+          timer = setTimeout(run, 220);
+        }
+        function liveRest(name) {
+          if (restLive[name]) return;
+          fetch('https://pokeapi.co/api/v2/pokemon/' + name)
+            .then(function (r) { return r.arrayBuffer(); })
+            .then(function (b) {
+              restLive[name] = b.byteLength;
+              if (name === who) { render(); schedule(); }
+            })
+            .catch(function () {});
+        }
+
+        checks.forEach(function (c) {
+          c.addEventListener('change', function () { userTouched = true; schedule(); });
+        });
+        document.querySelectorAll('#who .who').forEach(function (b) {
+          b.addEventListener('click', function () {
+            userTouched = true;
+            who = b.getAttribute('data-name');
+            document.querySelectorAll('#who .who').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+            liveRest(who);
+            schedule();
+          });
+        });
+
+        /* ---------- Pokémon parallax: each mover eases toward the pointer at its own depth ---------- */
+        var movers = Array.prototype.map.call(document.querySelectorAll('.mover'), function (m) {
+          return { el: m, d: +m.getAttribute('data-depth'), x: 0, y: 0 };
+        });
+        var tx = 0, ty = 0, raf = 0;
+        function loop() {
+          var busy = false;
+          movers.forEach(function (m) {
+            var gx = tx * m.d, gy = ty * m.d;
+            m.x += (gx - m.x) * 0.07;
+            m.y += (gy - m.y) * 0.07;
+            if (Math.abs(gx - m.x) > 0.05 || Math.abs(gy - m.y) > 0.05) busy = true;
+            m.el.style.transform = 'translate3d(' + m.x.toFixed(2) + 'px,' + m.y.toFixed(2) + 'px,0)';
+          });
+          raf = busy ? requestAnimationFrame(loop) : 0;
+        }
+        if (!reduce && movers.length && window.matchMedia('(pointer: fine)').matches) {
+          window.addEventListener('mousemove', function (e) {
+            tx = e.clientX / window.innerWidth - 0.5;
+            ty = e.clientY / window.innerHeight - 0.5;
+            if (!raf) raf = requestAnimationFrame(loop);
+          }, { passive: true });
+        }
+
+        render();
+        run();
+        liveRest(who);
+
+        /* One orchestrated moment: untick fields one by one to show the payload shrink */
+        if (!reduce) {
+          var drop = ['sprites', 'stats', 'base_experience', 'weight', 'height'];
+          var step = 0;
+          setTimeout(function tick() {
+            if (userTouched || step >= drop.length) return;
+            document.querySelector('#fields input[value="' + drop[step] + '"]').checked = false;
+            step++;
+            schedule();
+            setTimeout(tick, 650);
+          }, 1800);
+        }
+      })();
+    </script>
   </body>
 </html>

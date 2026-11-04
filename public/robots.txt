@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gql-poke.mazipan.space/sitemap.xml
