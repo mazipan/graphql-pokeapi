@@ -44,7 +44,7 @@
     "*.{js,ts,css,md}": "prettier --write"
   },
   "engines": {
-    "node": ">= 16.x"
+    "node": "26.x"
   },
   "repository": {
     "type": "git",
