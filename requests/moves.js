@@ -1,9 +1,8 @@
-import { PokedexInstance, handleError, hitSuccessCounter, extractIdFromUrl } from '../utils';
+import { PokedexInstance, handleError, extractIdFromUrl } from '../utils';
 
 export const getMovesList = async () => {
   try {
     const response = await PokedexInstance.getMovesList();
-    hitSuccessCounter();
     if (response && response.results) {
       return {
         ...response,
@@ -27,7 +26,6 @@ export const getMovesList = async () => {
 export const getMoveByName = async (move = '') => {
   try {
     const response = await PokedexInstance.getMoveByName(move);
-    hitSuccessCounter();
     return { response, params: { move }, status: true, message: '' };
   } catch (error) {
     console.error(`> Error api getMoveByName(${move})`, error);

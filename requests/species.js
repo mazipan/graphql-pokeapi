@@ -1,9 +1,8 @@
-import { PokedexInstance, handleError, hitSuccessCounter, extractIdFromUrl } from '../utils';
+import { PokedexInstance, handleError, extractIdFromUrl } from '../utils';
 
 export const getPokemonSpeciesList = async () => {
   try {
     const response = await PokedexInstance.getPokemonSpeciesList();
-    hitSuccessCounter();
     if (response && response.results) {
       return {
         ...response,
