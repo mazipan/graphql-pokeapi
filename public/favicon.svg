@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="graphql-pokeapi">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#26356b" />
+      <stop offset="1" stop-color="#0a1026" />
+    </linearGradient>
+    <linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.28" />
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+    <radialGradient id="node" cx="35%" cy="30%" r="75%">
+      <stop offset="0" stop-color="#d6f6ff" />
+      <stop offset="0.55" stop-color="#38d0ff" />
+      <stop offset="1" stop-color="#1383ad" />
+    </radialGradient>
+    <radialGradient id="core" cx="35%" cy="30%" r="75%">
+      <stop offset="0" stop-color="#ffb3ba" />
+      <stop offset="0.5" stop-color="#ff3b4a" />
+      <stop offset="1" stop-color="#b3122a" />
+    </radialGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#bg)" />
+  <rect x="1" y="1" width="62" height="62" rx="13" fill="none" stroke="#5f73c4" stroke-opacity="0.55" stroke-width="2" />
+  <path d="M32 11 50.2 21.5v21L32 53 13.8 42.5v-21z" fill="none" stroke="#38d0ff" stroke-width="3.2" stroke-linejoin="round" />
+  <g fill="url(#node)">
+    <circle cx="32" cy="11" r="5" />
+    <circle cx="50.2" cy="21.5" r="5" />
+    <circle cx="50.2" cy="42.5" r="5" />
+    <circle cx="32" cy="53" r="5" />
+    <circle cx="13.8" cy="42.5" r="5" />
+    <circle cx="13.8" cy="21.5" r="5" />
+  </g>
+  <circle cx="32" cy="32" r="8.5" fill="url(#core)" />
+  <circle cx="32" cy="32" r="8.5" fill="none" stroke="#fff" stroke-opacity="0.7" stroke-width="1.5" />
+  <path d="M2 14C2 6.3 8.3 2 16 2h32c7.7 0 14 4.3 14 12v6C48 26 16 26 2 20z" fill="url(#gloss)" />
+</svg>
