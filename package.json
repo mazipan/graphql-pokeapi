@@ -51,5 +51,8 @@
   },
   "bugs": {
     "url": "https://github.com/mazipan/graphql-pokeapi/issues"
+  },
+  "overrides": {
+    "axios": "^1.13.5"
   }
 }
