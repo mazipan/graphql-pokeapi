@@ -25,7 +25,7 @@ GraphQL wrapper for pokeapi.co. It runs as Vercel Functions. The static page in 
 ## Rules
 
 - Use npm only. Do not add `yarn.lock`.
-- The Node version is in `engines.node` in `package.json`. CI and Vercel read it. Do not set it anywhere else.
+- The Node version is in `engines.node` in `package.json`. CI and Vercel read it. Do not set it anywhere else. One exception: the Stellate push step in CI runs on Node 24, because the Stellate CLI declares `^24.22.1` and the push failed on Node 26.
 - Pin each GitHub Action to a commit SHA. Add the version in a comment.
 - Dependabot opens the update PRs. See `.github/dependabot.yml`. It ignores the major versions of the held-back packages.
 

@@ -30,6 +30,20 @@ jobs:
       - name: Run build
         run: npm run build
 
+      # The Stellate CLI declares Node ^24.22.1 and fails on Node 26 in CI
+      # ("Unexpected invariant triggered"), so this step runs on Node 24.
+      - name: Setup Node 24 for the Stellate CLI
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+
+      # Read-only check on pull requests. Skipped when secrets are not available.
+      - name: Check Stellate config (dry run)
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && github.actor != 'dependabot[bot]'
+        run: npx stellate push --dry
+        env:
+          STELLATE_TOKEN: ${{ secrets.STELLATE_TOKEN }}
+
       - name: Push to Stellate
         if: github.ref == 'refs/heads/master'
         run: npx stellate push
