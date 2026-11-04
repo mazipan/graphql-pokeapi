@@ -27,7 +27,7 @@ updates:
       - dependency-name: 'pokedex-promise-v2'
         update-types: ['version-update:semver-major']
       - dependency-name: 'graphql'
-        update-types: ['version-update:semver-major']
+        update-types: ['version-update:semver-major', 'version-update:semver-minor']
       - dependency-name: 'eslint'
         update-types: ['version-update:semver-major']
       - dependency-name: '@eslint/js'

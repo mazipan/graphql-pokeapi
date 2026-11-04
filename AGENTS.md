@@ -33,12 +33,11 @@ GraphQL wrapper for pokeapi.co. It runs as Vercel Functions. The static page in 
 
 Do not upgrade these packages until the reason is gone.
 
-| Package              | Held at | Reason                                                                                     |
-| -------------------- | ------- | ------------------------------------------------------------------------------------------ |
-| `pokedex-promise-v2` | 3.x     | Version 4 is ESM-only. Vercel loads the functions as CommonJS. All functions returned 500. |
-| `node-fetch`         | 2.x     | Version 3 is ESM-only. Same reason.                                                        |
-| `graphql`            | 16.x    | Apollo Server 5 requires `^16.11`.                                                         |
-| `eslint`             | 9.x     | `eslint-plugin-import` does not support version 10.                                        |
+| Package              | Held at | Reason                                                                                                                                                                                                                                                                                                                                      |
+| -------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `pokedex-promise-v2` | 3.x     | Version 4 is ESM-only. Vercel loads the functions as CommonJS. All functions returned 500.                                                                                                                                                                                                                                                  |
+| `graphql`            | 16.13.x | `graphql` 16.14 adds a location (`DIRECTIVE_DEFINITION`) to the built-in `@deprecated` directive. The Stellate CLI bundles `graphql` 16.12 and fails on our schema with `Unexpected invariant triggered`, so `stellate push` fails in CI. Remove the pin when the Stellate CLI bundles 16.14 or newer. Apollo Server 5 also needs `^16.11`. |
+| `eslint`             | 9.x     | `eslint-plugin-import` does not support version 10.                                                                                                                                                                                                                                                                                         |
 
 ## Case: dependency upgrade caused a production outage
 
@@ -80,3 +79,18 @@ Side effects of the same upgrade:
 ## Removed
 
 - The `api.countapi.xyz` counters and `/api/badge` are removed (PR #122). The service did not respond and `/api` timed out.
+
+## Case: `stellate push` fails with "Unexpected invariant triggered"
+
+Date: 2026-11-04. Every master CI run failed at `Push to Stellate`, from PR #111 on. The only green run (#110) pushed a few minutes before the new API was live.
+
+Cause: `stellate push` reads our schema from the live API (`schema` in `stellate.ts`). After #110 the API ran `graphql` 16.14. Its introspection lists `DIRECTIVE_DEFINITION` as a location of `@deprecated`. The Stellate CLI bundles `graphql` 16.12 and does not know it.
+
+It was not the token, the Node version or the organization. A new token, `STELLATE_ORG` and Node 24 changed nothing.
+
+How it was found: a mock server that returns our introspection result, and the CLI with a dummy token (`STELLATE_TOKEN=dummy stellate push --dry`). The CLI reads the schema before it checks the token. Removing one field at a time from the introspection showed the cause.
+
+Rules:
+
+- The Stellate push reads the live API. After a deploy that changes the schema, wait for the deploy, then re-run the failed CI job.
+- Do not upgrade `graphql` past 16.13 until the Stellate CLI supports it.
