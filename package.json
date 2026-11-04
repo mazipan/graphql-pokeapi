@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@apollo/server": "^5.5.1",
-    "graphql": "^16.14.2",
+    "graphql": "^17.0.2",
     "graphql-type-json": "^0.3.2",
     "pokedex-promise-v2": "^3.3.2",
     "stellate": "^3.2.32",
