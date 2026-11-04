@@ -14,7 +14,7 @@
     "prepare": "husky"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.5",
+    "@eslint/js": "^10.0.1",
     "@tailwindcss/cli": "^4.3.4",
     "@vercel/node": "^29.0.1",
     "ejs": "^7.0.2",
