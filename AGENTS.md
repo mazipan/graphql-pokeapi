@@ -26,6 +26,7 @@ GraphQL wrapper for pokeapi.co. It runs as Vercel Functions. The static page in 
 
 - Use npm only. Do not add `yarn.lock`.
 - Pin every dependency to an exact version. Never use `^` or `~`. `.npmrc` sets `save-exact=true`, so `npm install <package>` saves an exact version. A range let `graphql` 16.14 in and broke the Stellate push.
+- Fix a vulnerable transitive package with a range-scoped override and an exact version, for example `"tar@>=7.0.0 <7.5.22": "7.5.22"` in `overrides`. The key limits the override to the vulnerable range, so other versions stay as they are. Stay inside the same major version. Check with `npm audit`, then test the build, lint and the Stellate dry run.
 - The Node version is in `engines.node` in `package.json`. CI and Vercel read it. Do not set it anywhere else.
 - Pin each GitHub Action to a commit SHA. Add the version in a comment.
 - Dependabot opens the update PRs. See `.github/dependabot.yml`. It ignores the major versions of the held-back packages.
@@ -95,3 +96,18 @@ Rules:
 
 - The Stellate push reads the live API. After a deploy that changes the schema, wait for the deploy, then re-run the failed CI job.
 - Do not upgrade `graphql` past 16.13 until the Stellate CLI supports it.
+
+## Known vulnerabilities (tooling only)
+
+Checked on 2026-11-04 with `npm audit`. The runtime packages (`@apollo/server`, `graphql`, `graphql-type-json`, `pokedex-promise-v2`) have no findings. The remaining findings come from tooling (`vercel`, `@vercel/node`, `serve`, `stellate`, `eslint`) and have no fix inside the same major version.
+
+| Package                  | Needs        | Why it is not overridden                               |
+| ------------------------ | ------------ | ------------------------------------------------------ |
+| `minimatch` 3.x and 10.x | 11.x         | Major jump. ESLint 9 needs `minimatch` 3.              |
+| `undici` 5.x             | 6.x or newer | Major jump. Used by `@vercel/node`.                    |
+| `@fastify/busboy` 2.x    | 3.x          | Major jump. Used with `undici` 5.                      |
+| `glob` 13.x              | 14.x         | Major jump. Used by `@vercel/node`.                    |
+| `zod` 3.x                | 4.x          | Major jump. Different API.                             |
+| `esbuild` 0.27.x         | 0.28.1 (low) | Only affects the esbuild dev server. We do not run it. |
+
+Check again when `vercel`, `@vercel/node`, `stellate` or `eslint` publish a new version.
