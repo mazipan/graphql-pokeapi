@@ -1,4 +1,4 @@
-import { PokedexInstance, getOffset, handleError, hitSuccessCounter } from '../utils';
+import { PokedexInstance, getOffset, handleError } from '../utils';
 
 const BASE_URL_POKEMON = 'https://pokeapi.co/api/v2/pokemon/';
 const BASE_SPRITE = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
@@ -8,7 +8,6 @@ const BASE_DREAMWORLD = 'https://raw.githubusercontent.com/PokeAPI/sprites/maste
 export const getPokemonsList = async (limit = 20, offset = 1) => {
   try {
     const response = await PokedexInstance.getPokemonsList({ limit, offset });
-    hitSuccessCounter();
     if (response && response.results) {
       const responseWithImage = response.results.map((i) => {
         const id = i.url.replace(BASE_URL_POKEMON, '').slice(0, -1);
@@ -45,7 +44,6 @@ export const getPokemonsList = async (limit = 20, offset = 1) => {
 export const getPokemonByName = async (name = '') => {
   try {
     const response = await PokedexInstance.getPokemonByName(name);
-    hitSuccessCounter();
     return { ...response, params: { name }, status: true, message: '' };
   } catch (error) {
     console.error(`> Error api getPokemonByName(${name})`, error);

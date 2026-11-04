@@ -1,9 +1,8 @@
-import { PokedexInstance, handleError, hitSuccessCounter, extractIdFromUrl } from '../utils';
+import { PokedexInstance, handleError, extractIdFromUrl } from '../utils';
 
 export const getBerriesList = async () => {
   try {
     const response = await PokedexInstance.getBerriesList();
-    hitSuccessCounter();
     if (response && response.results) {
       return {
         ...response,
@@ -27,7 +26,6 @@ export const getBerriesList = async () => {
 export const getBerryByName = async (berry = '') => {
   try {
     const response = await PokedexInstance.getBerryByName(berry);
-    hitSuccessCounter();
     return { response, params: { berry }, status: true, message: '' };
   } catch (error) {
     console.error(`> Error api getBerryByName(${berry})`, error);
