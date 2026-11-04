@@ -13,7 +13,7 @@
 
 ## Homepage
 
-[https://graphql-pokeapi.vercel.app](https://graphql-pokeapi.vercel.app)
+[gql-poke.mazipan.space](https://gql-poke.mazipan.space)
 
 ## Deploy on Vercel
 
@@ -22,11 +22,11 @@
 ## Endpoint
 
 - GraphCDN (with caching): https://graphql-pokeapi.graphcdn.app
-- Origin: https://graphql-pokeapi.vercel.app/api/graphql
+- Origin: https://gql-poke.mazipan.space/api/graphql
 
 ## Playground
 
-[https://graphql-pokeapi.vercel.app/api/graphql](https://graphql-pokeapi.vercel.app/api/graphql)
+[https:///gql-poke.mazipan.space/api/graphql](https:///gql-poke.mazipan.space/api/graphql)
 
 ## Applications
 
