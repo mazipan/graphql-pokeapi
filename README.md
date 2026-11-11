@@ -280,6 +280,16 @@ If you use `graphql-pokeapi`, add your app to [awesome-list.md](awesome-list.md)
 - [Stellate](https://stellate.co) for the edge cache
 - [Vercel](https://vercel.com/)
 
+## Star History
+
+<a href="https://www.star-history.com/?repos=mazipan%2Fgraphql-pokeapi&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=mazipan/graphql-pokeapi&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=mazipan/graphql-pokeapi&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=mazipan/graphql-pokeapi&type=date&legend=top-left" />
+ </picture>
+</a>
+
 ## Contributors
 
 Thanks to these wonderful people!
